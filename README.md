@@ -1,4 +1,4 @@
-# Juraj Spevár Apps
+# IbaJuraj Apps
 
 Vitaj na stránke podpory mojich aplikácií pre iPhone.
 
