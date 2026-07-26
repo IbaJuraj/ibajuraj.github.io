@@ -5,7 +5,7 @@ Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
 Stránka obsahuje:
 
 - Strážca Termínov – dostupný v App Store,
-- Lex Drive – pripravovaný právny projekt,
+- Lex Drive – dostupný v App Store,
 - Kalkulačku 2v1 – dostupnú v App Store,
 - informácie o spôsobe vývoja a ochrane súkromia,
 - kontaktný formulár a doplnkovú podporu cez Telegram.
