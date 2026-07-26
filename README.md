@@ -2,37 +2,28 @@
 
 Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
 
-Stránka obsahuje:
+## Aplikácie
 
-- Strážca Termínov – dostupný v App Store,
-- Lex Drive – dostupný v App Store,
-- Kalkulačku 2v1 – dostupnú v App Store,
-- informácie o spôsobe vývoja a ochrane súkromia,
-- kontaktný formulár a doplnkovú podporu cez Telegram.
+- Strážca Termínov
+- Lex Drive
+- Kalkulačka 2v1
 
-Peňaženka Kariet je v tejto verzii webu zámerne skrytá.
+## Obsah repozitára
 
-## Publikovanie
+- `index.html` – hlavná stránka
+- `style.css` – responzívny dizajn
+- `script.js` – kontaktný formulár, výber aplikácie a tlačidlo späť hore
+- `privacy.html` – zásady ochrany súkromia
+- `404.html` – vlastná chybová stránka
+- `robots.txt` a `sitemap.xml` – základ pre vyhľadávače
+- `assets/` – ikony aplikácií a webu
 
-Web je publikovaný prostredníctvom GitHub Pages:
+Kontaktný formulár používa Formspree endpoint a Telegram je doplnkovým komunikačným kanálom.
+
+## Web
 
 https://ibajuraj.github.io/
 
-## Nastavenie kontaktu pred publikovaním
+## Značka
 
-V súbore `index.html` je potrebné nahradiť dve zástupné hodnoty:
-
-1. `REPLACE_WITH_FORMSPREE_ID` – ID formulára vytvoreného v službe Formspree.
-2. `REPLACE_WITH_TELEGRAM_GROUP` – verejný názov alebo odkaz Telegram skupiny.
-
-Príklad:
-
-```html
-action="https://formspree.io/f/abcde123"
-```
-
-```html
-href="https://t.me/ibajuraj_apps"
-```
-
-Bez nahradenia týchto hodnôt formulár ani Telegram odkaz nebudú pripravené na verejné používanie.
+Hlavné logo IbaJuraj Apps používa neutrálny symbol bez písmen. Telegram má vlastnú samostatnú ikonu iba v sekcii podpory.
