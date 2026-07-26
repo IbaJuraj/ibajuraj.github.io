@@ -1,38 +1,38 @@
 # IbaJuraj Apps
 
-Oficiálna prezentačná a podporná stránka aplikácií **IbaJuraj Apps**.
+Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
 
-Web obsahuje:
+Stránka obsahuje:
 
-- aktuálne dostupné aplikácie v App Store,
-- pripravované projekty vrátane Lex Drive,
-- základné princípy vývoja,
-- informácie o ochrane súkromia,
-- stručný plán ďalšieho vývoja,
-- kontakt na autora.
+- Strážca Termínov – dostupný v App Store,
+- Lex Drive – pripravovaný právny projekt,
+- Kalkulačku 2v1 – dostupnú v App Store,
+- informácie o spôsobe vývoja a ochrane súkromia,
+- kontaktný formulár a doplnkovú podporu cez Telegram.
 
-## Aktuálne aplikácie
+Peňaženka Kariet je v tejto verzii webu zámerne skrytá.
 
-### Strážca Termínov
+## Publikovanie
 
-Osobný administratívny asistent pre termíny, dokumenty, vozidlá, poistenia, záruky, zmluvy, zdravie, prácu a ďalšie dôležité povinnosti.
-
-### Kalkulačka 2v1
-
-Jednoduchá kalkulačka s klasickým režimom a praktickými percentuálnymi výpočtami.
-
-## Projekty vo vývoji
-
-### Lex Drive
-
-Pripravovaný právny asistent pre cestnú premávku, priestupky, sankcie a overiteľnú orientáciu v právnych predpisoch. Projekt je vo vývoji a nenahrádza individuálne právne poradenstvo.
-
-### Peňaženka Kariet
-
-Digitálna peňaženka pre vernostné, členské a zákaznícke karty.
-
-## GitHub Pages
-
-Stránka je publikovaná cez GitHub Pages:
+Web je publikovaný prostredníctvom GitHub Pages:
 
 https://ibajuraj.github.io/
+
+## Nastavenie kontaktu pred publikovaním
+
+V súbore `index.html` je potrebné nahradiť dve zástupné hodnoty:
+
+1. `REPLACE_WITH_FORMSPREE_ID` – ID formulára vytvoreného v službe Formspree.
+2. `REPLACE_WITH_TELEGRAM_GROUP` – verejný názov alebo odkaz Telegram skupiny.
+
+Príklad:
+
+```html
+action="https://formspree.io/f/abcde123"
+```
+
+```html
+href="https://t.me/ibajuraj_apps"
+```
+
+Bez nahradenia týchto hodnôt formulár ani Telegram odkaz nebudú pripravené na verejné používanie.

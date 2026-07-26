@@ -3,53 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="IbaJuraj Apps – praktické aplikácie pre termíny, dokumenty, výpočty a každodennú administratívu.">
+  <meta
+    name="description"
+    content="IbaJuraj Apps – praktické aplikácie pre termíny, administratívu, právnu orientáciu a každodenné výpočty."
+  >
   <meta name="theme-color" content="#f8fafc">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sk_SK">
+  <meta property="og:title" content="IbaJuraj Apps">
+  <meta
+    property="og:description"
+    content="Praktické aplikácie pre termíny, administratívu, právnu orientáciu a každodenné výpočty."
+  >
+  <meta property="og:url" content="https://ibajuraj.github.io/">
+
   <title>IbaJuraj Apps</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">Preskočiť na obsah</a>
+
   <header class="site-header">
     <nav class="nav" aria-label="Hlavná navigácia">
       <a class="brand" href="#top" aria-label="IbaJuraj Apps – úvod">
         <span class="brand-mark" aria-hidden="true">IA</span>
         <span>IbaJuraj Apps</span>
       </a>
+
       <div class="nav-links">
         <a href="#apps">Aplikácie</a>
-        <a href="#principles">Princípy</a>
+        <a href="#development">Vývoj</a>
         <a href="#privacy">Súkromie</a>
-        <a href="#roadmap">Pripravujeme</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#support">Podpora</a>
       </div>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="section hero">
-      <div>
+  <main id="main-content">
+    <section class="section hero" id="top">
+      <div class="hero-copy">
         <p class="eyebrow">Praktické aplikácie pre každý deň</p>
-        <h1>Prehľad bez zbytočného chaosu.</h1>
+        <h1>Jednoduchšie termíny, povinnosti a rozhodovanie.</h1>
         <p class="hero-text">
-          IbaJuraj Apps tvorí jednoduché nástroje pre termíny, dokumenty,
-          výpočty a každodennú administratívu. Dôraz je na zrozumiteľnosť,
-          súkromie a funkcie, ktoré majú reálny význam.
+          IbaJuraj Apps tvorí prehľadné nástroje pre administratívu,
+          právnu orientáciu a každodenné výpočty. Dôraz je na praktický
+          význam, zrozumiteľnosť, súkromie a spoľahlivosť.
         </p>
+
         <div class="hero-actions">
-          <a class="button primary" href="#apps">Pozrieť aplikácie</a>
-          <a class="button secondary" href="https://github.com/IbaJuraj">Kontakt cez GitHub</a>
+          <a class="button primary" href="#apps">Zobraziť aplikácie</a>
+          <a class="button secondary" href="#support">Kontakt a podpora</a>
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Stav vývoja">
-        <div class="hero-card-top">
+      <aside class="hero-card" aria-label="Hlavné zameranie">
+        <p class="hero-card-label">
           <span class="status-dot" aria-hidden="true"></span>
           Aktívny vývoj
-        </div>
-        <h2>Menej starostí.<br>Viac istoty.</h2>
+        </p>
+        <h2>Užitočné informácie bez zbytočného hľadania.</h2>
         <p>
-          Každá aplikácia vzniká postupne podľa reálnych potrieb používateľov,
-          s dôrazom na spoľahlivosť a dlhodobú udržateľnosť.
+          Aplikácie vznikajú postupne podľa reálnych potrieb používateľov.
+          Nové funkcie sa pridávajú až vtedy, keď majú jasný účel.
         </p>
       </aside>
     </section>
@@ -57,12 +74,15 @@
     <section class="section" id="apps">
       <div class="section-heading">
         <p class="eyebrow">Aplikácie</p>
-        <h2>Nástroje pre konkrétne situácie.</h2>
-        <p>Každá aplikácia má jasný účel a rieši svoju oblasť jednoducho a prehľadne.</p>
+        <h2>Najdôležitejšie projekty IbaJuraj Apps.</h2>
+        <p>
+          Dostupné aplikácie môžete otvoriť priamo v App Store.
+          Lex Drive je pripravovaný projekt a jeho obsah sa naďalej vyvíja.
+        </p>
       </div>
 
       <div class="app-grid">
-        <article class="app-card featured">
+        <article class="app-card app-card-primary">
           <div class="app-card-header">
             <div>
               <p class="app-status">Dostupné v App Store</p>
@@ -70,21 +90,56 @@
             </div>
             <span class="app-pill">Administratíva</span>
           </div>
-          <p>
-            Osobný administratívny asistent pre dôležité termíny, dokumenty,
-            vozidlá, poistenia a ďalšie povinnosti na jednom mieste.
+
+          <p class="app-lead">
+            Osobný administratívny asistent, ktorý pomáha evidovať dôležité
+            termíny, doklady, vozidlá, poistenia a ďalšie povinnosti.
           </p>
-          <ul>
-            <li>Doklady, vozidlá, poistenia, záruky a zmluvy</li>
-            <li>Zdravie, práca a vlastné sledované termíny</li>
-            <li>Kalendár, upozornenia a prehľad blížiacich sa udalostí</li>
-            <li>Osoby, skupiny, zdieľanie a synchronizácia cez iCloud</li>
-            <li>Prílohy, zálohy, export a ochrana aplikácie</li>
+
+          <ul class="feature-list">
+            <li>Prehľad blížiacich sa termínov a udalostí</li>
+            <li>Evidencia dokladov, vozidiel a poistení</li>
+            <li>Upozornenia na dôležité povinnosti</li>
+            <li>Vlastné kategórie a termíny na jednom mieste</li>
           </ul>
-          <a class="text-link" href="https://apps.apple.com/sk/app/str%C3%A1%C5%BEca-term%C3%ADnov/id6779741336">Otvoriť v App Store →</a>
+
+          <a
+            class="button primary app-button"
+            href="https://apps.apple.com/sk/app/str%C3%A1%C5%BEca-term%C3%ADnov/id6779741336"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Otvoriť v App Store
+          </a>
         </article>
 
-        <article class="app-card">
+        <article class="app-card app-card-lex">
+          <div class="app-card-header">
+            <div>
+              <p class="app-status development-status">Vo vývoji</p>
+              <h3>Lex Drive</h3>
+            </div>
+            <span class="app-pill app-pill-dark">Právo</span>
+          </div>
+
+          <p class="app-lead">
+            Praktický právny prehľad pre cestnú premávku, priestupky,
+            sankcie a súvisiace právne ustanovenia.
+          </p>
+
+          <ul class="feature-list">
+            <li>Porušené ustanovenie a právna kvalifikácia priestupku</li>
+            <li>Pokuta na mieste a možné sankcie v ďalšom konaní</li>
+            <li>Informácia, či ide o závažný priestupok</li>
+            <li>Dohľadateľné a overiteľné právne zdroje</li>
+          </ul>
+
+          <p class="app-note">
+            Lex Drive je pripravovaný projekt. Nenahrádza individuálne právne poradenstvo.
+          </p>
+        </article>
+
+        <article class="app-card app-card-calculator">
           <div class="app-card-header">
             <div>
               <p class="app-status">Dostupné v App Store</p>
@@ -92,116 +147,184 @@
             </div>
             <span class="app-pill">Výpočty</span>
           </div>
-          <p>Jednoduchá kalkulačka s klasickým režimom a praktickými percentuálnymi výpočtami.</p>
-          <ul>
+
+          <p class="app-lead">
+            Jednoduchá kalkulačka s klasickým režimom a praktickými
+            percentuálnymi výpočtami.
+          </p>
+
+          <ul class="feature-list">
             <li>Klasické výpočty</li>
             <li>Percentá, zľavy a úspora</li>
             <li>História a kopírovanie výsledkov</li>
           </ul>
-          <a class="text-link" href="https://apps.apple.com/sk/app/kalkula%C4%8Dka-2v1/id6777232702">Otvoriť v App Store →</a>
-        </article>
 
-        <article class="app-card">
-          <div class="app-card-header">
-            <div>
-              <p class="app-status muted">Vo vývoji</p>
-              <h3>Lex Drive</h3>
-            </div>
-            <span class="app-pill">Právo</span>
-          </div>
-          <p>
-            Pripravovaný právny asistent pre cestnú premávku, priestupky,
-            sankcie a praktickú orientáciu v právnych predpisoch.
-          </p>
-          <ul>
-            <li>Situácie z cestnej premávky v praktickom kontexte</li>
-            <li>Sankcie, právna kvalifikácia a súvisiace ustanovenia</li>
-            <li>Dohľadateľné a overiteľné zdroje právnych tvrdení</li>
-            <li>Rôzne úrovne vysvetlenia pre občana aj odbornú prax</li>
-          </ul>
-          <p class="app-note">Lex Drive je vo vývoji a nenahrádza individuálne právne poradenstvo.</p>
-        </article>
-
-        <article class="app-card">
-          <div class="app-card-header">
-            <div>
-              <p class="app-status muted">Vo vývoji</p>
-              <h3>Peňaženka Kariet</h3>
-            </div>
-            <span class="app-pill">Karty</span>
-          </div>
-          <p>Digitálna peňaženka pre vernostné, členské a zákaznícke karty.</p>
-          <ul>
-            <li>Vernostné a členské karty</li>
-            <li>QR a čiarové kódy</li>
-            <li>Rýchly prístup ku kartám</li>
-          </ul>
+          <a
+            class="text-link"
+            href="https://apps.apple.com/sk/app/kalkula%C4%8Dka-2v1/id6777232702"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Otvoriť v App Store →
+          </a>
         </article>
       </div>
     </section>
 
-    <section class="section split-section" id="principles">
+    <section class="section split-section" id="development">
       <div class="section-heading">
-        <p class="eyebrow">Princípy</p>
+        <p class="eyebrow">Spôsob vývoja</p>
         <h2>Jasný účel pred množstvom funkcií.</h2>
       </div>
+
       <div class="principle-grid">
-        <article><h3>Jednoduchosť</h3><p>Funkcie majú byť použiteľné bez zbytočného vysvetľovania.</p></article>
-        <article><h3>Praktickosť</h3><p>Každá aplikácia má riešiť reálnu každodennú potrebu.</p></article>
-        <article><h3>Prehľadnosť</h3><p>Dizajn má používateľovi rýchlo ukázať, čo je dôležité.</p></article>
-        <article><h3>Dôveryhodnosť</h3><p>Výsledok má byť zrozumiteľný, overiteľný a primeraný svojmu účelu.</p></article>
+        <article>
+          <h3>Praktickosť</h3>
+          <p>Každá funkcia má riešiť konkrétnu každodennú potrebu.</p>
+        </article>
+
+        <article>
+          <h3>Prehľadnosť</h3>
+          <p>Dôležité informácie majú byť viditeľné rýchlo a bez chaosu.</p>
+        </article>
+
+        <article>
+          <h3>Spoľahlivosť</h3>
+          <p>Nové možnosti sa pridávajú postupne a po kontrole ich fungovania.</p>
+        </article>
+
+        <article>
+          <h3>Dôveryhodnosť</h3>
+          <p>Výsledok má byť zrozumiteľný a primerane overiteľný.</p>
+        </article>
       </div>
     </section>
 
     <section class="section" id="privacy">
       <div class="privacy-card">
-        <p class="eyebrow">Ochrana súkromia</p>
-        <h2>Súkromie je súčasť produktu.</h2>
+        <div>
+          <p class="eyebrow">Ochrana súkromia</p>
+          <h2>Súkromie je súčasť produktu.</h2>
+        </div>
+
         <p>
-          Aplikácie IbaJuraj Apps nepredávajú osobné údaje tretím stranám.
-          Údaje zostávajú pod kontrolou používateľa a pri vybraných funkciách
-          môžu byť uložené v zariadení alebo synchronizované prostredníctvom iCloudu.
-          Zdieľanie sa vykonáva až na základe vedomého rozhodnutia používateľa.
+          Aplikácie IbaJuraj Apps nepredávajú osobné údaje používateľov.
+          Údaje zostávajú pod kontrolou používateľa a podľa funkcie môžu byť
+          uložené v zariadení alebo synchronizované prostredníctvom služieb Apple.
         </p>
       </div>
     </section>
 
-    <section class="section" id="roadmap">
-      <div class="section-heading">
-        <p class="eyebrow">Pripravujeme</p>
-        <h2>Postupný vývoj podľa reálneho používania.</h2>
+    <section class="section" id="support">
+      <div class="support-heading">
+        <p class="eyebrow">Kontakt a podpora</p>
+        <h2>Máte otázku, návrh alebo ste našli problém?</h2>
+        <p>
+          Vyberte aplikáciu a opíšte svoju otázku. Pri súkromných problémoch
+          neposielajte fotografie dokladov, heslá ani iné citlivé údaje.
+        </p>
       </div>
-      <div class="roadmap-list">
-        <article class="roadmap-item">
-          <span>01</span>
-          <div><h3>Strážca Termínov – ďalšie vylepšenia</h3><p>Dokončovanie kategórií, stabilita, používateľská spätná väzba a ďalšie zlepšovanie prehľadu.</p></div>
-        </article>
-        <article class="roadmap-item">
-          <span>02</span>
-          <div><h3>Lex Drive</h3><p>Budovanie overiteľnej právnej znalostnej platformy a praktického iOS klienta.</p></div>
-        </article>
-        <article class="roadmap-item">
-          <span>03</span>
-          <div><h3>Smart Scan</h3><p>Rozpoznanie dokumentu a návrh predvyplnenia až po stabilizácii dátových modelov; používateľ údaje vždy potvrdí.</p></div>
-        </article>
-      </div>
-    </section>
 
-    <section class="section" id="contact">
-      <div class="contact-section">
-        <div>
-          <p class="eyebrow">Kontakt</p>
-          <h2>Máte otázku alebo návrh?</h2>
-          <p>Spätná väzba pomáha zlepšovať aplikácie a rozhodovať o ďalšom vývoji.</p>
-        </div>
-        <a class="button primary" href="https://github.com/IbaJuraj">Kontakt cez GitHub</a>
+      <div class="support-grid">
+        <!-- Pred publikovaním nahraďte REPLACE_WITH_FORMSPREE_ID skutočným Formspree ID. -->
+        <form
+          class="support-form"
+          id="contact-form"
+          action="https://formspree.io/f/xnjeland"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Nová správa z webu IbaJuraj Apps">
+
+          <div class="form-row">
+            <label for="app">Aplikácia</label>
+            <select id="app" name="aplikacia" required>
+              <option value="">Vyberte aplikáciu</option>
+              <option value="Strážca Termínov">Strážca Termínov</option>
+              <option value="Lex Drive">Lex Drive</option>
+              <option value="Kalkulačka 2v1">Kalkulačka 2v1</option>
+              <option value="Všeobecná otázka">Všeobecná otázka</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message-type">Typ správy</label>
+            <select id="message-type" name="typ_spravy" required>
+              <option value="">Vyberte typ správy</option>
+              <option value="Otázka">Otázka</option>
+              <option value="Hlásenie problému">Hlásenie problému</option>
+              <option value="Návrh na zlepšenie">Návrh na zlepšenie</option>
+              <option value="Iné">Iné</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Váš e-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="meno@example.com"
+              required
+            >
+          </div>
+
+          <div class="form-row">
+            <label for="message">Správa</label>
+            <textarea
+              id="message"
+              name="sprava"
+              rows="7"
+              placeholder="Napíšte, čo potrebujete vyriešiť…"
+              required
+            ></textarea>
+          </div>
+
+          <button class="button primary submit-button" type="submit">
+            Odoslať správu
+          </button>
+
+        </form>
+
+        <aside class="telegram-card">
+          <div class="telegram-icon" aria-hidden="true">T</div>
+          <p class="eyebrow">Telegram</p>
+          <h3>Pýtať sa môžete aj cez aplikáciu Telegram.</h3>
+          <p>
+            Telegram skupina je vhodná na bežné otázky, návrhy a diskusiu
+            o aplikáciách. Nezverejňujte v nej osobné alebo citlivé údaje.
+          </p>
+
+          <!-- Pred publikovaním nahraďte Telegram odkaz skutočným odkazom skupiny. -->
+          <a
+            class="button secondary"
+            href="https://t.me/+mEtAJXPMUF9mZjI0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Otvoriť Telegram
+          </a>
+
+        </aside>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <p>© 2026 IbaJuraj Apps</p>
-    <p>Praktické aplikácie pre každodenný prehľad.</p>
+
+    <div class="footer-links">
+      <a href="#apps">Aplikácie</a>
+      <a href="#support">Kontakt a podpora</a>
+      <a href="#privacy">Ochrana súkromia</a>
+      <a
+        href="https://github.com/IbaJuraj"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </div>
   </footer>
 </body>
 </html>
