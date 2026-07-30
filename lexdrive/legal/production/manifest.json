@@ -1,0 +1,19 @@
+{
+  "bundleVersion": "2026.07.30-production.1",
+  "schemaVersion": "1.0",
+  "minimumAppBuild": 101,
+  "minimumAppVersion": "1.4",
+  "minimumEngineVersion": "1",
+  "channel": "production",
+  "packageKind": "full",
+  "publishedAt": "2026-07-30T08:55:00Z",
+  "legalStateDate": "2026-07-30",
+  "effectiveFrom": "2026-07-30",
+  "archivePath": "packages/SK-2026.07.30-production.1-production.zip",
+  "sha256": "b1943557cd41e86f5b2a97e0cc00bca69165e32cc6e9437f3c4948e7fdc6d999",
+  "signingKeyID": "lexdrive-production-2026-01",
+  "signature": "BfBn/4BO5fzTv+894OCa75rSBCT0Z2db85toGNfF5HoDov/9dUX0ezq/wIKmD02uTqd7CZRE06UjjJmun00CCA==",
+  "profileCount": 12,
+  "severity": "legalUpdate",
+  "summary": "Prvý podpísaný produkčný právny balík Lex Drive"
+}
