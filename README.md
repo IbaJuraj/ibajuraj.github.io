@@ -27,3 +27,5 @@ https://ibajuraj.github.io/
 ## Značka
 
 Hlavné logo IbaJuraj Apps používa neutrálny symbol bez písmen. Telegram má vlastnú samostatnú ikonu iba v sekcii podpory.
+
+- `standard/` – autoritatívny IbaJuraj Application Standard, governance, odkazy a changelog
