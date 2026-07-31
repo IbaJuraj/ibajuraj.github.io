@@ -592,3 +592,68 @@ h3 {
 }
 .error-page img { margin-bottom: 26px; border-radius: 22px; }
 .error-page p:not(.eyebrow) { color: var(--muted); font-size: 1.05rem; }
+
+/* Desktop typography and spacing refinement */
+@media (min-width: 821px) {
+  .section {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .hero {
+    padding-top: 50px;
+    padding-bottom: 42px;
+  }
+
+  .hero-copy {
+    max-width: 760px;
+  }
+
+  h1 {
+    max-width: 720px;
+    font-size: clamp(3.25rem, 4.2vw, 4rem);
+    line-height: 1.01;
+    letter-spacing: -0.052em;
+  }
+
+  h2 {
+    font-size: clamp(2.15rem, 2.85vw, 2.7rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .compact-heading {
+    max-width: 900px;
+  }
+
+  .support-heading h2 {
+    max-width: 860px;
+  }
+
+  .about-card,
+  .privacy-card {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .support-section {
+    padding-top: 50px;
+  }
+
+  .support-grid {
+    grid-template-columns: minmax(0, 1.38fr) minmax(300px, 0.72fr);
+  }
+
+  .support-form,
+  .telegram-card {
+    padding: 24px;
+  }
+
+  .form-row {
+    margin-bottom: 13px;
+  }
+
+  .form-row textarea {
+    min-height: 108px;
+  }
+}
