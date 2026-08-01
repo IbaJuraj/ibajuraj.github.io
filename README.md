@@ -1,6 +1,6 @@
 # IbaJuraj Apps
 
-Oficiálna stránka aplikácií IbaJuraj Apps.
+Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
 
 ## Aplikácie
 
@@ -8,15 +8,29 @@ Oficiálna stránka aplikácií IbaJuraj Apps.
 - Lex Drive
 - Kalkulačka 2v1
 
-## Hlavné súbory
+## Obsah repozitára
 
 - `index.html` – hlavná stránka
-- `style.css` – moderné responzívne zobrazenie
-- `script.js` – kontaktný formulár a pomocné interakcie
-- `privacy.html` – ochrana súkromia
-- `404.html` – chybová stránka
-- `assets/` – ikony a grafické podklady
+- `style.css` – responzívny dizajn
+- `script.js` – kontaktný formulár, výber aplikácie a tlačidlo späť hore
+- `privacy.html` – zásady ochrany súkromia
+- `404.html` – vlastná chybová stránka
+- `robots.txt` a `sitemap.xml` – základ pre vyhľadávače
+- `assets/` – ikony aplikácií a webu
 
-Samostatný IbaJuraj Application Standard zostáva dostupný cez `standard/index.html`.
+Kontaktný formulár používa Formspree endpoint a Telegram je doplnkovým komunikačným kanálom.
 
-Web: https://ibajuraj.github.io/
+## Web
+
+https://ibajuraj.github.io/
+
+## Značka
+
+Hlavné logo IbaJuraj Apps používa neutrálny symbol bez písmen. Telegram má vlastnú samostatnú ikonu iba v sekcii podpory.
+
+- `standard/` – autoritatívny IbaJuraj Application Standard, governance, odkazy a changelog
+
+## URL parametre podpory
+
+Kontaktný formulár podporuje parametre `app`, `type` a `subject` a fragment `#support`.
+Starší fragment `#kontakt` zostáva kompatibilný.
