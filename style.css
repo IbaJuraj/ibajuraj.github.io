@@ -669,15 +669,3 @@ h3 {
     min-height: 98px;
   }
 }
-
-/* Deep-link targets opened from IbaJuraj applications. */
-#support,
-#kontakt {
-  scroll-margin-top: 96px;
-}
-
-.anchor-alias {
-  display: block;
-  height: 0;
-  overflow: hidden;
-}
