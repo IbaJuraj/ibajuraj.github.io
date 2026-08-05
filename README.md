@@ -1,6 +1,10 @@
 # IbaJuraj Apps
 
-Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
+Oficiálna prezentačná a podporná stránka aplikácií **IbaJuraj Apps**.
+
+## Web
+
+https://ibajuraj.github.io/
 
 ## Aplikácie
 
@@ -10,23 +14,28 @@ Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
 
 ## Obsah repozitára
 
-- `index.html` – hlavná stránka
+- `index.html` – hlavná stránka ekosystému IbaJuraj Apps
 - `style.css` – responzívny dizajn
-- `script.js` – kontaktný formulár, výber aplikácie a tlačidlo späť hore
+- `script.js` – navigácia, kontaktný formulár a interakcie
 - `privacy.html` – zásady ochrany súkromia
-- `invite.html` – vstupná stránka pozvánok do zdieľaných skupín Strážcu Termínov
+- `invite.html` – vstupná stránka pozvánok Strážcu Termínov
 - `404.html` – vlastná chybová stránka
-- `robots.txt` a `sitemap.xml` – základ pre vyhľadávače
 - `assets/` – ikony aplikácií a webu
+- `lexdrive/legal/` – verejné právne balíky Lex Drive
 
-Kontaktný formulár používa Formspree endpoint a Telegram je doplnkovým komunikačným kanálom.
+## IbaJuraj Application Standard
 
-## Web
+Jediným autoritatívnym zdrojom spoločného štandardu je samostatný repozitár:
 
-https://ibajuraj.github.io/
+https://github.com/IbaJuraj/ibajuraj-application-standard
 
-## Značka
+Aktuálne oficiálne vydanie:
 
-Hlavné logo IbaJuraj Apps používa neutrálny symbol bez písmen. Telegram má vlastnú samostatnú ikonu iba v sekcii podpory.
+- **IbaJuraj Application Standard 1.0.0**
+- tag: `standard-v1.0.0`
 
-- `standard/` – autoritatívny IbaJuraj Application Standard, governance, odkazy a changelog
+Pôvodný priečinok `standard/` v tomto webovom repozitári sa zachováva iba ako historické presmerovanie. Nesmie sa používať ako zdroj aktuálneho znenia.
+
+## Podpora
+
+Kontaktný formulár používa Formspree. Telegram je doplnkovým komunikačným kanálom pre bežné otázky a komunitnú diskusiu.
