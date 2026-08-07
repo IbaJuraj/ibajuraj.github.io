@@ -3,88 +3,95 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Zásady ochrany súkromia aplikácií IbaJuraj Apps.">
-  <meta name="theme-color" content="#f5f8fd">
+  <meta name="description" content="Zásady ochrany súkromia aplikácií IbaJuraj Apps vrátane pripravovanej Peňaženky Kariet.">
+  <meta name="theme-color" content="#f4f7fc">
+  <meta name="color-scheme" content="light">
   <title>Ochrana súkromia – IbaJuraj Apps</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20260731-2">
+  <link rel="stylesheet" href="style.css?v=20260807-compact">
+  <script src="script.js?v=20260807-compact" defer></script>
 </head>
 <body>
-  <header class="site-header">
+  <a class="skip-link" href="#main-content">Preskočiť na obsah</a>
+
+  <header class="site-header" id="top">
     <nav class="nav" aria-label="Hlavná navigácia">
-      <a class="brand" href="index.html">
-        <img src="assets/ibajuraj-logo.svg" alt="" width="42" height="42">
+      <a class="brand" href="index.html" aria-label="IbaJuraj Apps – hlavná stránka">
+        <img src="assets/ibajuraj-logo.svg" alt="" width="44" height="44">
         <span>IbaJuraj Apps</span>
       </a>
-      <div class="nav-links">
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation">
+        <span class="menu-toggle-label">Menu</span>
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+
+      <div class="nav-links" id="mobile-navigation">
         <a href="index.html#apps">Aplikácie</a>
-        <a href="index.html#support">Podpora</a>
+        <a href="index.html#standard">Štandard</a>
+        <a href="privacy.html" aria-current="page">Súkromie</a>
+        <a class="nav-support" href="index.html#support">Kontakt</a>
       </div>
     </nav>
   </header>
 
-  <main class="legal-page">
-    <section class="section">
+  <main class="legal-page" id="main-content">
+    <section class="section legal-hero">
       <p class="eyebrow">Ochrana súkromia</p>
       <h1>Zásady ochrany súkromia</h1>
       <p class="legal-intro">
-        IbaJuraj Apps nepredáva osobné údaje používateľov.
-        Konkrétne spracovanie údajov závisí od funkcií jednotlivej aplikácie.
+        IbaJuraj Apps nepredáva osobné údaje používateľov. Konkrétne spracovanie údajov závisí od funkcií a nastavení jednotlivých aplikácií.
       </p>
-
-      <div class="legal-stack">
-        <article>
-          <h2>Strážca Termínov</h2>
-          <p>
-            Údaje, ktoré používateľ zadá do aplikácie, slúžia na evidenciu termínov,
-            dokumentov a súvisiacich upozornení. Podľa zapnutých funkcií môžu byť uložené
-            v zariadení alebo synchronizované prostredníctvom služieb Apple.
-          </p>
-        </article>
-
-        <article>
-          <h2>Lex Drive</h2>
-          <p>
-            Lex Drive poskytuje právne informačné prehľady. Aplikácia nevyžaduje,
-            aby používateľ zadával citlivé osobné údaje na získanie všeobecných informácií.
-          </p>
-        </article>
-
-        <article>
-          <h2>Kalkulačka 2v1</h2>
-          <p>
-            Výpočty sa používajú na zobrazenie výsledkov a histórie podľa funkcií aplikácie.
-            IbaJuraj Apps tieto údaje nepredáva.
-          </p>
-        </article>
-
-        <article>
-          <h2>Kontakt a podpora</h2>
-          <p>
-            Pri použití kontaktného formulára sa spracuje e-mailová adresa a obsah správy
-            iba na účely odpovede a riešenia požiadavky. Formulár technicky spracúva služba Formspree.
-            Do formulára ani Telegram skupiny neposielajte heslá, fotografie dokladov ani iné citlivé údaje.
-          </p>
-        </article>
-
-        <article>
-          <h2>Kontakt</h2>
-          <p>
-            Otázky k ochrane súkromia môžete poslať cez
-            <a class="text-link" href="index.html#support">kontaktný formulár</a>.
-          </p>
-        </article>
-      </div>
-
-      <p class="legal-updated">Posledná aktualizácia: júl 2026</p>
     </section>
+
+    <section class="section legal-grid" aria-label="Súkromie podľa aplikácie">
+      <article class="legal-card">
+        <h2>Strážca Termínov</h2>
+        <p>Údaje zadané používateľom slúžia na evidenciu termínov, dokumentov a súvisiacich upozornení. Podľa zapnutých funkcií môžu byť uložené v zariadení alebo synchronizované prostredníctvom služieb Apple.</p>
+      </article>
+
+      <article class="legal-card">
+        <h2>Lex Drive</h2>
+        <p>Lex Drive poskytuje právne informačné prehľady. Na získanie všeobecných právnych informácií nevyžaduje zadávanie citlivých osobných údajov.</p>
+      </article>
+
+      <article class="legal-card">
+        <h2>Kalkulačka 2v1</h2>
+        <p>Výpočty a história sa používajú na funkcie aplikácie. IbaJuraj Apps tieto údaje nepredáva.</p>
+      </article>
+
+      <article class="legal-card">
+        <span class="legal-status">Vo vývoji</span>
+        <h2>Peňaženka Kariet</h2>
+        <p>Údaje vernostných kariet sa ukladajú v aplikácii. Pri zapnutej osobnej synchronizácii sa karty môžu synchronizovať cez súkromnú databázu iCloud. Zdieľanie sa aktivuje iba výslovným vytvorením zdieľanej peňaženky. Nastavenia lokálneho zámku zostávajú v zariadení.</p>
+      </article>
+
+      <article class="legal-card legal-card-wide">
+        <h2>Kontakt a podpora</h2>
+        <p>Pri použití kontaktného formulára sa spracuje e-mailová adresa a obsah správy iba na účely odpovede a riešenia požiadavky. Formulár technicky spracúva služba Formspree. Do formulára ani Telegram komunity neposielajte heslá, fotografie dokladov, celé čísla kariet, čiarové alebo QR kódy ani iné citlivé údaje.</p>
+      </article>
+
+      <article class="legal-card legal-card-wide">
+        <h2>Otázky k súkromiu</h2>
+        <p>Otázky k ochrane súkromia môžete poslať cez <a class="text-link" href="index.html#support">kontaktný formulár IbaJuraj Apps</a>.</p>
+      </article>
+    </section>
+
+    <p class="legal-updated">Posledná aktualizácia: august 2026</p>
   </main>
 
   <footer class="footer">
-    <p>© 2026 IbaJuraj Apps</p>
+    <div class="footer-brand">
+      <img src="assets/ibajuraj-logo.svg" alt="" width="36" height="36">
+      <div><strong>IbaJuraj Apps</strong><p>Vytvorené na Slovensku 🇸🇰</p></div>
+    </div>
+    <div class="footer-meta"><p>© <span id="current-year">2026</span> IbaJuraj Apps</p></div>
     <div class="footer-links">
-      <a href="index.html">Späť na hlavnú stránku</a>
+      <a href="index.html">Hlavná stránka</a>
+      <a href="index.html#apps">Aplikácie</a>
+      <a href="index.html#support">Kontakt</a>
+      <a href="https://github.com/IbaJuraj/ibajuraj-application-standard" target="_blank" rel="noopener noreferrer">Štandard aplikácií</a>
     </div>
   </footer>
 </body>

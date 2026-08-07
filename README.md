@@ -1,41 +1,32 @@
 # IbaJuraj Apps
 
-Oficiálna prezentačná a podporná stránka aplikácií **IbaJuraj Apps**.
-
-## Web
-
-https://ibajuraj.github.io/
+Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
 
 ## Aplikácie
 
-- Strážca Termínov
-- Lex Drive
-- Kalkulačka 2v1
+- Strážca Termínov – dostupný v App Store
+- Lex Drive – dostupný v App Store
+- Kalkulačka 2v1 – dostupná v App Store
+- Peňaženka Kariet – vo vývoji
 
 ## Obsah repozitára
 
-- `index.html` – hlavná stránka ekosystému IbaJuraj Apps
-- `style.css` – responzívny dizajn
-- `script.js` – navigácia, kontaktný formulár a interakcie
-- `privacy.html` – zásady ochrany súkromia
-- `invite.html` – vstupná stránka pozvánok Strážcu Termínov
-- `404.html` – vlastná chybová stránka
-- `assets/` – ikony aplikácií a webu
-- `lexdrive/legal/` – verejné právne balíky Lex Drive
+- `index.html` – hlavná responzívna stránka,
+- `style.css` – desktop, tablet a mobilný dizajn,
+- `script.js` – mobilná navigácia, kontaktný formulár, tlačidlo späť hore a dynamická verzia IbaJuraj Application Standardu,
+- `privacy.html` – zásady ochrany súkromia vrátane Peňaženky Kariet,
+- `invite.html` – vstupná stránka pozvánok,
+- `404.html` – vlastná chybová stránka,
+- `assets/` – ikony aplikácií a webu.
 
 ## IbaJuraj Application Standard
 
-Jediným autoritatívnym zdrojom spoločného štandardu je samostatný repozitár:
+Autoritatívnym zdrojom je samostatný repozitár:
 
 https://github.com/IbaJuraj/ibajuraj-application-standard
 
-Aktuálne oficiálne vydanie:
-
-- **IbaJuraj Application Standard 1.0.0**
-- tag: `standard-v1.0.0`
-
-Pôvodný priečinok `standard/` v tomto webovom repozitári sa zachováva iba ako historické presmerovanie. Nesmie sa používať ako zdroj aktuálneho znenia.
+Hlavná stránka načítava aktuálnu verziu štandardu z `standard.json` v autoritatívnom repozitári. Pri publikovaní novej verzie štandardu preto nie je potrebné ručne meniť číslo verzie na webe.
 
 ## Podpora
 
-Kontaktný formulár používa Formspree. Telegram je doplnkovým komunikačným kanálom pre bežné otázky a komunitnú diskusiu.
+Kontaktný formulár používa Formspree. Telegram komunita je doplnkový komunikačný kanál; citlivé údaje sa nemajú posielať cez verejné komunikačné kanály.
