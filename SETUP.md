@@ -1,37 +1,13 @@
-# Dokončenie kontaktnej sekcie
+# Nastavenie a kontrola stránky
 
-Aktualizovaný web je pripravený na vloženie do repozitára, ale pred publikovaním treba doplniť dva skutočné odkazy.
+Kontaktný formulár a Telegram už používajú aktívne odkazy. Pred ďalším vydaním skontrolujte, že:
 
-## 1. Formspree
+1. endpoint Formspree v `index.html` je stále aktívny,
+2. pozývací odkaz Telegramu je platný,
+3. odkazy na aplikácie smerujú na ich aktuálne stránky v App Store,
+4. `standard.json` v autoritatívnom repozitári obsahuje aktuálnu verziu Standardu,
+5. stránka sa overila aspoň pri šírkach 320, 375, 768, 1024 a 1440 pixelov.
 
-1. Vytvorte formulár v službe Formspree.
-2. Skopírujte jeho ID alebo celý endpoint.
-3. V `index.html` vyhľadajte:
+## Publikovanie
 
-   `REPLACE_WITH_FORMSPREE_ID`
-
-4. Nahraďte ho skutočným ID.
-
-Príklad:
-
-`https://formspree.io/f/abcde123`
-
-## 2. Telegram
-
-1. Vytvorte Telegram skupinu.
-2. Nastavte jej verejný názov alebo získajte pozývací odkaz.
-3. V `index.html` vyhľadajte:
-
-   `https://t.me/REPLACE_WITH_TELEGRAM_GROUP`
-
-4. Nahraďte celý odkaz skutočným odkazom skupiny.
-
-## 3. Súbory na GitHub
-
-V koreňovom priečinku repozitára nahraďte:
-
-- `index.html`
-- `style.css`
-- `README.md`
-
-Súbor `SETUP.md` je iba pomocný a nemusí byť zverejnený.
+Obsah tohto priečinka patrí do koreňa repozitára `IbaJuraj/ibajuraj.github.io`. Pri nahrávaní cez web GitHubu zachovajte priečinky `assets`, `lexdrive` a `standard`.

@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const submit = form?.querySelector('button[type="submit"]');
   const label = submit?.querySelector(".button-label");
   const appSelect = document.getElementById("app");
+  const messageTypeSelect = document.getElementById("message-type");
+  const subjectInput = document.getElementById("subject");
+  const emailInput = document.getElementById("email");
+  const subjectField = form?.querySelector('input[name="_subject"]');
   const backToTop = document.getElementById("back-to-top");
   const menuToggle = document.querySelector(".menu-toggle");
   const navigation = document.getElementById("mobile-navigation");
@@ -51,14 +55,80 @@ document.addEventListener("DOMContentLoaded", () => {
       const app = link.getAttribute("data-app");
       if (appSelect && app) {
         appSelect.value = app;
+        updateMessageSubject();
         window.setTimeout(() => appSelect.focus({ preventScroll: true }), 350);
       }
     });
   });
 
+  const selectKnownValue = (select, requestedValue, aliases = {}) => {
+    if (!select || !requestedValue) return false;
+    const normalized = requestedValue.trim().toLocaleLowerCase("sk");
+    const aliasValue = aliases[normalized];
+    const matchingOption = Array.from(select.options).find((option) =>
+      option.value.toLocaleLowerCase("sk") === normalized
+    );
+    const value = aliasValue || matchingOption?.value;
+    if (!value) return false;
+    select.value = value;
+    return true;
+  };
+
+  const appAliases = {
+    "strazca-terminov": "Strážca Termínov",
+    "strazcaterminov": "Strážca Termínov",
+    "lex-drive": "Lex Drive",
+    "lexdrive": "Lex Drive",
+    "jurajcalc": "Kalkulačka 2v1",
+    "kalkulacka-2v1": "Kalkulačka 2v1",
+    "kalkulacka": "Kalkulačka 2v1",
+    "penazenka-kariet": "Peňaženka Kariet",
+    "penazenkakariet": "Peňaženka Kariet",
+    "general": "Všeobecná otázka"
+  };
+  const typeAliases = {
+    "question": "Otázka k používaniu",
+    "usage": "Otázka k používaniu",
+    "technical": "Technický problém",
+    "bug": "Technický problém",
+    "content": "Nesprávny údaj alebo obsah",
+    "suggestion": "Návrh na zlepšenie",
+    "privacy": "Ochrana súkromia",
+    "other": "Iné"
+  };
+
+  const updateMessageSubject = () => {
+    if (!subjectField) return;
+    const parts = ["Nová správa z webu IbaJuraj Apps"];
+    if (appSelect?.value) parts.push(appSelect.value);
+    if (messageTypeSelect?.value) parts.push(messageTypeSelect.value);
+    subjectField.value = parts.join(" – ");
+  };
+
+  if (form) {
+    const parameters = new URLSearchParams(window.location.search);
+    const appWasSet = selectKnownValue(appSelect, parameters.get("app"), appAliases);
+    const typeWasSet = selectKnownValue(messageTypeSelect, parameters.get("type"), typeAliases);
+    const requestedSubject = (parameters.get("subject") || "")
+      .replace(/[\u0000-\u001F\u007F]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 120);
+
+    if (subjectInput && requestedSubject) subjectInput.value = requestedSubject;
+    if (appWasSet || typeWasSet || requestedSubject) {
+      window.setTimeout(() => emailInput?.focus({ preventScroll: true }), 350);
+    }
+
+    appSelect?.addEventListener("change", updateMessageSubject);
+    messageTypeSelect?.addEventListener("change", updateMessageSubject);
+    updateMessageSubject();
+  }
+
   if (form && submit && label && status) {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      updateMessageSubject();
       status.textContent = "";
       status.className = "form-status";
       submit.disabled = true;
@@ -118,9 +188,13 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error("Invalid standard version");
       }
 
-      const tag = metadata.source?.tag || `standard-v${version}`;
-      const documentName = metadata.source?.document || "IBAJURAJ_APPLICATION_STANDARD.md";
-      const documentURL = `${repository}/blob/${encodeURIComponent(tag)}/${encodeURIComponent(documentName)}`;
+      const safeTag = typeof metadata.source?.tag === "string" && /^standard-v\d+\.\d+\.\d+$/.test(metadata.source.tag)
+        ? metadata.source.tag
+        : `standard-v${version}`;
+      const documentName = typeof metadata.source?.document === "string" && /^[A-Za-z0-9._-]+$/.test(metadata.source.document)
+        ? metadata.source.document
+        : "IBAJURAJ_APPLICATION_STANDARD.md";
+      const documentURL = `${repository}/blob/${encodeURIComponent(safeTag)}/${encodeURIComponent(documentName)}`;
 
       versionNodes.forEach((node) => {
         node.textContent = version;
@@ -128,11 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       documentLinks.forEach((link) => link.setAttribute("href", documentURL));
     } catch (error) {
-      versionNodes.forEach((node) => {
-        node.textContent = "aktuálna verzia";
-        node.setAttribute("title", "Verziu sa nepodarilo načítať; použite autoritatívny GitHub repozitár");
-      });
-      documentLinks.forEach((link) => link.setAttribute("href", repository));
+      versionNodes.forEach((node) => node.setAttribute("title", "Zobrazená je posledná známa verzia; aktuálnosť overte v repozitári"));
     }
   };
 

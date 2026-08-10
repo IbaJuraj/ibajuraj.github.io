@@ -11,12 +11,16 @@
   <meta property="og:title" content="IbaJuraj Apps">
   <meta property="og:description" content="Praktické aplikácie na každý deň – pre termíny, právnu orientáciu, výpočty a vernostné karty.">
   <meta property="og:url" content="https://ibajuraj.github.io/">
-  <meta property="og:image" content="https://ibajuraj.github.io/assets/apple-touch-icon.png">
+  <meta property="og:image" content="https://ibajuraj.github.io/assets/ibajuraj-apps-social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="IbaJuraj Apps – praktické aplikácie pre iPhone">
+  <link rel="canonical" href="https://ibajuraj.github.io/">
   <title>IbaJuraj Apps</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20260810-responsive-content">
-  <script src="script.js?v=20260807-compact" defer></script>
+  <link rel="stylesheet" href="style.css?v=20260810-standard-130">
+  <script src="script.js?v=20260810-standard-130" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Preskočiť na obsah</a>
@@ -209,6 +213,11 @@
           </div>
 
           <div class="form-row">
+            <label for="subject">Predmet <span>(nepovinné)</span></label>
+            <input id="subject" name="predmet" type="text" maxlength="120" placeholder="Napr. problém s upozornením">
+          </div>
+
+          <div class="form-row">
             <label for="message">Správa</label>
             <textarea id="message" name="sprava" rows="4" placeholder="Stručne opíšte svoju otázku alebo problém…" required></textarea>
           </div>
@@ -233,12 +242,12 @@
     <section class="section developer-standard-section" id="standard" aria-labelledby="standard-title">
       <article class="standard-card">
         <div class="standard-copy">
-          <p class="eyebrow">Pre vývojárov</p>
-          <h2 id="standard-title">Jednotný základ pre všetky aplikácie.</h2>
-          <p>Pravidlá dizajnu, prístupnosti, bezpečnosti a kvality, podľa ktorých aplikácie IbaJuraj vznikajú.</p>
+          <p class="eyebrow">IbaJuraj Application Standard</p>
+          <h2 id="standard-title">Rovnaká logika, jednoduchšia orientácia.</h2>
+          <p>Spoločné pravidlá pre nastavenia, navigáciu, prístupnosť, súkromie a kvalitu pomáhajú, aby sa naše aplikácie ovládali podobne.</p>
         </div>
         <div class="standard-meta">
-          <div class="version-badge">Štandard <strong data-standard-version aria-live="polite">1.2.0</strong></div>
+          <div class="version-badge">Štandard <strong data-standard-version aria-live="polite">1.3.0</strong></div>
           <div class="standard-actions">
             <a class="button primary" data-standard-document
                href="https://github.com/IbaJuraj/ibajuraj-application-standard"
