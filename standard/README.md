@@ -1,15 +1,13 @@
 # IbaJuraj Application Standard – presunuté
 
-Tento priečinok už **nie je autoritatívnym zdrojom** štandardu.
+Tento priečinok **nie je autoritatívnym zdrojom** IbaJuraj Application Standardu.
 
 Jediný autoritatívny zdroj:
-
 https://github.com/IbaJuraj/ibajuraj-application-standard
 
-Aktuálne stabilné vydanie pri poslednej aktualizácii tohto archívu:
+Aktuálne finálne vydanie:
+- verzia: **1.6.0**
+- tag: `standard-v1.6.0`
+- release: https://github.com/IbaJuraj/ibajuraj-application-standard/releases/tag/standard-v1.6.0
 
-- verzia: **1.3.0**
-- tag: `standard-v1.3.0`
-- release: https://github.com/IbaJuraj/ibajuraj-application-standard/releases/tag/standard-v1.3.0
-
-Dokumenty ponechané v tomto priečinku majú iba historický charakter. Zmeny štandardu, návrhy, výnimky a adopčné šablóny sa spravujú výhradne v samostatnom repozitári.
+Jednotlivé aplikácie prijímajú nové verzie Standardu samostatne; existencia novšieho Standardu sama osebe neznamená, že ho už používa každá aplikácia.

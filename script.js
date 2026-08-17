@@ -183,6 +183,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) throw new Error("Standard metadata request failed");
 
       const metadata = await response.json();
+      const metadataStatus = typeof metadata.status === "string" ? metadata.status.trim().toLowerCase() : "";
+      if (metadataStatus !== "active") throw new Error("Standard metadata is not active");
       const version = typeof metadata.version === "string" ? metadata.version.trim() : "";
       if (!/^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/.test(version)) {
         throw new Error("Invalid standard version");
