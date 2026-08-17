@@ -1,0 +1,118 @@
+name: Validate IbaJuraj Apps website
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate website source
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlsplit
+          import re
+          import sys
+
+          root = Path('.')
+          errors = []
+
+          required = [
+              Path('index.html'),
+              Path('style.css'),
+              Path('script.js'),
+              Path('privacy.html'),
+              Path('standard/index.html'),
+          ]
+          for path in required:
+              if not path.exists():
+                  errors.append(f'Missing required file: {path}')
+
+          forbidden = [
+              Path('standard/IBAJURAJ_APPLICATION_STANDARD.md'),
+              Path('standard/CHANGELOG.md'),
+              Path('standard/GOVERNANCE.md'),
+              Path('standard/SUPPORT_AND_LINKS.md'),
+              Path('README_REPLACE.md'),
+              Path('UPLOAD_INSTRUCTIONS.md'),
+          ]
+          for path in forbidden:
+              if path.exists():
+                  errors.append(f'Stale/non-authoritative file must not return: {path}')
+
+          for path in root.glob('style-*.css'):
+              if re.fullmatch(r'style-\d+\.css', path.name):
+                  errors.append(f'Version-specific stylesheet is not allowed: {path}')
+
+          index_text = Path('index.html').read_text(encoding='utf-8') if Path('index.html').exists() else ''
+          script_text = Path('script.js').read_text(encoding='utf-8') if Path('script.js').exists() else ''
+          redirect_text = Path('standard/index.html').read_text(encoding='utf-8') if Path('standard/index.html').exists() else ''
+
+          if 'data-standard-version' not in index_text:
+              errors.append('Main page is missing dynamic Standard version node.')
+          if 'Jednotlivé aplikácie ho zavádzajú postupne' not in index_text:
+              errors.append('Main page must state that applications adopt the Standard progressively.')
+          if 'standard.json' not in script_text or 'metadataStatus !== "active"' not in script_text:
+              errors.append('Standard metadata loader must use standard.json and require active status.')
+          if 'releases/latest' not in redirect_text:
+              errors.append('/standard/ must point to the latest authoritative release.')
+
+          class LocalReferenceParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.refs = []
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  for key in ('href', 'src'):
+                      value = attrs.get(key)
+                      if value:
+                          self.refs.append(value)
+
+          def local_target(source: Path, value: str):
+              value = value.strip()
+              if not value or value.startswith(('#', 'mailto:', 'tel:', 'javascript:', 'data:')):
+                  return None
+              parsed = urlsplit(value)
+              if parsed.scheme or parsed.netloc:
+                  return None
+              raw_path = parsed.path
+              if not raw_path:
+                  return None
+              if raw_path.startswith('/'):
+                  candidate = root / raw_path.lstrip('/')
+              else:
+                  candidate = source.parent / raw_path
+              if raw_path.endswith('/'):
+                  candidate = candidate / 'index.html'
+              return candidate
+
+          for html in root.rglob('*.html'):
+              parser = LocalReferenceParser()
+              try:
+                  parser.feed(html.read_text(encoding='utf-8'))
+              except Exception as exc:
+                  errors.append(f'Cannot parse {html}: {exc}')
+                  continue
+              for ref in parser.refs:
+                  target = local_target(html, ref)
+                  if target is not None and not target.exists():
+                      errors.append(f'Broken local reference in {html}: {ref} -> {target}')
+
+          if errors:
+              print('\n'.join(f'ERROR: {error}' for error in errors))
+              sys.exit(1)
+
+          print('IbaJuraj Apps website source: VALID')
+          PY
