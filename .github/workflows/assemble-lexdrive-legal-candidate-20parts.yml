@@ -1,0 +1,41 @@
+name: Assemble Lex Drive legal candidate 20 parts
+
+on:
+  push:
+    branches:
+      - lexdrive/legal-2026-09-01-candidate
+    paths:
+      - lexdrive/legal/candidate/ASSEMBLE_2026_09_01_20PARTS
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: lexdrive/legal-2026-09-01-candidate
+      - name: Assemble and verify package
+        shell: bash
+        run: |
+          set -euo pipefail
+          DIR="lexdrive/legal/candidate/2026-09-01-parts20"
+          DST="lexdrive/legal/production/packages/SK-2026.09.01-production.1-production.lexlegal.json"
+          mkdir -p "$(dirname "$DST")"
+          cat "$DIR"/part.* | base64 -d | xz -d > "$DST"
+          ACTUAL="$(sha256sum "$DST" | awk '{print $1}')"
+          EXPECTED="9bed2b1690de1534db93e2e7feb106bcf69f37d5d3377d0ef8c92df6e815cc3b"
+          test "$ACTUAL" = "$EXPECTED"
+          test "$(wc -c < "$DST" | tr -d ' ')" = "1995196"
+      - name: Commit assembled package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lexdrive/legal/production/packages/SK-2026.09.01-production.1-production.lexlegal.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Assemble Lex Drive 2026-09-01 legal package candidate"
+          git push origin HEAD:lexdrive/legal-2026-09-01-candidate
