@@ -30,6 +30,8 @@
     return Object.prototype.hasOwnProperty.call(SUPPORTED, short) ? short : null;
   };
 
+  const isPrivacyPage = /privacy\.html$/i.test(window.location.pathname);
+
   const params = new URLSearchParams(window.location.search);
   const explicit = normalizeLanguage(params.get("lang"));
   const saved = normalizeLanguage(localStorage.getItem(STORAGE_KEY));
@@ -102,17 +104,16 @@
   };
 
   const updateMetadata = () => {
-    const isPrivacy = /privacy\.html$/i.test(window.location.pathname);
     const info = locale.meta || SK_META;
     document.documentElement.lang = currentLanguage;
-    document.title = isPrivacy ? info.privacyTitle : info.siteTitle;
+    document.title = info.siteTitle;
 
     const description = document.querySelector('meta[name="description"]');
-    if (description) description.content = isPrivacy ? info.privacyDescription : info.siteDescription;
+    if (description) description.content = info.siteDescription;
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.content = isPrivacy ? info.privacyTitle : info.siteTitle;
+    if (ogTitle) ogTitle.content = info.siteTitle;
     const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) ogDescription.content = isPrivacy ? info.privacyDescription : info.siteDescription;
+    if (ogDescription) ogDescription.content = info.siteDescription;
     const ogLocale = document.querySelector('meta[property="og:locale"]');
     if (ogLocale) ogLocale.content = info.ogLocale;
   };
@@ -181,7 +182,7 @@
 
   const updateLocalizedInternalLinks = () => {
     if (currentLanguage === "sk") return;
-    document.querySelectorAll('a[href^="index.html"], a[href^="privacy.html"]').forEach((link) => {
+    document.querySelectorAll('a[href^="index.html"]').forEach((link) => {
       const raw = link.getAttribute("href");
       if (!raw) return;
       try {
@@ -193,7 +194,7 @@
   };
 
   const setCanonicalAlternates = () => {
-    const basePath = /privacy\.html$/i.test(window.location.pathname) ? "/privacy.html" : "/";
+    const basePath = "/";
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((node) => node.remove());
     Object.keys(SUPPORTED).forEach((code) => {
       const link = document.createElement("link");
@@ -212,6 +213,7 @@
   };
 
   const apply = async () => {
+    if (isPrivacyPage) return;
     await loadLocale();
     window.IbaJurajI18n.language = currentLanguage;
     window.IbaJurajI18n.t = t;
