@@ -39,6 +39,7 @@
   const currentLanguage = explicit || saved || browser || "sk";
 
   let locale = { meta: SK_META, strings: {} };
+  let privacyLocale = null;
 
   const t = (source, fallback = source) => locale.strings?.[source] || fallback;
   const message = (key, fallback) => locale.meta?.[key] || fallback;
@@ -62,6 +63,21 @@
       locale = loaded;
     } catch (_) {
       locale = { meta: SK_META, strings: {} };
+    }
+  };
+
+  const loadPrivacyLocale = async () => {
+    if (!isPrivacyPage || currentLanguage === "sk") return;
+    try {
+      const response = await fetch(`/locales/privacy-${currentLanguage}.json?v=20260904`, { cache: "no-store" });
+      if (!response.ok) throw new Error("Privacy locale request failed");
+      const loaded = await response.json();
+      if (!loaded || typeof loaded !== "object" || typeof loaded.cards !== "object") {
+        throw new Error("Invalid privacy locale");
+      }
+      privacyLocale = loaded;
+    } catch (_) {
+      privacyLocale = null;
     }
   };
 
@@ -103,19 +119,61 @@
     });
   };
 
+  const translatePrivacyPage = () => {
+    if (!isPrivacyPage || currentLanguage === "sk") return;
+    const data = privacyLocale;
+    if (!data) return;
+
+    const hero = data.hero || {};
+    const eyebrow = document.querySelector(".legal-hero .eyebrow");
+    const title = document.querySelector(".legal-hero h1");
+    const intro = document.querySelector(".legal-hero .legal-intro");
+    const grid = document.querySelector(".legal-grid");
+    const updated = document.querySelector(".legal-updated");
+
+    if (eyebrow && hero.eyebrow) eyebrow.textContent = hero.eyebrow;
+    if (title && hero.title) title.textContent = hero.title;
+    if (intro && hero.intro) intro.textContent = hero.intro;
+    if (grid && hero.gridLabel) grid.setAttribute("aria-label", hero.gridLabel);
+    if (updated && hero.updated) updated.textContent = hero.updated;
+
+    Object.entries(data.cards || {}).forEach(([id, cardData]) => {
+      const card = document.getElementById(id);
+      if (!card) return;
+
+      const heading = card.querySelector("h2");
+      if (heading && cardData.title) heading.textContent = cardData.title;
+
+      const paragraphs = card.querySelectorAll("p");
+      (cardData.paragraphs || []).forEach((html, index) => {
+        if (paragraphs[index]) paragraphs[index].innerHTML = html;
+      });
+
+      const items = card.querySelectorAll("li");
+      (cardData.items || []).forEach((html, index) => {
+        if (items[index]) items[index].innerHTML = html;
+      });
+    });
+  };
+
   const updateMetadata = () => {
     const info = locale.meta || SK_META;
+    const title = isPrivacyPage ? (info.privacyTitle || SK_META.privacyTitle) : (info.siteTitle || SK_META.siteTitle);
+    const descriptionText = isPrivacyPage
+      ? (info.privacyDescription || SK_META.privacyDescription)
+      : (info.siteDescription || SK_META.siteDescription);
+
     document.documentElement.lang = currentLanguage;
-    document.title = info.siteTitle;
+    document.title = title;
 
     const description = document.querySelector('meta[name="description"]');
-    if (description) description.content = info.siteDescription;
+    if (description) description.content = descriptionText;
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.content = info.siteTitle;
+    if (ogTitle) ogTitle.content = title;
     const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) ogDescription.content = info.siteDescription;
+    if (ogDescription) ogDescription.content = descriptionText;
     const ogLocale = document.querySelector('meta[property="og:locale"]');
-    if (ogLocale) ogLocale.content = info.ogLocale;
+    if (ogLocale) ogLocale.content = info.ogLocale || SK_META.ogLocale;
   };
 
   const updateAppStoreLinks = () => {
@@ -182,7 +240,7 @@
 
   const updateLocalizedInternalLinks = () => {
     if (currentLanguage === "sk") return;
-    document.querySelectorAll('a[href^="index.html"]').forEach((link) => {
+    document.querySelectorAll('a[href^="index.html"], a[href^="privacy.html"]').forEach((link) => {
       const raw = link.getAttribute("href");
       if (!raw) return;
       try {
@@ -194,7 +252,7 @@
   };
 
   const setCanonicalAlternates = () => {
-    const basePath = "/";
+    const basePath = isPrivacyPage ? "/privacy.html" : "/";
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((node) => node.remove());
     Object.keys(SUPPORTED).forEach((code) => {
       const link = document.createElement("link");
@@ -213,8 +271,8 @@
   };
 
   const apply = async () => {
-    if (isPrivacyPage) return;
     await loadLocale();
+    await loadPrivacyLocale();
     window.IbaJurajI18n.language = currentLanguage;
     window.IbaJurajI18n.t = t;
     window.IbaJurajI18n.message = message;
@@ -223,6 +281,7 @@
     updateMetadata();
     translateTextNodes();
     translateAttributes();
+    translatePrivacyPage();
     updateAppStoreLinks();
     updateLocalizedInternalLinks();
     addLanguageSwitcher();
