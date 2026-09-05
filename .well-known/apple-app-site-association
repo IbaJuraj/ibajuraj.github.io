@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "YQXY5DZ97C.sk.juraj.PenazenkaKariet",
+        "paths": [
+          "/card",
+          "/card/",
+          "/card/*"
+        ]
+      }
+    ]
+  }
+}
