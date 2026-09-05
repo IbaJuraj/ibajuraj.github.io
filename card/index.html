@@ -24,7 +24,7 @@
   <h1 id="title">Zdieľaná karta</h1>
   <p class="lead" id="lead">Ak máte Peňaženku Kariet nainštalovanú, tento odkaz sa má otvoriť priamo v aplikácii a ponúknuť uloženie karty.</p>
   <div id="content"></div>
-  <p class="note" id="privacy">Údaje karty sa nachádzajú iba vo fragmente tohto odkazu a táto stránka ich dekóduje lokálne v prehliadači. Poznámky, história ani cloudové údaje sa nezdieľajú.</p>
+  <p class="note" id="privacy">Údaje karty sa nachádzajú iba vo fragmente tohto odkazu a táto stránka ich dekóduje lokálne v prehliadači. Označenie, poznámky, história ani cloudové údaje sa nezdieľajú.</p>
   <a class="button" href="https://apps.apple.com/sk/app/pe%C5%88a%C5%BEenka-kariet/id6779166726?l=sk" id="store">Stiahnuť / otvoriť v App Store</a>
   <a class="secondary" href="/" id="home">IbaJuraj Apps</a>
 </main>
@@ -33,12 +33,12 @@
   const cs = (navigator.language || '').toLowerCase().startsWith('cs');
   const t = cs ? {
     title:'Sdílená karta', lead:'Pokud máte Peňaženku Kariet nainstalovanou, tento odkaz se má otevřít přímo v aplikaci a nabídnout uložení karty.',
-    privacy:'Údaje karty jsou pouze ve fragmentu tohoto odkazu a tato stránka je dekóduje lokálně v prohlížeči. Poznámky, historie ani cloudové údaje se nesdílejí.',
-    store:'Stáhnout / otevřít v App Store', merchant:'Obchod', card:'Karta', label:'Označení', number:'Číslo karty', invalid:'Sdílený odkaz není platný nebo je poškozený.'
+    privacy:'Údaje karty jsou pouze ve fragmentu tohoto odkazu a tato stránka je dekóduje lokálně v prohlížeči. Označení, poznámky, historie ani cloudové údaje se nesdílejí.',
+    store:'Stáhnout / otevřít v App Store', merchant:'Obchod', card:'Karta', number:'Číslo karty', invalid:'Sdílený odkaz není platný nebo je poškozený.'
   } : {
     title:'Zdieľaná karta', lead:'Ak máte Peňaženku Kariet nainštalovanú, tento odkaz sa má otvoriť priamo v aplikácii a ponúknuť uloženie karty.',
-    privacy:'Údaje karty sa nachádzajú iba vo fragmente tohto odkazu a táto stránka ich dekóduje lokálne v prehliadači. Poznámky, história ani cloudové údaje sa nezdieľajú.',
-    store:'Stiahnuť / otvoriť v App Store', merchant:'Obchod', card:'Karta', label:'Označenie', number:'Číslo karty', invalid:'Zdieľaný odkaz nie je platný alebo je poškodený.'
+    privacy:'Údaje karty sa nachádzajú iba vo fragmente tohto odkazu a táto stránka ich dekóduje lokálne v prehliadači. Označenie, poznámky, história ani cloudové údaje sa nezdieľajú.',
+    store:'Stiahnuť / otvoriť v App Store', merchant:'Obchod', card:'Karta', number:'Číslo karty', invalid:'Zdieľaný odkaz nie je platný alebo je poškodený.'
   };
   document.documentElement.lang = cs ? 'cs' : 'sk';
   document.getElementById('title').textContent=t.title; document.getElementById('lead').textContent=t.lead; document.getElementById('privacy').textContent=t.privacy; document.getElementById('store').textContent=t.store;
@@ -51,7 +51,8 @@
     const p=JSON.parse(new TextDecoder().decode(bytes));
     if(p.v!==1 || typeof p.s!=='string' || !p.s.trim() || typeof p.p!=='string' || !p.p.trim()) return fail();
     const display=(p.m||p.p||'').replace(/\s/g,''); const masked=display.length>4 ? '•••• '+display.slice(-4) : display;
-    const rows=[[t.merchant,p.s],[t.card,p.n||p.s],p.l?[t.label,p.l]:null,[t.number,masked]].filter(Boolean);
+    // Build 76 intentionally ignores legacy p.l / designation even when an older Build 75 link contains it.
+    const rows=[[t.merchant,p.s],[t.card,p.n||p.s],[t.number,masked]];
     const esc=x=>String(x).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
     content.innerHTML='<div class="card">'+rows.map(r=>`<div class="row"><span class="label">${esc(r[0])}</span><span class="value">${esc(r[1])}</span></div>`).join('')+'</div>';
   }catch(e){fail()}
