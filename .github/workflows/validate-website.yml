@@ -116,3 +116,32 @@ jobs:
 
           print('IbaJuraj Apps website source: VALID')
           PY
+
+      - name: Validate public catalogue and translations
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          html = Path("index.html").read_text(encoding="utf-8")
+          js = Path("script.js").read_text(encoding="utf-8")
+          assert html.count('<article class="app-card">') == 4, "Public catalogue must contain the four published apps"
+          assert "https://t.me/IbaJurajAppsNovinky" in html
+          assert "https://t.me/IbaJurajApps" in html
+          assert "https://t.me/+" not in html, "Old invitation-style Telegram link still present"
+          assert 'const fallbackVersion = "1.8.0"' in js
+          assert 'standard-v1.8.0/IBAJURAJ_APPLICATION_STANDARD.md' in html
+          keys = (
+              "Novinky a aktualizácie",
+              "Otázky a podpora",
+              "Novinky a podpora na Telegrame.",
+              "Sledujte nové verzie v informačnom kanáli a otázky riešte v podpornej skupine. Neposielajte citlivé údaje.",
+          )
+          for code in ("cs", "en", "de", "hu", "pl"):
+              locale = json.loads(Path(f"locales/{code}.json").read_text(encoding="utf-8"))
+              for key in keys:
+                  assert key in locale["strings"], f"Missing {code} translation: {key}"
+          print("Public website content: VALID")
+          PY
