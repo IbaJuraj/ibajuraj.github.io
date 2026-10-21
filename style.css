@@ -282,6 +282,8 @@ p { line-height: 1.54; }
 .telegram-card h3 { font-size: 25px; }
 .telegram-card p:not(.eyebrow) { color: var(--muted); font-size: 15px; }
 .telegram-card .button { margin-top: 4px; }
+.telegram-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch; }
+.telegram-actions .button { min-width: 175px; text-align: center; white-space: normal; }
 
 .back-to-top {
   position: fixed;
