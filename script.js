@@ -189,7 +189,7 @@
 
       const repository = "https://github.com/IbaJuraj/ibajuraj-application-standard";
       const metadataURL = "https://raw.githubusercontent.com/IbaJuraj/ibajuraj-application-standard/main/standard.json";
-      const fallbackVersion = "1.7.0";
+      const fallbackVersion = "1.8.0";
       const fallbackDocumentURL = `${repository}/blob/standard-v${fallbackVersion}/IBAJURAJ_APPLICATION_STANDARD.md`;
 
       versionNodes.forEach((node) => { node.textContent = fallbackVersion; });
