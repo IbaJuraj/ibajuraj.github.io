@@ -7,7 +7,7 @@ Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
 - Strážca Termínov – dostupný v App Store
 - Lex Drive – dostupný v App Store
 - Kalkulačka 2v1 – dostupná v App Store
-- Peňaženka Kariet – vo vývoji
+- Peňaženka Kariet – dostupná v App Store
 
 ## Obsah repozitára
 
@@ -27,7 +27,7 @@ https://github.com/IbaJuraj/ibajuraj-application-standard
 
 Hlavná stránka načítava aktuálnu aktívnu verziu z `standard.json` v autoritatívnom repozitári. HTML obsahuje iba fallback pre prípad nedostupnosti GitHub metadata endpointu.
 
-Aktuálne finálne vydanie pri tejto aktualizácii webu je **1.6.0** (`standard-v1.6.0`). Jednotlivé aplikácie Standard adoptujú vlastným release procesom a nemusia všetky používať rovnakú verziu.
+Aktuálne finálne vydanie pri tejto aktualizácii webu je **1.8.0** (`standard-v1.8.0`). Jednotlivé aplikácie Standard adoptujú vlastným release procesom a nemusia všetky používať rovnakú verziu.
 
 ## Odkazy z aplikácií na podporu
 
@@ -44,4 +44,4 @@ Zmeny webu sa pripravujú na samostatnej vetve, skontrolujú sa a následne sa m
 
 ## Podpora
 
-Kontaktný formulár používa Formspree. Telegram komunita je doplnkový komunikačný kanál; citlivé údaje sa nemajú posielať cez verejné komunikačné kanály.
+Kontaktný formulár používa Formspree. Telegram má informačný kanál https://t.me/IbaJurajAppsNovinky a diskusnú skupinu https://t.me/IbaJurajApps. Citlivé údaje sa nemajú posielať cez verejné komunikačné kanály.
