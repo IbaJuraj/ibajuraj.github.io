@@ -42,7 +42,7 @@
     "web": {
       "title": "Strona IbaJuraj Apps",
       "paragraphs": [
-        "Strona internetowa nie korzysta z kont użytkowników ani własnego systemu reklamowego. Na stronie głównej może być pobierana z GitHuba aktualna wersja IbaJuraj Application Standard. Przy takim połączeniu GitHub może przetwarzać typowe dane techniczne związane z żądaniem internetowym zgodnie ze swoją <a class=\"text-link\" href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\" target=\"_blank\" rel=\"noopener noreferrer\">polityką prywatności</a>. Strona może wyświetlać podglądy naszych aplikacji z serwerów Apple. Podczas ich ładowania Apple może przetwarzać standardowe dane techniczne żądania.",
+        "Strona internetowa nie korzysta z kont użytkowników ani własnego systemu reklamowego. Na stronie głównej może być pobierana z GitHuba aktualna wersja IbaJuraj Application Standard. Przy takim połączeniu GitHub może przetwarzać typowe dane techniczne związane z żądaniem internetowym zgodnie ze swoją <a class=\"text-link\" href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\" target=\"_blank\" rel=\"noopener noreferrer\">polityką prywatności</a>. Zrzuty ekranu aplikacji są przechowywane bezpośrednio w tej witrynie, a nie na serwerach obrazów Apple. Podglądy kart i terminów zawierają wyłącznie przykładowe dane.",
         "Linki do App Store, GitHub, Telegram, Formspree lub innych zewnętrznych stron prowadzą do usług podmiotów trzecich. Po ich otwarciu dalsze przetwarzanie danych podlega zasadom odpowiedniej usługi."
       ]
     },
