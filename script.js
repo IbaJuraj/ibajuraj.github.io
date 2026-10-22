@@ -260,9 +260,12 @@
             try { verifiedImage=new URL(file); }catch(_){ continue; }
             const host=verifiedImage.hostname.toLowerCase();
             if(verifiedImage.protocol!=="https:" || !(host==="mzstatic.com" || host.endsWith(".mzstatic.com"))) continue;
-            const a=document.createElement("a");a.href=store.href;a.target="_blank";a.rel="noopener noreferrer";
+            const a=document.createElement("a");a.href=file;a.target="_blank";a.rel="noopener noreferrer";
             a.setAttribute("aria-label",node.getAttribute("aria-label"));
-            const img=document.createElement("img");img.src=file;img.alt="";img.loading="lazy";img.decoding="async";img.referrerPolicy="no-referrer";img.width=250;img.height=544;
+            const img=document.createElement("img");
+            img.alt="";img.loading="lazy";img.decoding="async";img.referrerPolicy="no-referrer";img.width=250;img.height=544;
+            img.addEventListener("error",()=>{a.remove();if(!node.childElementCount)node.hidden=true;},{once:true});
+            img.src=file;
             a.appendChild(img);node.appendChild(a);
           }
           if(node.children.length) node.hidden=false;
