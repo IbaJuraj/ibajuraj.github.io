@@ -1,0 +1,28 @@
+name: One-time verified App Store screenshots (feature branch)
+on:
+  push:
+    branches: [feature/minimal-app-site-2026-10-22]
+    paths:
+      - '.github/workflows/appstore-screenshots-oneoff.yml'
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install image tooling
+        run: python3 -m pip install --disable-pip-version-check --quiet Pillow requests
+      - name: Import only verified screenshots from Apple
+        run: python3 tools/import_verified_appstore_shots.py
+      - name: Commit screenshots to the working branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/screenshots
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(web): import verified screenshots from exact App Store IDs'
+            git push origin HEAD:feature/minimal-app-site-2026-10-22
+          fi
