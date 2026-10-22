@@ -126,31 +126,49 @@ jobs:
                   if target is not None and not target.exists():
                       errors.append(f'Broken local reference in {html}: {ref} -> {target}')
 
-          # Only screenshot URLs from the Apple CDN and all four exact official Store IDs.
+          # Full-quality local screenshots: two correct images per official app,
+          # exact SHA256 and WebP signatures; reject any Apple 320x480 thumbnail.
           manifest_path = root / 'assets/screenshots/manifest.json'
-          if manifest_path.exists():
+          if not manifest_path.exists():
+              errors.append('Missing authoritative local screenshot manifest')
+          else:
               import json
-              from urllib.parse import urlsplit
+              import hashlib
               expected_ids = {'strazca-terminov': 6779741336, 'lexdrive': 6794546464,
                               'jurajcalc': 6777232702, 'penazenka-kariet': 6779166726}
               manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
-              if manifest.get('schemaVersion') != 1 or manifest.get('publisher') != 'Juraj Spevar':
-                  errors.append('App Store gallery requires verified publisher and schema.')
+              if manifest.get('schemaVersion') != 2 or manifest.get('publisher') != 'Juraj Spevar':
+                  errors.append('Local screenshot manifest: incorrect schema/publisher')
               entries = manifest.get('apps', {})
               if set(entries) != set(expected_ids):
-                  errors.append('App Store gallery must contain exactly four official apps.')
+                  errors.append('Must include exactly the four public apps')
               for slug, app_id in expected_ids.items():
                   entry = entries.get(slug, {})
                   if entry.get('appStoreId') != app_id:
-                      errors.append(f'Gallery ID mismatch: {slug}')
-                  urls = entry.get('screenshots') or []
-                  if len(urls) != 2:
-                      errors.append(f'Gallery requires exactly two original screenshots: {slug}')
-                  for url in urls:
-                      parsed = urlsplit(url)
-                      host = (parsed.hostname or '').lower()
-                      if parsed.scheme != 'https' or not (host == 'mzstatic.com' or host.endswith('.mzstatic.com')):
-                          errors.append(f'Gallery screenshot not hosted by Apple: {slug}')
+                      errors.append(f'Wrong App Store ID for {slug}')
+                  paths = entry.get('screenshots') or []
+                  hashes = entry.get('sha256') or []
+                  if len(paths) != 2 or len(hashes) != 2:
+                      errors.append(f'Expected two owned images and hashes for {slug}')
+                      continue
+                  if slug in ('strazca-terminov','penazenka-kariet') and entry.get('demoData') is not True:
+                      errors.append(f'Personal-data app must be marked as anonymized: {slug}')
+                  for idx, relative in enumerate(paths, 1):
+                      expected = f'assets/screenshots/{slug}-{idx}.webp'
+                      if relative != expected:
+                          errors.append(f'Unexpected media path {relative}, expected {expected}')
+                          continue
+                      filename = root / relative
+                      if not filename.is_file():
+                          errors.append(f'Missing local image {relative}')
+                          continue
+                      blob = filename.read_bytes()
+                      if len(blob) < 12000 or blob[:4] != b'RIFF' or blob[8:12] != b'WEBP':
+                          errors.append(f'Image invalid or too small: {relative}')
+                      if hashlib.sha256(blob).hexdigest() != hashes[idx-1]:
+                          errors.append(f'SHA256 mismatch: {relative}')
+              if '320x480bb' in manifest_path.read_text(encoding='utf-8'):
+                  errors.append('Legacy low-resolution Apple preview remains in manifest')
           # Ensure locale dictionaries stay parseable and the offline state is translated.
           import json
           offline_key = 'Verziu sa nepodarilo overiť; aktuálnosť overte v repozitári'

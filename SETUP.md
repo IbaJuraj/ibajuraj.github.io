@@ -29,3 +29,7 @@ Manifest `assets/screenshots/manifest.json` vznikol zo skutočného Apple Lookup
 ## Akceptácia iPhone Safari
 
 Po publikovaní skontrolovať na reálnom iPhone: celé screenshoty bez odrezania, potiahnutie druhej ukážky, primárne tlačidlo App Store viditeľné pred galériou, nepriehľadné mobilné menu a jeho zatvorenie, natívny výber jazykov SK/CS/EN/DE/PL/HU na oboch stránkach, rýchle odkazy medzi sekciami súkromia, zobrazenie poľa zariadenia len pri technickej otázke a zachovanie kontaktného Formspree. Bez skutočného Safari smoke nenahlasovať runtime PASS.
+
+## 2026-10-22 – lokálne ostré screenshoty
+
+Osem súborov `assets/screenshots/<slug>-1/2.webp` je vložených priamo do GitHub repozitára; obrázky boli zmenšené na šírku 820 px pre ostrosť na Retina displejoch a úsporu prenosov. Každá z 4 aplikácií má presne 2 obrázky. `manifest.json` schémy 2 obsahuje presné App Store ID, lokálne cesty, SHA256 a príznak `demoData` pre anonymizované obrázky Strážcu a Peňaženky. Už sa nenačítavajú obrázky Apple CDN. Pôvodné osobné screenshoty sa nikdy nesmú commitnúť. Posledný iPhone Safari vizuálny test ostáva samostatnou kontrolou po produkčnom nasadení.

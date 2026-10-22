@@ -258,7 +258,7 @@
         if(!response.ok) return;
         const manifest=await response.json();
         const allowed={"strazca-terminov":6779741336,"lexdrive":6794546464,"jurajcalc":6777232702,"penazenka-kariet":6779166726};
-        if(manifest?.schemaVersion!==1 || manifest?.publisher!=="Juraj Spevar") return;
+        if(manifest?.schemaVersion!==2 || manifest?.publisher!=="Juraj Spevar") return;
         document.querySelectorAll("[data-gallery]").forEach(node=>{
           const slug=node.getAttribute("data-gallery"),entry=manifest.apps?.[slug];
           if(!entry || allowed[slug]!==entry.appStoreId || !Array.isArray(entry.screenshots)) return;
@@ -266,16 +266,14 @@
           if(!store) return;
           for(const file of entry.screenshots.slice(0,2)){
             if(typeof file!=="string") continue;
-            let verifiedImage;
-            try { verifiedImage=new URL(file); }catch(_){ continue; }
-            const host=verifiedImage.hostname.toLowerCase();
-            if(verifiedImage.protocol!=="https:" || !(host==="mzstatic.com" || host.endsWith(".mzstatic.com"))) continue;
-            const a=document.createElement("a");a.href=file;a.target="_blank";a.rel="noopener noreferrer";
-            a.setAttribute("aria-label",node.getAttribute("aria-label"));
+            if(file!==`assets/screenshots/${slug}-${node.children.length + 1}.webp`) continue;
+            const imageUrl="/"+file;
+            const a=document.createElement("a");a.href=imageUrl;a.target="_blank";a.rel="noopener noreferrer";
+            a.setAttribute("aria-label",node.getAttribute("aria-label") + (entry.demoData ? " — ukážkové údaje" : ""));
             const img=document.createElement("img");
-            img.alt="";img.loading="lazy";img.decoding="async";img.referrerPolicy="no-referrer";img.width=250;img.height=544;
+            img.alt="";img.loading="lazy";img.decoding="async";img.width=820;img.height=1783;
             img.addEventListener("error",()=>{a.remove();if(!node.childElementCount)node.hidden=true;},{once:true});
-            img.src=file;
+            img.src=imageUrl;
             a.appendChild(img);node.appendChild(a);
           }
           if(node.children.length) node.hidden=false;
