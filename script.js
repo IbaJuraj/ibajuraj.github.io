@@ -189,10 +189,10 @@
 
       const repository = "https://github.com/IbaJuraj/ibajuraj-application-standard";
       const metadataURL = "https://raw.githubusercontent.com/IbaJuraj/ibajuraj-application-standard/main/standard.json";
-      const fallbackVersion = "1.7.0";
-      const fallbackDocumentURL = `${repository}/blob/standard-v${fallbackVersion}/IBAJURAJ_APPLICATION_STANDARD.md`;
+      // Use active main/standard.json as the single source. Never show a stale fallback version.
+      const fallbackDocumentURL = `${repository}/blob/main/IBAJURAJ_APPLICATION_STANDARD.md`;
 
-      versionNodes.forEach((node) => { node.textContent = fallbackVersion; });
+      versionNodes.forEach((node) => { node.textContent = "…"; node.removeAttribute("title"); });
       documentLinks.forEach((link) => link.setAttribute("href", fallbackDocumentURL));
 
       try {
@@ -206,12 +206,13 @@
         const metadataStatus = typeof metadata.status === "string" ? metadata.status.trim().toLowerCase() : "";
         if (metadataStatus !== "active") throw new Error("Standard metadata is not active");
         const version = typeof metadata.version === "string" ? metadata.version.trim() : "";
-        if (!/^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/.test(version)) {
+        if (!/^\d+\.\d+\.\d+$/.test(version)) {
           throw new Error("Invalid standard version");
         }
 
-        const safeTag = typeof metadata.source?.tag === "string" && /^standard-v\d+\.\d+\.\d+$/.test(metadata.source.tag)
-          ? metadata.source.tag
+        const declaredTag = metadata.source?.stableReleaseTag || metadata.source?.releaseTag || metadata.source?.tag;
+        const safeTag = typeof declaredTag === "string" && /^standard-v\d+\.\d+\.\d+$/.test(declaredTag)
+          ? declaredTag
           : `standard-v${version}`;
         const documentName = typeof metadata.source?.document === "string" && /^[A-Za-z0-9._-]+$/.test(metadata.source.document)
           ? metadata.source.document
@@ -227,10 +228,13 @@
         });
         documentLinks.forEach((link) => link.setAttribute("href", documentURL));
       } catch (error) {
-        versionNodes.forEach((node) => node.setAttribute("title", i18nText(
-          "Zobrazená je posledná známa verzia; aktuálnosť overte v repozitári",
-          "Zobrazená je posledná známa verzia; aktuálnosť overte v repozitári"
-        )));
+        versionNodes.forEach((node) => {
+          node.textContent = "—";
+          node.setAttribute("title", i18nText(
+            "Verziu sa nepodarilo overiť; aktuálnosť overte v repozitári",
+            "Verziu sa nepodarilo overiť; aktuálnosť overte v repozitári"
+          ));
+        });
       }
     };
 
