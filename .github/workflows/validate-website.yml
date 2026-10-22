@@ -73,9 +73,9 @@ jobs:
               errors.append('Failed metadata read must not show any stale version.')
           for doc in ('index.html', 'script.js', 'README.md', 'standard/README.md'):
               content = Path(doc).read_text(encoding='utf-8')
-              if re.search(r'standard-v[0-9]+\\.[0-9]+\\.[0-9]+', content):
+              if re.search(r'standard-v[0-9]+\.[0-9]+\.[0-9]+', content):
                   errors.append(f'Fixed Standard version is forbidden: {doc}')
-          if re.search(r'fallbackVersion\\s*=', script_text):
+          if re.search(r'fallbackVersion\s*=', script_text):
               errors.append('A numeric fallbackVersion is forbidden.')
 
           if 'Jednotlivé aplikácie ho zavádzajú postupne' not in index_text:
@@ -126,9 +126,26 @@ jobs:
                   if target is not None and not target.exists():
                       errors.append(f'Broken local reference in {html}: {ref} -> {target}')
 
+          # Ensure locale dictionaries stay parseable and the offline state is translated.
+          import json
+          offline_key = 'Verziu sa nepodarilo overiť; aktuálnosť overte v repozitári'
+          for lang in ('cs', 'en', 'de', 'pl', 'hu'):
+              data = json.loads(Path(f'locales/{lang}.json').read_text(encoding='utf-8'))
+              if not data.get('strings', {}).get(offline_key):
+                  errors.append(f'Missing localized offline Standard notice for {lang}')
+
           if errors:
               print('\n'.join(f'ERROR: {error}' for error in errors))
               sys.exit(1)
 
           print('IbaJuraj Apps website source: VALID')
           PY
+
+  javascript-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JavaScript syntax
+        run: |
+          node --check script.js
+          node --check i18n.js

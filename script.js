@@ -211,7 +211,7 @@
         }
 
         const declaredTag = metadata.source?.stableReleaseTag || metadata.source?.releaseTag || metadata.source?.tag;
-        const safeTag = typeof declaredTag === "string" && /^standard-v\d+\.\d+\.\d+$/.test(declaredTag)
+        const safeTag = typeof declaredTag === "string" && declaredTag === `standard-v${version}`
           ? declaredTag
           : `standard-v${version}`;
         const documentName = typeof metadata.source?.document === "string" && /^[A-Za-z0-9._-]+$/.test(metadata.source.document)
