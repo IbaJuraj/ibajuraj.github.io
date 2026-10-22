@@ -7,7 +7,7 @@ Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
 - Strážca Termínov – dostupný v App Store
 - Lex Drive – dostupný v App Store
 - Kalkulačka 2v1 – dostupná v App Store
-- Peňaženka Kariet – vo vývoji
+- Peňaženka Kariet – dostupná v App Store
 
 ## Obsah repozitára
 
@@ -25,9 +25,11 @@ Oficiálna prezentačná a podporná stránka aplikácií IbaJuraj Apps.
 Autoritatívnym zdrojom je samostatný repozitár:
 https://github.com/IbaJuraj/ibajuraj-application-standard
 
-Hlavná stránka načítava aktuálnu aktívnu verziu z `standard.json` v autoritatívnom repozitári. HTML obsahuje iba fallback pre prípad nedostupnosti GitHub metadata endpointu.
+Hlavná stránka automaticky načítava iba **aktívnu stabilnú verziu** z [autoritatívneho `standard.json`](https://raw.githubusercontent.com/IbaJuraj/ibajuraj-application-standard/main/standard.json). Číslo verzie ani odkaz na konkrétny tag sa vo webe ručne neudržiavajú. Pri úspešnom načítaní zobrazuje stránka aktuálnu verziu a odkaz na normatívny dokument daného vydania.
 
-Aktuálne finálne vydanie pri tejto aktualizácii webu je **1.6.0** (`standard-v1.6.0`). Jednotlivé aplikácie Standard adoptujú vlastným release procesom a nemusia všetky používať rovnakú verziu.
+Pri nedostupnom GitHube sa zobrazí `—` a odkaz na [dokumentáciu z autoritatívnej vetvy `main`](https://github.com/IbaJuraj/ibajuraj-application-standard/blob/main/IBAJURAJ_APPLICATION_STANDARD.md) namiesto falošne aktuálnej záložnej verzie. GitHub Markdown README nespúšťa JavaScript, preto namiesto ručného čísla odkazuje priamo na dynamické metadáta.
+
+Jednotlivé aplikácie Standard adoptujú vlastným release procesom a nemusia všetky používať rovnakú verziu. Pracovné vydania RC sa nezobrazujú ako stable.
 
 ## Odkazy z aplikácií na podporu
 

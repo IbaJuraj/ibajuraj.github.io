@@ -12,6 +12,7 @@
     "error": "Zprávu se nepodařilo odeslat. Zkuste to prosím znovu."
   },
   "strings": {
+    "Verziu sa nepodarilo overiť; aktuálnosť overte v repozitári": "Verzi se nepodařilo ověřit; aktuálnost zkontrolujte v repozitáři.",
     "Preskočiť na obsah": "Přeskočit na obsah",
     "Hlavná navigácia": "Hlavní navigace",
     "IbaJuraj Apps – úvod": "IbaJuraj Apps – úvod",

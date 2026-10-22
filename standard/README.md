@@ -2,13 +2,12 @@
 
 Tento priečinok **nie je autoritatívnym zdrojom** IbaJuraj Application Standardu.
 
-Jediný autoritatívny zdroj:
-https://github.com/IbaJuraj/ibajuraj-application-standard
+Aktuálnu stabilnú verziu, dátum a odkaz na vydanie čítajte z [autoritatívnych metadát na `main`](https://raw.githubusercontent.com/IbaJuraj/ibajuraj-application-standard/main/standard.json). Číslo verzie sa tu ručne neudržiava.
 
-Aktuálna verzia autoritatívneho zdroja na `main`:
-- verzia: **1.6.2**
-- dátum: **2026-08-20**
+- [Aktuálna normatívna dokumentácia](https://github.com/IbaJuraj/ibajuraj-application-standard/blob/main/IBAJURAJ_APPLICATION_STANDARD.md)
+- [Najnovšie publikované stabilné vydanie](https://github.com/IbaJuraj/ibajuraj-application-standard/releases/latest)
+- [Autoritatívny repozitár](https://github.com/IbaJuraj/ibajuraj-application-standard)
 
-Nemenný tag/Release `standard-v1.6.2` sa vytvára samostatne ako release krok. Kým nie je publikovaný, odkaz na `releases/latest` môže ešte smerovať na predchádzajúce finálne vydanie.
+Odkaz webu `/standard/` automaticky smeruje na najnovšie publikované vydanie. Aktívnu verziu určuje metadata `status: active`, nie pracovný RC. Dátum GitHub Release a dátum aktivácie metadát sa môžu krátkodobo líšiť.
 
-Jednotlivé aplikácie prijímajú nové verzie Standardu samostatne; existencia novšieho Standardu sama osebe neznamená, že ho už používa každá aplikácia.
+Jednotlivé aplikácie prijímajú nové verzie Standardu samostatne; vydanie nového Standardu nezaručuje ich automatickú adopciu.
