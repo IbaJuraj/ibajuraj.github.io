@@ -239,5 +239,40 @@
     };
 
     loadStandardMetadata();
+
+    // Show ONLY locally hosted screenshots originating from the 4 official App Store IDs.
+    // A missing/invalid verified manifest gracefully leaves the app cards text-only.
+    const loadOfficialScreenshots = async () => {
+      try {
+        const response = await fetch("/assets/screenshots/manifest.json", {cache:"no-store"});
+        if(!response.ok) return;
+        const manifest=await response.json();
+        const allowed={"strazca-terminov":6779741336,"lexdrive":6794546464,"jurajcalc":6777232702,"penazenka-kariet":6779166726};
+        if(manifest?.schemaVersion!==1 || manifest?.publisher!=="Juraj Spevar") return;
+        document.querySelectorAll("[data-gallery]").forEach(node=>{
+          const slug=node.getAttribute("data-gallery"),entry=manifest.apps?.[slug];
+          if(!entry || allowed[slug]!==entry.appStoreId || !Array.isArray(entry.screenshots)) return;
+          const store=node.closest(".app-card")?.querySelector('.app-actions a[href*="apps.apple.com"]');
+          if(!store) return;
+          for(const file of entry.screenshots.slice(0,2)){
+            if(typeof file!=="string") continue;
+            let verifiedImage;
+            try { verifiedImage=new URL(file); }catch(_){ continue; }
+            const host=verifiedImage.hostname.toLowerCase();
+            if(verifiedImage.protocol!=="https:" || !(host==="mzstatic.com" || host.endsWith(".mzstatic.com"))) continue;
+            const a=document.createElement("a");a.href=file;a.target="_blank";a.rel="noopener noreferrer";
+            a.setAttribute("aria-label",node.getAttribute("aria-label"));
+            const img=document.createElement("img");
+            img.alt="";img.loading="lazy";img.decoding="async";img.referrerPolicy="no-referrer";img.width=250;img.height=544;
+            img.addEventListener("error",()=>{a.remove();if(!node.childElementCount)node.hidden=true;},{once:true});
+            img.src=file;
+            a.appendChild(img);node.appendChild(a);
+          }
+          if(node.children.length) node.hidden=false;
+        });
+      }catch(_){/* No unverifiable substitutes */ }
+    };
+    loadOfficialScreenshots();
+
   });
 })();
