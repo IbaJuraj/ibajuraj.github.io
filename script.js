@@ -255,10 +255,14 @@
           const store=node.closest(".app-card")?.querySelector('.app-actions a[href*="apps.apple.com"]');
           if(!store) return;
           for(const file of entry.screenshots.slice(0,2)){
-            if(typeof file!=="string" || !/^assets\/screenshots\/[a-z0-9-]+-[12]\.webp$/.test(file)) continue;
+            if(typeof file!=="string") continue;
+            let verifiedImage;
+            try { verifiedImage=new URL(file); }catch(_){ continue; }
+            const host=verifiedImage.hostname.toLowerCase();
+            if(verifiedImage.protocol!=="https:" || !(host==="mzstatic.com" || host.endsWith(".mzstatic.com"))) continue;
             const a=document.createElement("a");a.href=store.href;a.target="_blank";a.rel="noopener noreferrer";
             a.setAttribute("aria-label",node.getAttribute("aria-label"));
-            const img=document.createElement("img");img.src="/"+file;img.alt="";img.loading="lazy";img.decoding="async";img.width=250;img.height=544;
+            const img=document.createElement("img");img.src=file;img.alt="";img.loading="lazy";img.decoding="async";img.referrerPolicy="no-referrer";img.width=250;img.height=544;
             a.appendChild(img);node.appendChild(a);
           }
           if(node.children.length) node.hidden=false;
