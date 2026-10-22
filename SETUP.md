@@ -19,3 +19,5 @@ Produkčný GitHub Pages web používa vetvu `main` a koreň repozitára. Zmeny 
 Hlavný web používa jediný autoritatívny zdroj `https://raw.githubusercontent.com/IbaJuraj/ibajuraj-application-standard/main/standard.json` (`status: active`, stabilné semver). Verzia sa aktualizuje pri ďalšom načítaní webu, bez osobitnej zmeny webového repozitára.
 
 Markdown README nepodporuje vlastný JavaScript, preto namiesto neaktuálneho čísla používa odkazy na živé metadata. Pri výpadku GitHubu zobrazuje hlavná stránka `—` a odkaz na normatívny dokument z `main`. Pracovné RC sa nesmú vydávať za stable.
+
+Pri zmene webu skontrolovať Telegram kanál `https://t.me/IbaJurajApps`, podporu `https://t.me/+mEtAJXPMUF9mZjI0`, všetkých šesť lokalizácií a originálne App Store ID pri galériách. Nevydávať interné buildy ani TradeBook.

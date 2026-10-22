@@ -47,3 +47,7 @@ Zmeny webu sa pripravujú na samostatnej vetve, skontrolujú sa a následne sa m
 ## Podpora
 
 Kontaktný formulár používa Formspree. Telegram komunita je doplnkový komunikačný kanál; citlivé údaje sa nemajú posielať cez verejné komunikačné kanály.
+
+## Minimalistický verejný web
+
+Novinky (Telegram kanál) a podpora (diskusná skupina) sú oddelené. Zverejňujú sa iba štyri verejné aplikácie; TradeBook je súkromný. Galérie používajú iba overený manifest originálnych App Store screenshotov z `assets/screenshots/`, ktorý sa doplní až po bezpečnom importe médií podľa štyroch App Store ID. Bez manifestu sa nevykresľujú žiadne náhradné screenshoty.
