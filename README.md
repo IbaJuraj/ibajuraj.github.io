@@ -53,3 +53,7 @@ Kontaktný formulár používa Formspree. Telegram komunita je doplnkový komuni
 Novinky (Telegram kanál) a podpora (diskusná skupina) sú oddelené. Zverejňujú sa iba štyri App Store aplikácie. Galérie používajú manifest originálnych obrázkov z oficiálneho Apple CDN (`assets/screenshots/manifest.json`), viazaný na štyri presné App Store ID a vývojára. Nepoužívajú náhradné vizuály. Bez manifestu sa nevykresľujú žiadne náhradné screenshoty.
 
 Obrázky galérií sú momentálne poskytované obrazovým serverom Apple; web ich načítava len pri viditeľných náhľadoch, používa `referrerpolicy=no-referrer` a túto skutočnosť uvádza v zásadách súkromia. Pri neskoršom vlastnom bezpečnom lokálnom spracovaní je možné zdroje preniesť do repozitára bez zmeny identity aplikácií.
+
+## Mobilné rozloženie a dostupnosť
+
+App Store tlačidlo je pred obrázkami, ktoré majú prirodzený pomer strán. iPhone zobrazí jednu úplnú snímku s horizontálnym posúvaním na ďalšiu; široké zobrazenie má dve snímky vedľa seba. Mobilné menu je nepriehľadné a používa natívny jazykový výber. Dlhé zásady ochrany súkromia si ponechávajú plné znenie; hore pribudli štyri navigačné odkazy. Kontaktný formulár má voliteľnú informáciu o zariadení iba pre technický problém a skryté pole predmetu zachováva URL parameter `subject`.

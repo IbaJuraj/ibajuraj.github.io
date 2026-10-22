@@ -19,8 +19,8 @@
   <title>IbaJuraj Apps</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20260831-penazenka-release">
-  <script src="script.js?v=20261022-minimal-site" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261022-mobile-correction">
+  <script src="script.js?v=20261022-mobile-correction" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -125,13 +125,13 @@
             </div>
           </div>
           <p class="app-lead">Termíny, vozidlá a dokumenty prehľadne. Upozornenia v správny čas.</p>
-          <div class="app-gallery" data-gallery="strazca-terminov" aria-label="Ukážky aplikácie Strážca Termínov" hidden></div>
           <div class="app-actions">
             <a class="button primary app-button"
                href="https://apps.apple.com/sk/app/str%C3%A1%C5%BEca-term%C3%ADnov/id6779741336"
                target="_blank" rel="noopener noreferrer">Otvoriť v App Store</a>
-            <a class="support-link" href="#support" data-app="Strážca Termínov">Kontaktovať podporu</a>
           </div>
+          <div class="app-gallery" data-gallery="strazca-terminov" aria-label="Ukážky aplikácie Strážca Termínov" hidden></div>
+
         </article>
 
         <article class="app-card">
@@ -144,14 +144,14 @@
             </div>
           </div>
           <p class="app-lead">Dopravné pravidlá, priestupky a sankcie zrozumiteľne.</p>
-          <div class="app-gallery" data-gallery="lexdrive" aria-label="Ukážky aplikácie Lex Drive" hidden></div>
           <p class="app-note">Informačná aplikácia. Nenahrádza právne poradenstvo.</p>
           <div class="app-actions">
             <a class="button primary app-button"
                href="https://apps.apple.com/sk/app/lexdrive/id6794546464?l=sk"
                target="_blank" rel="noopener noreferrer">Otvoriť v App Store</a>
-            <a class="support-link" href="#support" data-app="Lex Drive">Kontaktovať podporu</a>
           </div>
+          <div class="app-gallery" data-gallery="lexdrive" aria-label="Ukážky aplikácie Lex Drive" hidden></div>
+
         </article>
 
         <article class="app-card">
@@ -164,13 +164,13 @@
             </div>
           </div>
           <p class="app-lead">Kalkulačka, percentá a história výpočtov poruke.</p>
-          <div class="app-gallery" data-gallery="jurajcalc" aria-label="Ukážky aplikácie Kalkulačka 2v1" hidden></div>
           <div class="app-actions">
             <a class="button primary app-button"
                href="https://apps.apple.com/sk/app/kalkula%C4%8Dka-2v1/id6777232702"
                target="_blank" rel="noopener noreferrer">Otvoriť v App Store</a>
-            <a class="support-link" href="#support" data-app="Kalkulačka 2v1">Kontaktovať podporu</a>
           </div>
+          <div class="app-gallery" data-gallery="jurajcalc" aria-label="Ukážky aplikácie Kalkulačka 2v1" hidden></div>
+
         </article>
 
         <article class="app-card">
@@ -183,13 +183,13 @@
             </div>
           </div>
           <p class="app-lead">Vernostné karty, QR kódy a zdieľanie v jednom.</p>
-          <div class="app-gallery" data-gallery="penazenka-kariet" aria-label="Ukážky aplikácie Peňaženka Kariet" hidden></div>
           <div class="app-actions">
             <a class="button primary app-button"
                href="https://apps.apple.com/sk/app/pe%C5%88a%C5%BEenka-kariet/id6779166726?l=sk"
                target="_blank" rel="noopener noreferrer">Otvoriť v App Store</a>
-            <a class="support-link" href="#support" data-app="Peňaženka Kariet">Kontaktovať podporu</a>
           </div>
+          <div class="app-gallery" data-gallery="penazenka-kariet" aria-label="Ukážky aplikácie Peňaženka Kariet" hidden></div>
+
         </article>
       </div>
     </section>
@@ -206,6 +206,12 @@
         <p>Spracovanie údajov závisí od aplikácie a zapnutých funkcií.</p>
         <a class="text-link" href="privacy.html">Zobraziť zásady ochrany súkromia →</a>
       </article>
+    </section>
+
+    <section class="section faq-section" aria-labelledby="faq-title">
+      <p class="eyebrow">Časté otázky</p><h2 id="faq-title">Krátke odpovede.</h2>
+      <details><summary>Fungujú aplikácie aj bez iCloudu?</summary><p>Základné funkcie závisia od aplikácie. Synchronizácia a zdieľanie cez iCloud vyžadujú príslušné nastavenie.</p></details>
+      <details><summary>Kde nahlásim chybu?</summary><p>Vyberte aplikáciu vo formulári podpory alebo nám napíšte cez Telegram.</p></details>
     </section>
 
     <section class="section support-section" id="support" aria-labelledby="support-title">
@@ -252,16 +258,13 @@
               <label for="email">Váš e-mail</label>
               <input id="email" name="email" type="email" autocomplete="email" placeholder="meno@example.com" required>
             </div>
-            <div class="form-row">
+            <div class="form-row" id="device-row" hidden>
               <label for="device">Zariadenie a verzia iOS <span>(nepovinné)</span></label>
               <input id="device" name="zariadenie_a_ios" type="text" placeholder="Napr. iPhone 14, iOS 26">
             </div>
           </div>
 
-          <div class="form-row">
-            <label for="subject">Predmet <span>(nepovinné)</span></label>
-            <input id="subject" name="predmet" type="text" maxlength="120" placeholder="Napr. problém s upozornením">
-          </div>
+          <input id="subject" name="predmet" type="hidden">
 
           <div class="form-row">
             <label for="message">Správa</label>
@@ -284,12 +287,6 @@
           </div>
         </aside>
       </div>
-    </section>
-
-    <section class="section faq-section" aria-labelledby="faq-title">
-      <p class="eyebrow">Časté otázky</p><h2 id="faq-title">Krátke odpovede.</h2>
-      <details><summary>Fungujú aplikácie aj bez iCloudu?</summary><p>Základné funkcie závisia od aplikácie. Synchronizácia a zdieľanie cez iCloud vyžadujú príslušné nastavenie.</p></details>
-      <details><summary>Kde nahlásim chybu?</summary><p>Vyberte aplikáciu vo formulári podpory alebo nám napíšte cez Telegram.</p></details>
     </section>
 
     <section class="section developer-standard-section" id="standard" aria-labelledby="standard-title">

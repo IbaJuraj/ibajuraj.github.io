@@ -25,3 +25,7 @@ Pri zmene webu skontrolovať Telegram kanál `https://t.me/IbaJurajAppsNovinky`,
 ## Screenshot provenance
 
 Manifest `assets/screenshots/manifest.json` vznikol zo skutočného Apple Lookup API pre 4 presné ID a kontrolu `artistName=Juraj Spevar`. Dva iPhone náhľady pre každú aplikáciu používajú originálne URL Apple CDN, nie obrazový generátor. Načítavajú sa len pri otvorení stránky, optimalizovane a s `referrerpolicy=no-referrer`. Pri ďalšej aktualizácii na nové App Store screenshoty treba obnoviť manifest a overiť publikovanú verziu. Jednorazový importný workflow sa po úspechu odstráni; generátor `tools/import_verified_appstore_shots.py` sa ponechá na ručné použitie.
+
+## Akceptácia iPhone Safari
+
+Po publikovaní skontrolovať na reálnom iPhone: celé screenshoty bez odrezania, potiahnutie druhej ukážky, primárne tlačidlo App Store viditeľné pred galériou, nepriehľadné mobilné menu a jeho zatvorenie, natívny výber jazykov SK/CS/EN/DE/PL/HU na oboch stránkach, rýchle odkazy medzi sekciami súkromia, zobrazenie poľa zariadenia len pri technickej otázke a zachovanie kontaktného Formspree. Bez skutočného Safari smoke nenahlasovať runtime PASS.

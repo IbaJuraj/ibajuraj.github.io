@@ -559,3 +559,34 @@ p { line-height: 1.54; }
 .faq-section{max-width:880px}.faq-section details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-top:10px}
 .faq-section summary{cursor:pointer;font-weight:700}.faq-section details p{margin:12px 0 0;color:var(--muted)}
 @media(max-width:760px){.news-section{flex-direction:column;align-items:stretch}.news-section .button{text-align:center}}
+
+/* Acceptance fix: full App Store images and a truly opaque iPhone menu. */
+.form-row[hidden], .app-gallery[hidden] { display:none !important; }
+.app-gallery {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px;overflow:visible;}
+.app-gallery a {display:block;width:100%;min-width:0;}
+.app-gallery img {display:block;width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;object-position:center;border:1px solid var(--line);border-radius:15px;}
+.app-gallery a:focus-visible,.legal-quicklinks a:focus-visible {outline:3px solid var(--blue);outline-offset:3px;}
+.legal-quicklinks {display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.legal-quicklinks a {padding:9px 12px;border:1px solid var(--line-strong);border-radius:999px;background:#fff;color:var(--blue);font-size:13px;font-weight:700;text-decoration:none;}
+.legal-card {scroll-margin-top:calc(var(--header-height) + 15px);}
+@media(max-width:760px) {
+  :root {--header-height:62px;}
+  .site-header {background:rgba(248,250,255,.96);}
+  .brand img {width:38px;height:38px;}
+  .brand {font-size:17px;}
+  .nav-links {top:calc(var(--header-height) + 6px);background:#fff;z-index:110;}
+  body.menu-open::before {content:"";position:fixed;inset:var(--header-height) 0 0;z-index:90;background:rgba(11,21,48,.24);pointer-events:none;}
+  .app-gallery {grid-auto-flow:column;grid-auto-columns:100%;grid-template-columns:none;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+  .app-gallery a {scroll-snap-align:start;}
+  .app-gallery img {height:auto;aspect-ratio:auto;object-fit:contain;}
+  .app-actions {margin-top:14px;}
+  .legal-quicklinks {flex-wrap:nowrap;overflow-x:auto;padding:4px 2px 9px;scrollbar-width:thin;}
+  .legal-quicklinks a {flex:0 0 auto;}
+  .section {padding-block:36px;}
+  .hero {padding-top:34px;padding-bottom:26px;}
+  .footer-links {gap:6px 12px;}
+}
+@media(max-width:430px) {
+  .footer-links {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .footer-links a {display:flex;align-items:center;min-height:44px;}
+}

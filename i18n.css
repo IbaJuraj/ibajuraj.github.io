@@ -44,3 +44,8 @@
     min-height: 46px;
   }
 }
+
+@media(max-width:760px) {
+  .language-switcher {border-top:1px solid #dbe4f1;padding-top:12px;margin-top:8px;}
+  .language-select {min-height:46px;background-color:#fff;border-color:#c8d6e9;}
+}
