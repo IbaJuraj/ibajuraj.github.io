@@ -126,6 +126,31 @@ jobs:
                   if target is not None and not target.exists():
                       errors.append(f'Broken local reference in {html}: {ref} -> {target}')
 
+          # Only screenshot URLs from the Apple CDN and all four exact official Store IDs.
+          manifest_path = root / 'assets/screenshots/manifest.json'
+          if manifest_path.exists():
+              import json
+              from urllib.parse import urlsplit
+              expected_ids = {'strazca-terminov': 6779741336, 'lexdrive': 6794546464,
+                              'jurajcalc': 6777232702, 'penazenka-kariet': 6779166726}
+              manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+              if manifest.get('schemaVersion') != 1 or manifest.get('publisher') != 'Juraj Spevar':
+                  errors.append('App Store gallery requires verified publisher and schema.')
+              entries = manifest.get('apps', {})
+              if set(entries) != set(expected_ids):
+                  errors.append('App Store gallery must contain exactly four official apps.')
+              for slug, app_id in expected_ids.items():
+                  entry = entries.get(slug, {})
+                  if entry.get('appStoreId') != app_id:
+                      errors.append(f'Gallery ID mismatch: {slug}')
+                  urls = entry.get('screenshots') or []
+                  if len(urls) != 2:
+                      errors.append(f'Gallery requires exactly two original screenshots: {slug}')
+                  for url in urls:
+                      parsed = urlsplit(url)
+                      host = (parsed.hostname or '').lower()
+                      if parsed.scheme != 'https' or not (host == 'mzstatic.com' or host.endswith('.mzstatic.com')):
+                          errors.append(f'Gallery screenshot not hosted by Apple: {slug}')
           # Ensure locale dictionaries stay parseable and the offline state is translated.
           import json
           offline_key = 'Verziu sa nepodarilo overiť; aktuálnosť overte v repozitári'

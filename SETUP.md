@@ -21,3 +21,7 @@ Hlavný web používa jediný autoritatívny zdroj `https://raw.githubuserconten
 Markdown README nepodporuje vlastný JavaScript, preto namiesto neaktuálneho čísla používa odkazy na živé metadata. Pri výpadku GitHubu zobrazuje hlavná stránka `—` a odkaz na normatívny dokument z `main`. Pracovné RC sa nesmú vydávať za stable.
 
 Pri zmene webu skontrolovať Telegram kanál `https://t.me/IbaJurajApps`, podporu `https://t.me/+mEtAJXPMUF9mZjI0`, všetkých šesť lokalizácií a originálne App Store ID pri galériách. Nevydávať interné buildy ani TradeBook.
+
+## Screenshot provenance
+
+Manifest `assets/screenshots/manifest.json` vznikol zo skutočného Apple Lookup API pre 4 presné ID a kontrolu `artistName=Juraj Spevar`. Dva iPhone náhľady pre každú aplikáciu používajú originálne URL Apple CDN, nie obrazový generátor. Načítavajú sa len pri otvorení stránky, optimalizovane a s `referrerpolicy=no-referrer`. Pri ďalšej aktualizácii na nové App Store screenshoty treba obnoviť manifest a overiť publikovanú verziu. Jednorazový importný workflow sa po úspechu odstráni; generátor `tools/import_verified_appstore_shots.py` sa ponechá na ručné použitie.
