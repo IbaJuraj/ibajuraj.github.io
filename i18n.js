@@ -195,7 +195,7 @@
     if (document.querySelector('link[data-ibajuraj-i18n-style]')) return;
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "/i18n.css?v=20260902";
+    link.href = "/i18n.css?v=20261022-mobile-correction";
     link.dataset.ibajurajI18nStyle = "true";
     document.head.appendChild(link);
   };

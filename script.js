@@ -2,7 +2,7 @@
   const loadI18n = () => {
     if (document.querySelector('script[data-ibajuraj-i18n]')) return;
     const script = document.createElement("script");
-    script.src = "/i18n.js?v=20260902";
+    script.src = "/i18n.js?v=20261022-mobile-correction";
     script.defer = true;
     script.dataset.ibajurajI18n = "true";
     document.head.appendChild(script);
@@ -137,6 +137,16 @@
 
       appSelect?.addEventListener("change", updateMessageSubject);
       messageTypeSelect?.addEventListener("change", updateMessageSubject);
+      const deviceRow = document.getElementById("device-row");
+      const deviceInput = document.getElementById("device");
+      const updateDeviceVisibility = () => {
+        const isTechnical = messageTypeSelect?.value === "Technický problém";
+        if (deviceRow) deviceRow.hidden = !isTechnical;
+        if (!isTechnical && deviceInput) deviceInput.value = "";
+      };
+      messageTypeSelect?.addEventListener("change", updateDeviceVisibility);
+      updateDeviceVisibility();
+      form.addEventListener("reset", () => window.setTimeout(updateDeviceVisibility, 0));
       updateMessageSubject();
     }
 
