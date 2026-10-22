@@ -50,6 +50,6 @@ Kontaktný formulár používa Formspree. Telegram komunita je doplnkový komuni
 
 ## Minimalistický verejný web
 
-Novinky (Telegram kanál) a podpora (diskusná skupina) sú oddelené. Zverejňujú sa iba štyri verejné aplikácie; TradeBook je súkromný. Galérie používajú manifest originálnych obrázkov z oficiálneho Apple CDN (`assets/screenshots/manifest.json`), viazaný na štyri presné App Store ID a vývojára. Nepoužívajú náhradné vizuály. Bez manifestu sa nevykresľujú žiadne náhradné screenshoty.
+Novinky (Telegram kanál) a podpora (diskusná skupina) sú oddelené. Zverejňujú sa iba štyri App Store aplikácie. Galérie používajú manifest originálnych obrázkov z oficiálneho Apple CDN (`assets/screenshots/manifest.json`), viazaný na štyri presné App Store ID a vývojára. Nepoužívajú náhradné vizuály. Bez manifestu sa nevykresľujú žiadne náhradné screenshoty.
 
 Obrázky galérií sú momentálne poskytované obrazovým serverom Apple; web ich načítava len pri viditeľných náhľadoch, používa `referrerpolicy=no-referrer` a túto skutočnosť uvádza v zásadách súkromia. Pri neskoršom vlastnom bezpečnom lokálnom spracovaní je možné zdroje preniesť do repozitára bez zmeny identity aplikácií.
