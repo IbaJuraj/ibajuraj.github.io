@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "publisher": "Juraj Spevar",
+  "source": "Apple iTunes Lookup API country=sk; verified trackId, artistName and mzstatic.com image host",
+  "apps": {
+    "strazca-terminov": {
+      "appStoreId": 6779741336,
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/75/60/cb75600d-7925-68b8-127c-ee9576bcd6b3/Image_27._8._2026_U002c_15_13_59.png/320x480bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/a3/67/bca36761-192b-3e63-7456-655cc5c05b4b/Image_27._8._2026_U002c_15_14_03.png/320x480bb.jpg"
+      ]
+    },
+    "lexdrive": {
+      "appStoreId": 6794546464,
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/ca/0d/21ca0d82-2abc-ba11-91e2-ae9d97424853/IMG_1479.jpg/320x480bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e0/a9/01/e0a90186-cfd4-2683-7ca5-2ea5c06982fc/IMG_1480.jpg/320x480bb.jpg"
+      ]
+    },
+    "jurajcalc": {
+      "appStoreId": 6777232702,
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/ed/3b/90ed3b23-43a8-38e4-8ee1-2d4d947e89e5/IMG_2697.jpg/320x480bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ca/3c/3c/ca3c3c7a-d90f-789b-f5b3-f2f48c8d49b1/IMG_2698.jpg/320x480bb.jpg"
+      ]
+    },
+    "penazenka-kariet": {
+      "appStoreId": 6779166726,
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/58/87/a8/5887a8aa-2ab2-ffc1-5153-fae2495a5f8d/Image_5._9._2026_U002c_22_03_56.png/320x480bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c5/59/ae/c559ae42-a63b-f614-bae5-5f359137f532/Image_5._9._2026_U002c_22_03_48.png/320x480bb.jpg"
+      ]
+    }
+  }
+}
