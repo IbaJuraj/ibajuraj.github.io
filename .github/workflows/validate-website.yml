@@ -78,8 +78,12 @@ jobs:
           if re.search(r'fallbackVersion\s*=', script_text):
               errors.append('A numeric fallbackVersion is forbidden.')
 
-          if 'Jednotlivé aplikácie ho zavádzajú postupne' not in index_text:
+          if 'Aplikácie ich preberajú postupne' not in index_text:
               errors.append('Main page must state that applications adopt the Standard progressively.')
+          if 'Obrázky aplikácií obsahujú ukážkové údaje.' not in index_text:
+              errors.append('Demo screenshots must be explicitly labeled.')
+          if 'Preferovaný jazyk si prehliadač pamätá v lokálnom úložisku' not in Path('privacy.html').read_text(encoding='utf-8'):
+              errors.append('Privacy policy must disclose language localStorage.')
           if 'standard.json' not in script_text or 'metadataStatus !== "active"' not in script_text:
               errors.append('Standard metadata loader must use standard.json and require active status.')
           if 'releases/latest' not in redirect_text:
@@ -177,6 +181,30 @@ jobs:
               if not data.get('strings', {}).get(offline_key):
                   errors.append(f'Missing localized offline Standard notice for {lang}')
 
+          # Strict six-language coverage for public copy and privacy disclosures.
+          copy_keys = (
+              'Obrázky aplikácií obsahujú ukážkové údaje.',
+              'Jednotný základ aplikácií.',
+              'Spoločné pravidlá pre ovládanie, prístupnosť a súkromie. Aplikácie ich preberajú postupne.',
+          )
+          for lang in ('cs','en','de','pl','hu'):
+              main_locale = json.loads(Path(f'locales/{lang}.json').read_text(encoding='utf-8'))
+              privacy_locale = json.loads(Path(f'locales/privacy-{lang}.json').read_text(encoding='utf-8'))
+              for key in copy_keys:
+                  if not main_locale.get('strings',{}).get(key):
+                      errors.append(f'Missing {lang} translation: {key}')
+              if 'localStorage' not in privacy_locale.get('cards',{}).get('cookies-analytika',{}).get('paragraphs',[''])[0]:
+                  errors.append(f'Missing language storage disclosure in {lang} privacy')
+              if len(privacy_locale.get('cards',{})) != 9:
+                  errors.append(f'Unexpected privacy section count: {lang}')
+          if not Path('link-i18n.js').is_file():
+              errors.append('Missing six-language auxiliary page support')
+          else:
+              helper = Path('link-i18n.js').read_text(encoding='utf-8')
+              for code in ('cs','en','de','pl','hu'):
+                  if '"' + code + '"' not in helper:
+                      errors.append(f'Missing deep-link language {code}')
+
           if errors:
               print('\n'.join(f'ERROR: {error}' for error in errors))
               sys.exit(1)
@@ -192,3 +220,4 @@ jobs:
         run: |
           node --check script.js
           node --check i18n.js
+          node --check link-i18n.js
