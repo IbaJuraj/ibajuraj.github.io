@@ -4,13 +4,13 @@
     "title": "Polityka prywatności",
     "intro": "Sposób przetwarzania danych zależy od konkretnej aplikacji i włączonych funkcji. Wiele danych pozostaje wyłącznie na urządzeniu użytkownika lub, po włączeniu synchronizacji, jest przechowywanych za pośrednictwem usług Apple. IbaJuraj Apps nie stosuje reklamowego śledzenia użytkowników pomiędzy aplikacjami i stronami internetowymi.",
     "gridLabel": "Prywatność według aplikacji",
-    "updated": "Ostatnia aktualizacja: 22 października 2026"
+    "updated": "Ostatnia aktualizacja: 30 października 2026"
   },
   "cards": {
     "strazca-terminov": {
       "title": "Strážca Termínov",
       "paragraphs": [
-        "Strážca Termínov nie korzysta z osobnego konta użytkownika IbaJuraj Apps. Dane wprowadzane do aplikacji służą do ewidencji terminów, dokumentów, pojazdów, ubezpieczeń i powiązanych przypomnień.",
+        "Strážca Termínov nie wymaga osobnego konta logowania IbaJuraj Apps. Aplikacja może korzystać z profili i grup współdzielonych. Dane wprowadzane do aplikacji służą do ewidencji terminów, dokumentów, pojazdów, ubezpieczeń i powiązanych przypomnień.",
         "W zależności od włączonych funkcji dane pozostają na urządzeniu lub są synchronizowane za pośrednictwem Apple iCloud/CloudKit. Aplikacja obsługuje również opcjonalne udostępnianie, kopie zapasowe i eksport; użytkownik włącza lub korzysta z tych funkcji w razie potrzeby. Przetwarzanie danych przez usługi Apple podlega <a class=\"text-link\" href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">Polityce prywatności Apple</a>.",
         "Aplikację można chronić za pomocą Face ID, kodu PIN aplikacji składającego się z 4–8 cyfr oraz automatycznej blokady. Uwierzytelnianie biometryczne obsługuje system iOS; aplikacja nie ma dostępu do danych biometrycznych użytkownika."
       ]
@@ -49,7 +49,7 @@
     "cookies-analytika": {
       "title": "Pliki cookie i analityka",
       "paragraphs": [
-        "Sama strona IbaJuraj Apps nie korzysta z własnej analityki reklamowej, trackerów reklamowych ani własnych reklamowych plików cookie. Nie używamy technologii przeznaczonych do śledzenia użytkowników pomiędzy stronami internetowymi.",
+        "Sama strona IbaJuraj Apps nie korzysta z własnej analityki reklamowej, trackerów reklamowych ani własnych reklamowych plików cookie. Nie używamy technologii przeznaczonych do śledzenia użytkowników pomiędzy stronami internetowymi. Wybrany język jest zapisywany lokalnie w przeglądarce (localStorage); nie używamy tej informacji do śledzenia reklamowego.",
         "Podczas korzystania z formularza kontaktowego lub otwierania usług zewnętrznych odpowiednie podmioty trzecie mogą przetwarzać dane techniczne lub korzystać z własnych technologii zgodnie ze swoimi politykami prywatności."
       ]
     },

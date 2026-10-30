@@ -1,0 +1,43 @@
+// Localizes only the two public deep-link landing pages; never touches invitation or card payloads.
+(() => {
+  let saved="";try{saved=localStorage.getItem("ibajuraj-language")||""}catch(_){}
+  const param=new URLSearchParams(location.search).get("lang");
+  let lang=(param||saved||navigator.language||"sk").toLowerCase().split(/[-_]/)[0];
+  if(lang==="cz")lang="cs";
+  const data={"cs":{"invite":{"brand":"Pozvánka do sdílené skupiny","eyebrow":"Pozvánka","title":"Otevřete pozvánku v aplikaci.","lead":"Pokud máte Strážca Termínov nainstalovaný, použijte tlačítko níže.","codeLabel":"Kód pozvánky","open":"Otevřít pozvánku v aplikaci","store":"Stáhnout Strážca Termínov","copy":"Kopírovat kód","note":"Po instalaci znovu otevřete původní odkaz. Pozvánku lze přijmout také pomocí kódu.","invalid":"Tento odkaz neobsahuje platný kód pozvánky. Požádejte odesílatele o nový odkaz.","invalidLead":"Platnost odkazu se nepodařilo ověřit.","opening":"Otevírám aplikaci…","openFail":"Aplikace se neotevřela? Nainstalujte ji z App Store nebo zadejte kód ručně.","copied":"Kód byl zkopírován.","copyFail":"Kód se nepodařilo zkopírovat. Zkuste to ručně.","privacy":"Ochrana soukromí"},"card":{"title":"Sdílená karta","lead":"Pokud máte Peňaženku Kariet nainstalovanou, odkaz by měl otevřít aplikaci a nabídnout uložení karty.","privacy":"Údaje karty se dekódují lokálně v prohlížeči z fragmentu odkazu; poznámky, historie a cloudová data se nesdílejí.","store":"Stáhnout / otevřít v App Store","merchant":"Obchod","card":"Karta","number":"Číslo karty","invalid":"Sdílený odkaz je neplatný nebo poškozený."}},"en":{"invite":{"brand":"Shared group invitation","eyebrow":"Invitation","title":"Open the invitation in the app.","lead":"If Strážca Termínov is installed, use the button below.","codeLabel":"Invitation code","open":"Open invitation in app","store":"Get Strážca Termínov","copy":"Copy code","note":"After installing the app, reopen the original link. You can also accept the invitation manually using its code.","invalid":"This link does not contain a valid invitation code. Ask the sender for a new link.","invalidLead":"The link could not be verified.","opening":"Opening the app…","openFail":"Didn't open? Install from the App Store or use the code manually.","copied":"Code copied.","copyFail":"Unable to copy the code. Please copy it manually.","privacy":"Privacy policy"},"card":{"title":"Shared card","lead":"If Peňaženka Kariet is installed, this link should open the app and offer to save the card.","privacy":"Card data is decoded locally from the URL fragment. Labels, notes, history and cloud data are not shared.","store":"Get / open in App Store","merchant":"Store","card":"Card","number":"Card number","invalid":"Invalid or damaged card-sharing link."}},"de":{"invite":{"brand":"Einladung zu einer geteilten Gruppe","eyebrow":"Einladung","title":"Einladung in der App öffnen.","lead":"Wenn Strážca Termínov installiert ist, nutzen Sie die Schaltfläche unten.","codeLabel":"Einladungscode","open":"Einladung in der App öffnen","store":"Strážca Termínov laden","copy":"Code kopieren","note":"Nach der Installation den ursprünglichen Link erneut öffnen. Alternativ können Sie den Einladungscode manuell eingeben.","invalid":"Dieser Link enthält keinen gültigen Einladungscode. Bitten Sie den Absender um einen neuen Link.","invalidLead":"Der Link konnte nicht überprüft werden.","opening":"App wird geöffnet…","openFail":"App öffnet sich nicht? Installieren Sie sie aus dem App Store oder geben Sie den Code manuell ein.","copied":"Code kopiert.","copyFail":"Code konnte nicht kopiert werden. Bitte manuell kopieren.","privacy":"Datenschutz"},"card":{"title":"Geteilte Karte","lead":"Wenn Peňaženka Kariet installiert ist, sollte der Link die App öffnen und das Speichern der Karte anbieten.","privacy":"Kartendaten werden aus dem URL-Fragment lokal im Browser dekodiert. Notizen, Verlauf und Cloud-Daten werden nicht geteilt.","store":"Im App Store laden / öffnen","merchant":"Geschäft","card":"Karte","number":"Kartennummer","invalid":"Ungültiger oder beschädigter Freigabelink."}},"pl":{"invite":{"brand":"Zaproszenie do grupy współdzielonej","eyebrow":"Zaproszenie","title":"Otwórz zaproszenie w aplikacji.","lead":"Jeśli masz Strážca Termínov, użyj przycisku poniżej.","codeLabel":"Kod zaproszenia","open":"Otwórz zaproszenie","store":"Pobierz Strážca Termínov","copy":"Kopiuj kod","note":"Po instalacji ponownie otwórz pierwotny link. Zaproszenie można także przyjąć ręcznie za pomocą kodu.","invalid":"Link nie zawiera prawidłowego kodu zaproszenia. Poproś nadawcę o nowy link.","invalidLead":"Nie udało się zweryfikować linku.","opening":"Otwieranie aplikacji…","openFail":"Aplikacja się nie otworzyła? Zainstaluj ją z App Store lub użyj kodu ręcznie.","copied":"Kod skopiowany.","copyFail":"Nie można skopiować kodu. Skopiuj go ręcznie.","privacy":"Polityka prywatności"},"card":{"title":"Udostępniona karta","lead":"Jeśli masz Peňaženka Kariet, link powinien otworzyć aplikację i umożliwić zapisanie karty.","privacy":"Dane karty są dekodowane lokalnie z fragmentu adresu URL. Notatki, historia ani dane w chmurze nie są udostępniane.","store":"Pobierz / otwórz w App Store","merchant":"Sklep","card":"Karta","number":"Numer karty","invalid":"Nieprawidłowy lub uszkodzony link do karty."}},"hu":{"invite":{"brand":"Meghívás megosztott csoportba","eyebrow":"Meghívó","title":"Nyissa meg a meghívót az alkalmazásban.","lead":"Ha telepítette a Strážca Termínov alkalmazást, használja az alábbi gombot.","codeLabel":"Meghívókód","open":"Meghívó megnyitása","store":"Strážca Termínov letöltése","copy":"Kód másolása","note":"Telepítés után nyissa meg újra az eredeti hivatkozást. A meghívókódot kézzel is beírhatja.","invalid":"A hivatkozás nem tartalmaz érvényes meghívókódot. Kérjen újat a küldőtől.","invalidLead":"A hivatkozás nem ellenőrizhető.","opening":"Alkalmazás megnyitása…","openFail":"Nem nyílt meg? Telepítse az App Store-ból, vagy adja meg kézzel a kódot.","copied":"Kód másolva.","copyFail":"Nem sikerült másolni a kódot. Másolja kézzel.","privacy":"Adatvédelmi szabályzat"},"card":{"title":"Megosztott kártya","lead":"Ha telepítette a Peňaženka Kariet alkalmazást, a hivatkozás megnyitja, és felajánlja a kártya mentését.","privacy":"A kártyaadatok helyileg kerülnek feldolgozásra az URL-töredékből. Jegyzetek, előzmények és felhőadatok nem kerülnek megosztásra.","store":"Letöltés / megnyitás az App Store-ban","merchant":"Üzlet","card":"Kártya","number":"Kártyaszám","invalid":"Érvénytelen vagy sérült kártyamegosztási hivatkozás."}}};
+  if(!Object.prototype.hasOwnProperty.call(data,lang)){document.documentElement.lang="sk";return;}
+  const isCard=location.pathname.startsWith("/card/");
+  const tr=isCard?data[lang].card:data[lang].invite;
+  document.documentElement.lang=lang;
+  const put=(selector,key)=>{const el=document.querySelector(selector);if(el&&tr[key])el.textContent=tr[key];};
+  if(isCard){
+    put("#title","title");put("#lead","lead");put("#privacy","privacy");put("#store","store");
+    document.querySelectorAll("#content .row .label").forEach((x,i)=>x.textContent=tr[["merchant","card","number"][i]]||x.textContent);
+    const err=document.querySelector("#content .error");if(err)err.textContent=tr.invalid;
+    document.title=tr.title+" – Peňaženka Kariet";
+    return;
+  }
+  put(".invite-brand p","brand");put(".invite-card .eyebrow","eyebrow");
+  put("#invite-title","title");
+  put(".invite-code-label","codeLabel");
+  put("#open-app","open");put("#app-store","store");put("#copy-code","copy");
+  put("#valid-note","note");put("#invalid-note","invalid");
+  const lead=document.getElementById("invite-description");
+  if(lead)lead.textContent=lead.textContent.includes("Platnosť odkazu")?tr.invalidLead:tr.lead;
+  const privacy=document.querySelector('.invite-footer a[href^="privacy.html"]');
+  if(privacy){privacy.textContent=tr.privacy;privacy.href="privacy.html?lang="+lang;}
+  document.title=tr.title+" – Strážca Termínov";
+  // Existing handlers change status text dynamically; translate only those known static messages.
+  const status=document.getElementById("status");
+  if(status){
+    const mapping=new Map([
+      ["Otváram aplikáciu…",tr.opening],
+      ["Aplikácia sa neotvorila? Nainštalujte ju z App Store alebo použite kód ručne.",tr.openFail],
+      ["Kód bol skopírovaný.",tr.copied],
+      ["Kód sa nepodarilo skopírovať. Označte ho a skopírujte ručne.",tr.copyFail]
+    ]);
+    const translate=()=>{const next=mapping.get(status.textContent);if(next&&next!==status.textContent)status.textContent=next;};
+    new MutationObserver(translate).observe(status,{childList:true,characterData:true,subtree:true});
+    translate();
+  }
+})();

@@ -33,3 +33,7 @@ Po publikovaní skontrolovať na reálnom iPhone: celé screenshoty bez odrezani
 ## 2026-10-22 – lokálne ostré screenshoty
 
 Osem súborov `assets/screenshots/<slug>-1/2.webp` je vložených priamo do GitHub repozitára; obrázky boli zmenšené na šírku 820 px pre ostrosť na Retina displejoch a úsporu prenosov. Každá z 4 aplikácií má presne 2 obrázky. `manifest.json` schémy 2 obsahuje presné App Store ID, lokálne cesty, SHA256 a príznak `demoData` pre anonymizované obrázky Strážcu a Peňaženky. Už sa nenačítavajú obrázky Apple CDN. Pôvodné osobné screenshoty sa nikdy nesmú commitnúť. Posledný iPhone Safari vizuálny test ostáva samostatnou kontrolou po produkčnom nasadení.
+
+## Textová akceptácia 2026-10-30
+
+Overiť SK/CS/EN/DE/PL/HU a právnu paritu privacy; overiť chýbajúci preklad pri načítaní stránky, uloženie jazyka v localStorage, App Store odkazy, pomocné stránky a vnútornú konzistenciu demo screenshotov. Nerobiť neoverené bezpečnostné sľuby.
