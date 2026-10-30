@@ -30,7 +30,11 @@
 </main>
 <script>
 (() => {
-  const cs = (navigator.language || '').toLowerCase().startsWith('cs');
+  // Keep the selected site language authoritative on deep-link pages.
+  let storedLanguage='';
+  try { storedLanguage=localStorage.getItem('ibajuraj-language')||''; } catch (_) {}
+  const languageChoice=new URLSearchParams(location.search).get('lang')||storedLanguage||navigator.language||'sk';
+  const cs=languageChoice.toLowerCase().split(/[-_]/)[0]==='cs';
   const t = cs ? {
     title:'Sdílená karta', lead:'Pokud máte Peňaženku Kariet nainstalovanou, tento odkaz se má otevřít přímo v aplikaci a nabídnout uložení karty.',
     privacy:'Údaje karty jsou pouze ve fragmentu tohoto odkazu a tato stránka je dekóduje lokálně v prohlížeči. Označení, poznámky, historie ani cloudové údaje se nesdílejí.',
