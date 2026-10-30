@@ -61,3 +61,5 @@ App Store tlačidlo je pred obrázkami, ktoré majú prirodzený pomer strán. i
 ## Textový a jazykový audit · 2026-10-30
 
 Zjednodušená sekcia Standardu, odstránená duplicitná FAQ otázka, spoločná poznámka o demo dátach. Pri Strážcovi spresnený profil vs. samostatný účet. Zásady uvádzajú localStorage pre jazyk. Preklady synchronizované, pri chybe prekladu zostáva slovenská stránka správne označená.
+
+Ukážkový detail PZP používa konzistentné demo termíny: dátum 24. 5. 2027 zodpovedá 214 dňom od 22. 10. 2026. Akcia mení iba už anonymizovaný obrázok a aktualizuje jeho SHA256 v galériovom manifeste.

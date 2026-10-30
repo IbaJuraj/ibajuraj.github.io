@@ -267,7 +267,10 @@
           for(const file of entry.screenshots.slice(0,2)){
             if(typeof file!=="string") continue;
             if(file!==`assets/screenshots/${slug}-${node.children.length + 1}.webp`) continue;
-            const imageUrl="/"+file;
+            // Manifest hash makes updated demo media visible without stale Safari caches.
+            const digest=entry.sha256?.[node.children.length];
+            if(typeof digest!=="string" || !/^[a-f0-9]{64}$/.test(digest)) continue;
+            const imageUrl="/"+file+"?v="+digest.slice(0,12);
             const a=document.createElement("a");a.href=imageUrl;a.target="_blank";a.rel="noopener noreferrer";
             a.setAttribute("aria-label",node.getAttribute("aria-label") + (entry.demoData ? " — ukážkové údaje" : ""));
             const img=document.createElement("img");
