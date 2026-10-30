@@ -57,3 +57,7 @@ Galérie používajú osem lokálnych ostrých WebP obrázkov (820 px), nie 320�
 ## Mobilné rozloženie a dostupnosť
 
 App Store tlačidlo je pred obrázkami, ktoré majú prirodzený pomer strán. iPhone zobrazí jednu úplnú snímku s horizontálnym posúvaním na ďalšiu; široké zobrazenie má dve snímky vedľa seba. Mobilné menu je nepriehľadné a používa natívny jazykový výber. Dlhé zásady ochrany súkromia si ponechávajú plné znenie; hore pribudli štyri navigačné odkazy. Kontaktný formulár má voliteľnú informáciu o zariadení iba pre technický problém a skryté pole predmetu zachováva URL parameter `subject`.
+
+## Textový a jazykový audit · 2026-10-30
+
+Zjednodušená sekcia Standardu, odstránená duplicitná FAQ otázka, spoločná poznámka o demo dátach. Pri Strážcovi spresnený profil vs. samostatný účet. Zásady uvádzajú localStorage pre jazyk. Preklady synchronizované, pri chybe prekladu zostáva slovenská stránka správne označená.

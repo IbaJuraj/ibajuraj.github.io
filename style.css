@@ -590,3 +590,7 @@ p { line-height: 1.54; }
   .footer-links {grid-template-columns:repeat(2,minmax(0,1fr));}
   .footer-links a {display:flex;align-items:center;min-height:44px;}
 }
+
+/* Minimal shared-content polish */
+.gallery-data-notice{margin:14px 0 0;font-size:.82rem;color:var(--muted);text-align:center}
+@media(max-width:760px){.site-footer{padding-bottom:24px}.footer-links{row-gap:1px}}

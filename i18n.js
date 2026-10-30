@@ -34,9 +34,13 @@
 
   const params = new URLSearchParams(window.location.search);
   const explicit = normalizeLanguage(params.get("lang"));
-  const saved = normalizeLanguage(localStorage.getItem(STORAGE_KEY));
+  let saved = null;
+  try { saved = normalizeLanguage(localStorage.getItem(STORAGE_KEY)); } catch (_) {}
   const browser = normalizeLanguage(navigator.language);
-  const currentLanguage = explicit || saved || browser || "sk";
+  let currentLanguage = explicit || saved || browser || "sk";
+  let localeLoaded = currentLanguage === "sk";
+  let privacyLoaded = !isPrivacyPage || currentLanguage === "sk";
+  let translationFallback = false;
 
   let locale = { meta: SK_META, strings: {} };
   let privacyLocale = null;
@@ -54,30 +58,34 @@
   const loadLocale = async () => {
     if (currentLanguage === "sk") return;
     try {
-      const response = await fetch(`/locales/${currentLanguage}.json?v=20260902`, { cache: "no-store" });
+      const response = await fetch(`/locales/${currentLanguage}.json?v=20261030`, { cache: "no-store" });
       if (!response.ok) throw new Error("Locale request failed");
       const loaded = await response.json();
       if (!loaded || typeof loaded !== "object" || typeof loaded.strings !== "object") {
         throw new Error("Invalid locale");
       }
       locale = loaded;
+      localeLoaded = true;
     } catch (_) {
       locale = { meta: SK_META, strings: {} };
+      localeLoaded = false;
     }
   };
 
   const loadPrivacyLocale = async () => {
     if (!isPrivacyPage || currentLanguage === "sk") return;
     try {
-      const response = await fetch(`/locales/privacy-${currentLanguage}.json?v=20260904`, { cache: "no-store" });
+      const response = await fetch(`/locales/privacy-${currentLanguage}.json?v=20261030`, { cache: "no-store" });
       if (!response.ok) throw new Error("Privacy locale request failed");
       const loaded = await response.json();
       if (!loaded || typeof loaded !== "object" || typeof loaded.cards !== "object") {
         throw new Error("Invalid privacy locale");
       }
       privacyLocale = loaded;
+      privacyLoaded = true;
     } catch (_) {
       privacyLocale = null;
+      privacyLoaded = false;
     }
   };
 
@@ -227,7 +235,7 @@
 
     select.addEventListener("change", () => {
       const next = normalizeLanguage(select.value) || "sk";
-      localStorage.setItem(STORAGE_KEY, next);
+      try { localStorage.setItem(STORAGE_KEY, next); } catch (_) {}
       const url = new URL(window.location.href);
       if (next === "sk") url.searchParams.delete("lang");
       else url.searchParams.set("lang", next);
@@ -273,6 +281,12 @@
   const apply = async () => {
     await loadLocale();
     await loadPrivacyLocale();
+    if (!localeLoaded || !privacyLoaded) {
+      currentLanguage = "sk";
+      locale = { meta: SK_META, strings: {} };
+      privacyLocale = null;
+      translationFallback = true;
+    }
     window.IbaJurajI18n.language = currentLanguage;
     window.IbaJurajI18n.t = t;
     window.IbaJurajI18n.message = message;
@@ -286,7 +300,9 @@
     updateLocalizedInternalLinks();
     addLanguageSwitcher();
     setCanonicalAlternates();
-    localStorage.setItem(STORAGE_KEY, currentLanguage);
+    if (!translationFallback) {
+      try { localStorage.setItem(STORAGE_KEY, currentLanguage); } catch (_) {}
+    }
   };
 
   if (document.readyState === "loading") {
