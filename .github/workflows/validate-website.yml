@@ -197,6 +197,8 @@ jobs:
                   errors.append(f'Missing language storage disclosure in {lang} privacy')
               if len(privacy_locale.get('cards',{})) != 9:
                   errors.append(f'Unexpected privacy section count: {lang}')
+          if "const cs=languageChoice.toLowerCase().split" not in Path('card/index.html').read_text(encoding='utf-8'):
+              errors.append('Shared-card page must honor explicit/saved language before browser defaults.')
           if not Path('link-i18n.js').is_file():
               errors.append('Missing six-language auxiliary page support')
           else:
