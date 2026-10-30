@@ -116,6 +116,9 @@
     "Fungujú aplikácie aj bez iCloudu?": "Működnek az alkalmazások iCloud nélkül?",
     "Základné funkcie závisia od aplikácie. Synchronizácia a zdieľanie cez iCloud vyžadujú príslušné nastavenie.": "Az alapfunkciók alkalmazásonként eltérnek. Az iCloud-szinkron és megosztás beállítást igényel.",
     "Kde nahlásim chybu?": "Hol jelenthetek hibát?",
-    "Vyberte aplikáciu vo formulári podpory alebo nám napíšte cez Telegram.": "Válassza ki az alkalmazást az űrlapon, vagy írjon Telegramon."
+    "Vyberte aplikáciu vo formulári podpory alebo nám napíšte cez Telegram.": "Válassza ki az alkalmazást az űrlapon, vagy írjon Telegramon.",
+    "Obrázky aplikácií obsahujú ukážkové údaje.": "Az alkalmazásképek bemutató adatokat tartalmaznak.",
+    "Jednotný základ aplikácií.": "Közös alap az alkalmazásainkhoz.",
+    "Spoločné pravidlá pre ovládanie, prístupnosť a súkromie. Aplikácie ich preberajú postupne.": "Közös szabályok a használhatóságra, akadálymentességre és adatvédelemre. Az alkalmazások fokozatosan vezetik be őket."
   }
 }

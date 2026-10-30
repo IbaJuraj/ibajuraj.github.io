@@ -4,13 +4,13 @@
     "title": "Privacy Policy",
     "intro": "How data is handled depends on the specific app and enabled features. Much of the data stays only on the user’s device or, when synchronization is enabled, is stored through Apple services. IbaJuraj Apps does not use advertising tracking of users across apps and websites.",
     "gridLabel": "Privacy by app",
-    "updated": "Last updated: 22 October 2026"
+    "updated": "Last updated: 30 October 2026"
   },
   "cards": {
     "strazca-terminov": {
       "title": "Strážca Termínov",
       "paragraphs": [
-        "Strážca Termínov does not use a separate IbaJuraj Apps user account. Data you enter in the app is used to manage deadlines, documents, vehicles, insurance, and related reminders.",
+        "Strážca Termínov does not require a separate IbaJuraj Apps sign-in account. The app may use profiles and shared groups. Data you enter in the app is used to manage deadlines, documents, vehicles, insurance, and related reminders.",
         "Depending on the enabled features, data stays on the device or is synchronized through Apple iCloud/CloudKit. The app also supports optional sharing, backups, and export; users enable or use these features as needed. Data processing by Apple services is governed by <a class=\"text-link\" href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">Apple’s Privacy Policy</a>.",
         "The app can be protected with Face ID, an app PIN of 4 to 8 digits, and automatic locking. Biometric authentication is handled by iOS; the app does not access the user’s biometric data."
       ]
@@ -49,7 +49,7 @@
     "cookies-analytika": {
       "title": "Cookies and analytics",
       "paragraphs": [
-        "The IbaJuraj Apps website itself does not use its own advertising analytics, advertising trackers, or advertising cookies. We do not use technologies intended to track users across websites.",
+        "The IbaJuraj Apps website itself does not use its own advertising analytics, advertising trackers, or advertising cookies. We do not use technologies intended to track users across websites. The browser saves the selected language in local storage (localStorage); we do not use it for advertising tracking.",
         "When the contact form is used or external services are opened, the relevant third parties may process technical data or use their own technologies under their privacy policies."
       ]
     },

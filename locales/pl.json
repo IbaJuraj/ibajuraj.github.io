@@ -99,7 +99,7 @@
     "Termíny, vozidlá a dokumenty prehľadne. Upozornenia v správny čas.": "Terminy, pojazdy i dokumenty. Powiadomienia na czas.",
     "Dopravné pravidlá, priestupky a sankcie zrozumiteľne.": "Przepisy drogowe, wykroczenia i kary przejrzyście.",
     "Kalkulačka, percentá a história výpočtov poruke.": "Kalkulator, procenty i historia obliczeń.",
-    "Vernostné karty, QR kódy a zdieľanie v jednom.": "Karty lojalnościowe, kody QR i udostępnianie.",
+    "Vernostné karty, QR kódy a zdieľanie v jednom.": "Karty lojalnościowe, kody QR i udostępnianie w jednym miejscu.",
     "Čo je nové?": "Co nowego?",
     "Aktualizácie našich aplikácií na Telegrame.": "Aktualizacje naszych aplikacji na Telegramie.",
     "Sledovať novinky ↗": "Śledź nowości ↗",
@@ -116,6 +116,9 @@
     "Fungujú aplikácie aj bez iCloudu?": "Czy aplikacje działają bez iCloud?",
     "Základné funkcie závisia od aplikácie. Synchronizácia a zdieľanie cez iCloud vyžadujú príslušné nastavenie.": "Podstawowe funkcje zależą od aplikacji. Synchronizacja i udostępnianie wymagają konfiguracji iCloud.",
     "Kde nahlásim chybu?": "Gdzie zgłosić błąd?",
-    "Vyberte aplikáciu vo formulári podpory alebo nám napíšte cez Telegram.": "Wybierz aplikację w formularzu lub napisz na Telegramie."
+    "Vyberte aplikáciu vo formulári podpory alebo nám napíšte cez Telegram.": "Wybierz aplikację w formularzu lub napisz na Telegramie.",
+    "Obrázky aplikácií obsahujú ukážkové údaje.": "Zrzuty ekranu aplikacji zawierają przykładowe dane.",
+    "Jednotný základ aplikácií.": "Wspólna podstawa naszych aplikacji.",
+    "Spoločné pravidlá pre ovládanie, prístupnosť a súkromie. Aplikácie ich preberajú postupne.": "Wspólne zasady obsługi, dostępności i prywatności. Aplikacje wdrażają je stopniowo."
   }
 }

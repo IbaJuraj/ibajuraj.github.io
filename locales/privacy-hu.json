@@ -4,13 +4,13 @@
     "title": "Adatvédelmi irányelvek",
     "intro": "Az adatok kezelése az adott alkalmazástól és a bekapcsolt funkcióktól függ. Sok adat kizárólag a felhasználó eszközén marad, vagy bekapcsolt szinkronizálás esetén Apple-szolgáltatásokon keresztül kerül tárolásra. Az IbaJuraj Apps nem használ alkalmazásokon és webhelyeken átívelő reklámcélú felhasználókövetést.",
     "gridLabel": "Adatvédelem alkalmazásonként",
-    "updated": "Utolsó frissítés: 2026. október 22."
+    "updated": "Utolsó frissítés: 2026. október 30."
   },
   "cards": {
     "strazca-terminov": {
       "title": "Strážca Termínov",
       "paragraphs": [
-        "A Strážca Termínov nem használ külön IbaJuraj Apps felhasználói fiókot. Az alkalmazásban megadott adatok határidők, dokumentumok, járművek, biztosítások és kapcsolódó emlékeztetők kezelésére szolgálnak.",
+        "A Strážca Termínov használatához nincs szükség külön IbaJuraj Apps bejelentkezési fiókra. Az alkalmazás profilokat és megosztott csoportokat is használhat. Az alkalmazásban megadott adatok határidők, dokumentumok, járművek, biztosítások és kapcsolódó emlékeztetők kezelésére szolgálnak.",
         "A bekapcsolt funkcióktól függően az adatok az eszközön maradnak, vagy az Apple iCloud/CloudKit szolgáltatásain keresztül szinkronizálódnak. Az alkalmazás opcionális megosztást, biztonsági mentést és exportot is támogat; ezeket a funkciókat a felhasználó szükség szerint kapcsolja be vagy használja. Az Apple szolgáltatásainak adatkezelésére az <a class=\"text-link\" href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">Apple adatvédelmi szabályzata</a> vonatkozik.",
         "Az alkalmazás Face ID-val, 4–8 számjegyű alkalmazás-PIN-nel és automatikus zárolással védhető. A biometrikus hitelesítést az iOS végzi; az alkalmazás nem fér hozzá a felhasználó biometrikus adataihoz."
       ]
@@ -49,7 +49,7 @@
     "cookies-analytika": {
       "title": "Cookie-k és analitika",
       "paragraphs": [
-        "Az IbaJuraj Apps webhely önmagában nem használ saját hirdetési analitikát, reklámkövetőket vagy saját hirdetési cookie-kat. Nem használunk a felhasználók webhelyek közötti követésére szolgáló technológiákat.",
+        "Az IbaJuraj Apps webhely önmagában nem használ saját hirdetési analitikát, reklámkövetőket vagy saját hirdetési cookie-kat. Nem használunk a felhasználók webhelyek közötti követésére szolgáló technológiákat. A kiválasztott nyelvet a böngésző helyileg tárolja (localStorage); ezt az adatot nem használjuk reklámcélú követésre.",
         "A kapcsolatfelvételi űrlap használatakor vagy külső szolgáltatások megnyitásakor az érintett harmadik felek saját adatvédelmi szabályzatuk szerint technikai adatokat kezelhetnek vagy saját technológiákat használhatnak."
       ]
     },

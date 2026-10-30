@@ -4,13 +4,13 @@
     "title": "Zásady ochrany soukromí",
     "intro": "Způsob práce s údaji závisí na konkrétní aplikaci a zapnutých funkcích. Mnoho údajů zůstává pouze v zařízení uživatele nebo se při zapnuté synchronizaci ukládá prostřednictvím služeb Apple. IbaJuraj Apps nepoužívá reklamní sledování uživatelů napříč aplikacemi a weby.",
     "gridLabel": "Soukromí podle aplikace",
-    "updated": "Poslední aktualizace: 22. října 2026"
+    "updated": "Poslední aktualizace: 30. října 2026"
   },
   "cards": {
     "strazca-terminov": {
       "title": "Strážca Termínov",
       "paragraphs": [
-        "Strážca Termínov nemá vlastní uživatelský účet IbaJuraj Apps. Údaje, které do aplikace zadáte, slouží k evidenci termínů, dokumentů, vozidel, pojištění a souvisejících upozornění.",
+        "Pro používání Strážca Termínov není potřeba samostatný přihlašovací účet IbaJuraj Apps. Aplikace může používat profily a sdílené skupiny. Údaje, které do aplikace zadáte, slouží k evidenci termínů, dokumentů, vozidel, pojištění a souvisejících upozornění.",
         "Podle zapnutých funkcí zůstávají údaje v zařízení nebo se synchronizují prostřednictvím Apple iCloud/CloudKit. Aplikace podporuje také volitelné sdílení, zálohy a export; tyto funkce uživatel aktivuje nebo použije podle potřeby. Zpracování údajů službami Apple se řídí <a class=\"text-link\" href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener noreferrer\">zásadami ochrany osobních údajů společnosti Apple</a>.",
         "Aplikaci lze chránit pomocí Face ID, PINu aplikace se 4 až 8 číslicemi a automatického uzamčení. Biometrické ověření zajišťuje systém iOS; aplikace nemá přístup k samotným biometrickým údajům uživatele."
       ]
@@ -49,7 +49,7 @@
     "cookies-analytika": {
       "title": "Cookies a analytika",
       "paragraphs": [
-        "Samotný web IbaJuraj Apps nepoužívá vlastní reklamní analytiku, reklamní trackery ani vlastní reklamní cookies. Na stránce nepoužíváme technologie určené ke sledování uživatele napříč weby.",
+        "Samotný web IbaJuraj Apps nepoužívá vlastní reklamní analytiku, reklamní trackery ani vlastní reklamní cookies. Na stránce nepoužíváme technologie určené ke sledování uživatele napříč weby. Preferovaný jazyk si prohlížeč pamatuje v místním úložišti (localStorage); tento údaj nepoužíváme k reklamnímu sledování.",
         "Při použití kontaktního formuláře nebo po otevření externích služeb mohou příslušné třetí strany zpracovávat technické údaje nebo používat vlastní technologie podle svých zásad ochrany soukromí."
       ]
     },
