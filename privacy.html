@@ -17,7 +17,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css?v=20261030-final">
-  <script src="/i18n.js?v=20261030-final" defer data-ibajuraj-i18n></script>
+  <script src="/i18n.js?v=20261118-privacy" defer data-ibajuraj-i18n></script>
   <script src="script.js?v=20261030-final" defer></script>
 </head>
 <body>
@@ -71,6 +71,8 @@
         <p>Na bežné používanie Lex Drive nie je potrebný vlastný používateľský účet IbaJuraj Apps. Na zobrazenie právnych informačných prehľadov aplikácia nevyžaduje zadávanie osobných údajov.</p>
         <p>Údaje používané na funkcie aplikácie, napríklad nastavenia, história alebo obľúbené položky, sa používajú na fungovanie týchto funkcií.</p>
         <p>Lex Drive môže pri kontrole dostupnosti alebo sťahovaní aktualizácií právneho obsahu kontaktovať distribučné súbory hostované prostredníctvom GitHub Pages. Pri takejto sieťovej požiadavke môže GitHub spracovať bežné technické údaje, napríklad IP adresu, informácie o zariadení a čas požiadavky, podľa svojich <a class="text-link" href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">zásad ochrany súkromia</a>. Ak používateľ otvorí iný externý odkaz, ďalšie spracovanie údajov sa riadi pravidlami cieľovej webovej stránky alebo služby.</p>
+        <p>Lex Drive umožňuje dobrovoľne nahlásiť chybu priamo z aplikácie. Po výslovnom potvrdení odoslania sa cez šifrované spojenie prenesie opis problému, zvolený typ, identifikátor a názov karty či sekcie, kontext príslušnej obrazovky, verzia a build aplikácie, jazyk, právny dátum a náhodne vytvorený identifikátor hlásenia. Formulár nevyžaduje meno, e-mail ani účet; do voľného textu nevkladajte mená, adresy, evidenčné čísla vozidiel, údaje z dokladov ani iné nepotrebné osobné údaje. Žiadne fotografie či dokumenty sa automaticky neprikladajú.</p>
+        <p>Priame hlásenie sa odošle cez Cloudflare Workers (IbaJuraj Reports API) do súkromného chatu správcu prostredníctvom služby Telegram. Účelom je prijatie, preverenie a prípadná oprava nahláseného problému. D1 databáza systému uchováva iba technické identifikátory hlásení, stav doručenia a časové údaje na ochranu pred duplicitami spravidla najviac 14 dní; denné počítadlá sa čistia po 30 dňoch. Opisy hlásení sa do D1 neukladajú. Text doručenej správy môže zostať v Telegrame do jej vymazania správcom; automatické 14-dňové vymazanie v Telegrame sa negarantuje.</p>
       </article>
 
       <article class="legal-card" id="kalkulacka-2v1">
@@ -104,6 +106,8 @@
         <p>Pri odoslaní kontaktného formulára spracujeme e-mailovú adresu, zvolenú aplikáciu, typ požiadavky, obsah správy a ďalšie údaje, ktoré používateľ do formulára dobrovoľne uvedie, na účely odpovede a vyriešenia požiadavky. Informáciu o zariadení a verzii iOS zadávate dobrovoľne.</p>
         <p>Právnym základom tohto spracúvania je oprávnený záujem IbaJuraj Apps podľa čl. 6 ods. 1 písm. f) GDPR na vybavení požiadaviek používateľov, poskytovaní podpory, riešení hlásených problémov a zabezpečovaní spoľahlivosti služieb. Proti spracúvaniu založenému na oprávnenom záujme môžete namietať.</p>
         <p>Formulár technicky spracúva služba Formspree. Podľa jej zásad môže pri použití služby automaticky spracovať aj technické údaje, napríklad IP adresu, typ prehliadača, čas prístupu alebo adresu odkazujúcej stránky. Formspree je služba so spracovaním aj v Spojených štátoch a jej použitie môže zahŕňať medzinárodný prenos údajov; podrobnosti o spracovaní a ochrane prenášaných údajov uvádza Formspree vo svojich zásadách. Správy uchovávame iba tak dlho, ako je potrebné na vybavenie požiadavky a nadväzujúcu komunikáciu.</p>
+        <p>Pri priamom hlásení chyby z aplikácie sa nepoužíva webový formulár Formspree. Cloudflare technicky spracúva sieťové požiadavky a na účely ochrany pred zneužitím môže dočasne vyhodnocovať IP adresu a súvisiace technické údaje; aplikácia tieto údaje zámerne neukladá do vlastnej databázy hlásení. Telegram spracúva obsah doručeného hlásenia podľa svojich pravidiel. Pri využití týchto služieb môže dochádzať k spracúvaniu alebo prenosom údajov mimo EHP; podrobnosti sa riadia príslušnými pravidlami poskytovateľov.</p>
+        <p>Priame hlásenia slúžia na používateľskú podporu a spoľahlivosť aplikácií; neslúžia na reklamné sledovanie. Odoslanie je dobrovoľné a vyžaduje osobitné potvrdenie v aplikácii. Požiadavky týkajúce sa prístupu k údajom alebo ich vymazania možno poslať cez kontaktný formulár; ak máte identifikátor hlásenia, uveďte ho na jednoduchšie vyhľadanie. Výmaz správy z Telegramu podlieha možnostiam tejto služby a príslušným povinnostiam uchovávania.</p>
         <ul>
           <li>Príjemcom údajov potrebných na technické doručenie formulára je Formspree a jeho technickí poskytovatelia v rozsahu uvedenom v <a class="text-link" href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">zásadách ochrany súkromia Formspree</a>.</li>
           <li>Telegram je samostatná komunikačná služba; použitie komunity je dobrovoľné.</li>
@@ -127,7 +131,7 @@
       </article>
     </section>
 
-    <p class="legal-updated">Posledná aktualizácia: 30. októbra 2026</p>
+    <p class="legal-updated">Posledná aktualizácia: 18. novembra 2026</p>
   </main>
 
   <footer class="footer">
