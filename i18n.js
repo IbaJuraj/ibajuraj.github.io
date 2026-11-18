@@ -75,7 +75,7 @@
   const loadPrivacyLocale = async () => {
     if (!isPrivacyPage || currentLanguage === "sk") return;
     try {
-      const response = await fetch(`/locales/privacy-${currentLanguage}.json?v=20261030`, { cache: "no-store" });
+      const response = await fetch(`/locales/privacy-${currentLanguage}.json?v=20261118`, { cache: "no-store" });
       if (!response.ok) throw new Error("Privacy locale request failed");
       const loaded = await response.json();
       if (!loaded || typeof loaded !== "object" || typeof loaded.cards !== "object") {
