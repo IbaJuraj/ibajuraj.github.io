@@ -1,0 +1,14 @@
+name: Validate Telegram release pilot
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/test_telegram_release.py
+      - run: python3 tools/telegram_release.py --mode preview
