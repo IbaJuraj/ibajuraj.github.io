@@ -19,6 +19,12 @@ class Tests(unittest.TestCase):
                 target=(ROOT/u.path.lstrip("/")) if u.path.startswith("/") else (path.parent/u.path)
                 if target.is_dir():target=target/"index.html"
                 self.assertTrue(target.exists(),(path,value))
+    def test_news_channel(self):
+        for filename in ("index.html", "news.html"):
+            parser = Links()
+            parser.feed((ROOT / filename).read_text(encoding="utf-8"))
+            self.assertIn("https://t.me/IbaJurajAppsNews", parser.refs)
+            self.assertNotIn("https://t.me/IbaJurajAppsNovinky", parser.refs)
     def test_catalog(self):
         cfg=json.loads((ROOT/"assets/appstore/config.json").read_text())
         self.assertEqual({a["id"] for a in cfg["apps"]},{6779741336,6794546464,6777232702,6779166726})
