@@ -1,5 +1,6 @@
 (() => {
   "use strict";
+  const storefronts={sk:"SK",cs:"CZ",en:"US",de:"DE",pl:"PL",hu:"HU"};
   const allowed = {"strazca-terminov":6779741336,"lexdrive":6794546464,"jurajcalc":6777232702,"penazenka-kariet":6779166726};
   const tr = key => window.IbaJurajI18n?.t?.(key,key) || key;
   const lang = () => window.IbaJurajI18n?.language || "sk";
@@ -9,11 +10,11 @@
   const record = slug => {
     const entry=catalog?.apps?.[slug];
     if(!entry || entry.id!==allowed[slug])return null;
-    const l=lang(), actual=entry.locales?.[l]?l:"sk", data=entry.locales?.[actual];
+    const l=lang(), actual=[l,"sk","cs","en","de","pl","hu"].find(k=>typeof entry.locales?.[k]?.version==="string" && entry.locales[k].version), data=entry.locales?.[actual];
     return data && typeof data.version==="string" && data.version ? {entry,data,actual}:null;
   };
   const date = value => {const d=new Date(value);return Number.isFinite(d.getTime())?new Intl.DateTimeFormat(lang(),{dateStyle:"medium",timeZone:"UTC"}).format(d):"";};
-  const label = r => [tr("Verzia")+" "+r.data.version,date(r.data.date),r.actual!==lang()?tr("Údaje zo slovenského App Store"):""].filter(Boolean).join(" · ");
+  const label = r => [tr("Verzia")+" "+r.data.version,date(r.data.date),r.actual!==lang()?tr("Údaje z iného obchodu App Store")+" ("+storefronts[r.actual]+")":""].filter(Boolean).join(" · ");
   function render(){
     if(!catalog)return;
     const renderGeneration=++generation;
@@ -40,6 +41,11 @@
         }
         function finish(){if(renderGeneration===generation && finished===links.length && success>0){gallery.dataset.storeGallery="true";gallery.replaceChildren(...links.filter(a=>a.firstChild?.naturalWidth>0));gallery.hidden=false;}}
       }
+    });
+    document.querySelectorAll('a[href*="apps.apple.com/"]').forEach(a=>{
+      const id=Number(new URL(a.href).pathname.match(/id(\d+)/)?.[1]);
+      const slug=Object.keys(allowed).find(k=>allowed[k]===id),r=slug&&record(slug);
+      if(r && r.actual!==lang()){const u=new URL(a.href),p=u.pathname.split("/");p[1]=storefronts[r.actual].toLowerCase();u.pathname=p.join("/");u.searchParams.set("l",r.actual);a.href=u.toString();}
     });
     document.querySelectorAll("[data-news]").forEach(list=>{
       const entries=Object.keys(allowed).map(slug=>({slug,r:record(slug)})).filter(x=>x.r);

@@ -44,6 +44,12 @@ class Tests(unittest.TestCase):
         self.assertEqual(len(again["history"]),2)
         with self.assertRaises(ValueError):
             entry_from({"version":"1.0","currentVersionReleaseDate":"2026-01-01T00:00:00Z"},again,[])
+    def test_privacy_web_disclosure(self):
+        self.assertIn("Verejné informácie o aplikáciách", (ROOT/"privacy.html").read_text())
+        for lang in ("cs","en","de","pl","hu"):
+            data=json.loads((ROOT/f"locales/privacy-{lang}.json").read_text())
+            self.assertEqual(len(data["cards"]["web"]["paragraphs"]),3)
+            self.assertIn("Apple",data["cards"]["web"]["paragraphs"][2])
     def test_media_host(self):
         self.assertTrue(apple_image(urlsplit("https://is1-ssl.mzstatic.com/a.jpg")))
         self.assertFalse(apple_image(urlsplit("https://mzstatic.com.evil.example/a.jpg")))

@@ -4,7 +4,7 @@
     "title": "Adatvédelmi irányelvek",
     "intro": "Az adatok kezelése az adott alkalmazástól és a bekapcsolt funkcióktól függ. Sok adat kizárólag a felhasználó eszközén marad, vagy bekapcsolt szinkronizálás esetén Apple-szolgáltatásokon keresztül kerül tárolásra. Az IbaJuraj Apps nem használ alkalmazásokon és webhelyeken átívelő reklámcélú felhasználókövetést.",
     "gridLabel": "Adatvédelem alkalmazásonként",
-    "updated": "Utolsó frissítés: 2026. november 18."
+    "updated": "Utolsó frissítés: 2026. november 27."
   },
   "cards": {
     "strazca-terminov": {
@@ -45,7 +45,8 @@
       "title": "IbaJuraj Apps webhely",
       "paragraphs": [
         "A webhely nem használ felhasználói fiókokat és saját hirdetési rendszert. A főoldal a GitHubról betöltheti az IbaJuraj Application Standard aktuális verzióját. Egy ilyen kapcsolat során a GitHub a <a class=\"text-link\" href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\" target=\"_blank\" rel=\"noopener noreferrer\">saját adatvédelmi szabályzata</a> szerint kezelheti a webes kéréshez kapcsolódó szokásos technikai adatokat. Az alkalmazások előnézeti képei közvetlenül ezen a webhelyen találhatók, nem az Apple képszerverein. A kártya- és határidőképek kizárólag bemutató adatokat tartalmaznak.",
-        "Az App Store-ra, GitHubra, Telegramra, Formspree-re vagy más külső oldalakra mutató hivatkozások harmadik felek szolgáltatásaihoz vezetnek. Megnyitásuk után a további adatkezelésre az adott szolgáltatás szabályzata vonatkozik."
+        "Az App Store-ra, GitHubra, Telegramra, Formspree-re vagy más külső oldalakra mutató hivatkozások harmadik felek szolgáltatásaihoz vezetnek. Megnyitásuk után a további adatkezelésre az adott szolgáltatás szabályzata vonatkozik.",
+        "A nyilvános alkalmazásinformációkat és a közzétett képernyőképeket a GitHub automatizálása rendszeresen lekéri az App Store nyilvános felületéről. A webhely helyben tárolt másolatokat jelenít meg; a termékoldalak puszta böngészése nem küld látogatói kéréseket az Apple API-jának. Az automatizálás során az alkalmazások felhasználói adatai és a kapcsolati űrlapok adatai nem kerülnek az Apple-hez."
       ]
     },
     "cookies-analytika": {
