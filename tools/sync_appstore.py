@@ -2,6 +2,7 @@
 """Read published App Store metadata; never access App Store Connect or user data."""
 import hashlib, json, re, sys, time
 from pathlib import Path
+from datetime import datetime
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
@@ -30,6 +31,9 @@ def entry_from(row, previous, image_paths):
     date=text_field(row.get("currentVersionReleaseDate"),64)
     if not version or not re.fullmatch(r"[0-9A-Za-z.+_-]+",version) or not re.match(r"^\d{4}-\d{2}-\d{2}T",date):
         raise ValueError("Invalid release")
+    release_date=datetime.fromisoformat(date.replace("Z","+00:00"))
+    if previous.get("date") and release_date < datetime.fromisoformat(previous["date"].replace("Z","+00:00")):
+        raise ValueError("Stale release response")
     notes=text_field(row.get("releaseNotes"),30000)
     history={x["version"]:x for x in previous.get("history",[]) if isinstance(x,dict) and "version" in x}
     # Preserve prior releases and notes if Apple omits them.
@@ -85,10 +89,13 @@ def main():
                 entry=cache["apps"].setdefault(slug,{"id":app["id"],"name":app["name"],"locales":{}})
                 if entry["id"]!=app["id"]:raise ValueError("App ID mismatch")
                 previous=entry["locales"].get(lang,{})
-                candidate=entry_from(row,previous,previous.get("images",[]))
-                candidate["images"]=screenshots(row,slug,lang,previous)
-                entry["locales"][lang]=candidate
-                seen+=1
+                try:
+                    candidate=entry_from(row,previous,previous.get("images",[]))
+                    candidate["images"]=screenshots(row,slug,lang,previous)
+                    entry["locales"][lang]=candidate
+                    seen+=1
+                except Exception as exc:
+                    print("App entry unavailable; retaining cache:",slug,lang,type(exc).__name__,file=sys.stderr)
         except Exception as exc:
             print("Storefront unavailable; retaining cache:",country,type(exc).__name__,file=sys.stderr)
         time.sleep(3)

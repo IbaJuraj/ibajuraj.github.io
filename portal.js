@@ -4,6 +4,7 @@
   const tr = key => window.IbaJurajI18n?.t?.(key,key) || key;
   const lang = () => window.IbaJurajI18n?.language || "sk";
   let catalog = null;
+  let generation = 0;
   const el = (tag, text, cls) => {const n=document.createElement(tag); if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
   const record = slug => {
     const entry=catalog?.apps?.[slug];
@@ -15,6 +16,7 @@
   const label = r => [tr("Verzia")+" "+r.data.version,date(r.data.date),r.actual!==lang()?tr("Údaje zo slovenského App Store"):""].filter(Boolean).join(" · ");
   function render(){
     if(!catalog)return;
+    const renderGeneration=++generation;
     document.querySelectorAll("[data-version]").forEach(n=>{const r=record(n.dataset.version);n.textContent=r?label(r):"";});
     document.querySelectorAll("[data-product]").forEach(root=>{
       const slug=root.dataset.product,r=record(slug);if(!r)return;
@@ -36,7 +38,7 @@
           const img=el("img");img.alt="";img.decoding="async";img.width=820;img.height=1783;a.append(img);links.push(a);
           img.onload=()=>{success++;finished++;finish();};img.onerror=()=>{finished++;a.remove();finish();};img.src=a.href;
         }
-        function finish(){if(finished===links.length && success>0){gallery.replaceChildren(...links.filter(a=>a.firstChild?.naturalWidth>0));gallery.hidden=false;}}
+        function finish(){if(renderGeneration===generation && finished===links.length && success>0){gallery.dataset.storeGallery="true";gallery.replaceChildren(...links.filter(a=>a.firstChild?.naturalWidth>0));gallery.hidden=false;}}
       }
     });
     document.querySelectorAll("[data-news]").forEach(list=>{

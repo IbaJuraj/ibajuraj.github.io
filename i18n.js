@@ -58,7 +58,7 @@
   const loadLocale = async () => {
     if (currentLanguage === "sk") return;
     try {
-      const response = await fetch(`/locales/${currentLanguage}.json?v=20261030`, { cache: "no-store" });
+      const response = await fetch(`/locales/${currentLanguage}.json?v=portal2`, { cache: "no-store" });
       if (!response.ok) throw new Error("Locale request failed");
       const loaded = await response.json();
       if (!loaded || typeof loaded !== "object" || typeof loaded.strings !== "object") {

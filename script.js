@@ -62,7 +62,7 @@
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 760) closeMenu();
+      if (window.innerWidth > 960) closeMenu();
     });
 
     document.querySelectorAll("[data-app]").forEach((link) => {
@@ -183,7 +183,7 @@
 
     const updateBackToTop = () => {
       if (!backToTop) return;
-      backToTop.classList.toggle("is-visible", window.scrollY > 650 && window.innerWidth > 760);
+      backToTop.classList.toggle("is-visible", window.scrollY > 650 && window.innerWidth > 960);
     };
 
     window.addEventListener("scroll", updateBackToTop, { passive: true });
@@ -260,6 +260,7 @@
         const allowed={"strazca-terminov":6779741336,"lexdrive":6794546464,"jurajcalc":6777232702,"penazenka-kariet":6779166726};
         if(manifest?.schemaVersion!==2 || manifest?.publisher!=="Juraj Spevar") return;
         document.querySelectorAll("[data-gallery]").forEach(node=>{
+          if(node.dataset.storeGallery==="true") return;
           const slug=node.getAttribute("data-gallery"),entry=manifest.apps?.[slug];
           if(!entry || allowed[slug]!==entry.appStoreId || !Array.isArray(entry.screenshots)) return;
           const store=node.closest(".app-card")?.querySelector('.app-actions a[href*="apps.apple.com"]');

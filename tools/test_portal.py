@@ -42,6 +42,8 @@ class Tests(unittest.TestCase):
         again=entry_from({"version":"1.1","currentVersionReleaseDate":"2026-02-01T00:00:00Z"},second,[])
         self.assertEqual(again["notes"],"Second")
         self.assertEqual(len(again["history"]),2)
+        with self.assertRaises(ValueError):
+            entry_from({"version":"1.0","currentVersionReleaseDate":"2026-01-01T00:00:00Z"},again,[])
     def test_media_host(self):
         self.assertTrue(apple_image(urlsplit("https://is1-ssl.mzstatic.com/a.jpg")))
         self.assertFalse(apple_image(urlsplit("https://mzstatic.com.evil.example/a.jpg")))
