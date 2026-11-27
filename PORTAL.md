@@ -1,0 +1,11 @@
+# IbaJuraj Apps – portal modernization
+
+- Compact home, four product pages, news and support. Existing /privacy.html, /invite.html, /card/, /standard/, /#support, legal payloads and Universal Links remain valid.
+- Six UI languages; Apple text comes from the corresponding public storefront when available, with explicitly labelled fallback to an available storefront. Apple may serve its own fallback language. Release history starts at first successful lookup; no fabricated historical releases.
+- Original approved icons and screenshot manifest are retained. Published Apple screenshot downloads are optional; validated local copies are served, with the verified gallery as fallback. No App Store Connect credentials, tracking or personal records are imported.
+- Website privacy wording now covers server-side public App Store refresh in all six languages. App-specific disclosures remain unchanged pending the final app-release audit. Existing Formspree and Telegram remain in use.
+- Run python3 tools/test_portal.py and node --check portal.js; existing validate-website workflow remains intact.
+- Deployment: after review and merge, configure Settings > Pages > Source > GitHub Actions. In Settings > Secrets and variables > Actions > Variables set ENABLE_PORTAL_PAGES_DEPLOY to true. Run Update App Store and publish portal manually once. The workflow then refreshes every three hours, preserves last valid cache during failures, commits only changed metadata and deploys in the same run (GITHUB_TOKEN commits alone do not trigger Pages). Do not switch production source until the draft PR is reviewed and checks pass. If rollback needed, remove variable and revert the portal commit through the normal review process.
+- Manual smoke test: at 320/390/768/1440 px, light/dark, all six languages, compact catalogue, horizontal gallery, details, support prefill and keyboard focus; verify invitation and shared-card links with synthetic inputs, Standard redirect, existing legal manifests, AASA and privacy URLs. Do not submit real personal data through test forms.
+
+The PR workflow also includes a read-only Apple lookup preview and Chromium viewport tests with screenshots available as Actions artifacts; these checks must pass before merging. The public site and branch settings are not changed by the PR checks.

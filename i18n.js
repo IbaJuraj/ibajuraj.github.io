@@ -58,7 +58,7 @@
   const loadLocale = async () => {
     if (currentLanguage === "sk") return;
     try {
-      const response = await fetch(`/locales/${currentLanguage}.json?v=20261030`, { cache: "no-store" });
+      const response = await fetch(`/locales/${currentLanguage}.json?v=portal3`, { cache: "no-store" });
       if (!response.ok) throw new Error("Locale request failed");
       const loaded = await response.json();
       if (!loaded || typeof loaded !== "object" || typeof loaded.strings !== "object") {
@@ -75,7 +75,7 @@
   const loadPrivacyLocale = async () => {
     if (!isPrivacyPage || currentLanguage === "sk") return;
     try {
-      const response = await fetch(`/locales/privacy-${currentLanguage}.json?v=20261118`, { cache: "no-store" });
+      const response = await fetch(`/locales/privacy-${currentLanguage}.json?v=portal3`, { cache: "no-store" });
       if (!response.ok) throw new Error("Privacy locale request failed");
       const loaded = await response.json();
       if (!loaded || typeof loaded !== "object" || typeof loaded.cards !== "object") {
@@ -166,8 +166,9 @@
 
   const updateMetadata = () => {
     const info = locale.meta || SK_META;
-    const title = isPrivacyPage ? (info.privacyTitle || SK_META.privacyTitle) : (info.siteTitle || SK_META.siteTitle);
-    const descriptionText = isPrivacyPage
+    const isOtherPage = !isPrivacyPage && !["/","/index.html"].includes(window.location.pathname);
+    const title = isOtherPage ? document.title : isPrivacyPage ? (info.privacyTitle || SK_META.privacyTitle) : (info.siteTitle || SK_META.siteTitle);
+    const descriptionText = isOtherPage ? (document.querySelector('meta[name="description"]')?.content || "") : isPrivacyPage
       ? (info.privacyDescription || SK_META.privacyDescription)
       : (info.siteDescription || SK_META.siteDescription);
 
@@ -248,11 +249,12 @@
 
   const updateLocalizedInternalLinks = () => {
     if (currentLanguage === "sk") return;
-    document.querySelectorAll('a[href^="index.html"], a[href^="privacy.html"]').forEach((link) => {
+    document.querySelectorAll('a[href]').forEach((link) => {
       const raw = link.getAttribute("href");
       if (!raw) return;
       try {
         const url = new URL(raw, window.location.href);
+        if (url.origin !== location.origin || raw.startsWith("#") || !(/^(\/|\/index\.html|\/privacy\.html|\/support\.html|\/news\.html|\/apps\/[^/]+\/)$/).test(url.pathname)) return;
         url.searchParams.set("lang", currentLanguage);
         link.href = url.toString();
       } catch (_) {}
@@ -260,7 +262,7 @@
   };
 
   const setCanonicalAlternates = () => {
-    const basePath = isPrivacyPage ? "/privacy.html" : "/";
+    const basePath = location.pathname === "/index.html" ? "/" : location.pathname;
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((node) => node.remove());
     Object.keys(SUPPORTED).forEach((code) => {
       const link = document.createElement("link");
@@ -300,6 +302,7 @@
     updateLocalizedInternalLinks();
     addLanguageSwitcher();
     setCanonicalAlternates();
+    document.dispatchEvent(new Event("ibajuraj:language-ready"));
     if (!translationFallback) {
       try { localStorage.setItem(STORAGE_KEY, currentLanguage); } catch (_) {}
     }
