@@ -1,0 +1,32 @@
+{
+  "apps": [
+    {
+      "slug": "strazca-terminov",
+      "id": 6779741336,
+      "name": "Strážca Termínov"
+    },
+    {
+      "slug": "lexdrive",
+      "id": 6794546464,
+      "name": "Lex Drive"
+    },
+    {
+      "slug": "jurajcalc",
+      "id": 6777232702,
+      "name": "Kalkulačka 2v1"
+    },
+    {
+      "slug": "penazenka-kariet",
+      "id": 6779166726,
+      "name": "Peňaženka Kariet"
+    }
+  ],
+  "storefronts": {
+    "sk": "sk",
+    "cs": "cz",
+    "en": "us",
+    "de": "de",
+    "pl": "pl",
+    "hu": "hu"
+  }
+}

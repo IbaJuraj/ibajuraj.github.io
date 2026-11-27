@@ -49,3 +49,5 @@
   .language-switcher {border-top:1px solid #dbe4f1;padding-top:12px;margin-top:8px;}
   .language-select {min-height:46px;background-color:#fff;border-color:#c8d6e9;}
 }
+
+@media(prefers-color-scheme:dark){.language-switcher{border-color:var(--line)}.language-select,.language-select:hover{background-color:var(--surface-solid);color:var(--text);border-color:var(--line)}}

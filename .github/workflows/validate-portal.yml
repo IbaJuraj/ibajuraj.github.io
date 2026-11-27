@@ -1,0 +1,15 @@
+name: Validate portal
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/test_portal.py
+      - run: node --check portal.js && node --check i18n.js

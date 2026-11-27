@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://ibajuraj.github.io/</loc>
-    <lastmod>2026-08-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://ibajuraj.github.io/privacy.html</loc>
-    <lastmod>2026-08-31</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <url><loc>https://ibajuraj.github.io/</loc></url>
+  <url><loc>https://ibajuraj.github.io/privacy.html</loc></url>
+  <url><loc>https://ibajuraj.github.io/support.html</loc></url>
+  <url><loc>https://ibajuraj.github.io/news.html</loc></url>
+  <url><loc>https://ibajuraj.github.io/apps/strazca-terminov/</loc></url>
+  <url><loc>https://ibajuraj.github.io/apps/lexdrive/</loc></url>
+  <url><loc>https://ibajuraj.github.io/apps/jurajcalc/</loc></url>
+  <url><loc>https://ibajuraj.github.io/apps/penazenka-kariet/</loc></url>
 </urlset>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Praktické aplikácie na každý deň – pre termíny, právnu orientáciu, výpočty a vernostné karty.">
   <meta name="theme-color" content="#f4f7fc">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="sk_SK">
   <meta property="og:title" content="IbaJuraj Apps">
@@ -19,8 +19,8 @@
   <title>IbaJuraj Apps</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=20261030-final">
-  <script src="script.js?v=20261030-final" defer></script>
+  <link rel="stylesheet" href="/style.css?v=portal1">
+  <script src="/i18n.js?v=portal1" defer data-ibajuraj-i18n></script><script src="/script.js?v=portal1" defer></script><script src="/portal.js?v=portal1" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -75,13 +75,13 @@
   }
   </script>
 </head>
-<body>
+<body class="portal-page portal-home">
   <a class="skip-link" href="#main-content">Preskočiť na obsah</a>
 
   <header class="site-header" id="top">
     <nav class="nav" aria-label="Hlavná navigácia">
-      <a class="brand" href="#top" aria-label="IbaJuraj Apps – úvod">
-        <img src="assets/ibajuraj-logo.svg" alt="" width="44" height="44">
+      <a class="brand" href="/" aria-label="IbaJuraj Apps – úvod">
+        <img src="/assets/ibajuraj-logo.svg" alt="" width="44" height="44">
         <span>IbaJuraj Apps</span>
       </a>
 
@@ -91,9 +91,10 @@
       </button>
 
       <div class="nav-links" id="mobile-navigation">
-        <a href="#apps">Aplikácie</a>
-        <a href="#novinky">Novinky</a>
-        <a class="nav-support" href="#support">Podpora</a>
+        <a href="/#apps">Aplikácie</a>
+        <a href="/news.html">Novinky</a>
+        <a class="nav-support" href="/support.html">Podpora</a>
+        <a href="/privacy.html">Ochrana súkromia</a>
       </div>
     </nav>
   </header>
@@ -110,95 +111,12 @@
       </div>
     </section>
 
-    <section class="section apps-section" id="apps" aria-labelledby="apps-title">
-      <h2 class="visually-hidden" id="apps-title">Aplikácie</h2>
-      <p class="eyebrow apps-eyebrow">Aplikácie</p>
+    <section class="section apps-section portal-catalog" id="apps" aria-labelledby="apps-title"><h2 id="apps-title">Aplikácie</h2><div class="catalog-grid"><article class="catalog-card"><a class="catalog-link" href="/apps/strazca-terminov/"><img class="app-icon" src="/assets/strazca-terminov.webp" alt="" width="64" height="64"><div class="catalog-copy"><h3>Strážca Termínov</h3><p>Termíny, vozidlá a dokumenty prehľadne. Upozornenia v správny čas.</p><span class="catalog-version" data-version="strazca-terminov"></span></div><span class="catalog-chevron" aria-hidden="true">›</span></a><a class="catalog-store" href="https://apps.apple.com/sk/app/id6779741336?l=sk">Otvoriť v App Store</a></article>
+<article class="catalog-card"><a class="catalog-link" href="/apps/lexdrive/"><img class="app-icon" src="/assets/lexdrive.webp" alt="" width="64" height="64"><div class="catalog-copy"><h3>Lex Drive</h3><p>Dopravné pravidlá, priestupky a sankcie zrozumiteľne.</p><span class="catalog-version" data-version="lexdrive"></span></div><span class="catalog-chevron" aria-hidden="true">›</span></a><a class="catalog-store" href="https://apps.apple.com/sk/app/id6794546464?l=sk">Otvoriť v App Store</a></article>
+<article class="catalog-card"><a class="catalog-link" href="/apps/jurajcalc/"><img class="app-icon" src="/assets/kalkulacka-2v1.webp" alt="" width="64" height="64"><div class="catalog-copy"><h3>Kalkulačka 2v1</h3><p>Kalkulačka, percentá a história výpočtov poruke.</p><span class="catalog-version" data-version="jurajcalc"></span></div><span class="catalog-chevron" aria-hidden="true">›</span></a><a class="catalog-store" href="https://apps.apple.com/sk/app/id6777232702?l=sk">Otvoriť v App Store</a></article>
+<article class="catalog-card"><a class="catalog-link" href="/apps/penazenka-kariet/"><img class="app-icon" src="/assets/penazenka-kariet.webp" alt="" width="64" height="64"><div class="catalog-copy"><h3>Peňaženka Kariet</h3><p>Vernostné karty, QR kódy a zdieľanie v jednom.</p><span class="catalog-version" data-version="penazenka-kariet"></span></div><span class="catalog-chevron" aria-hidden="true">›</span></a><a class="catalog-store" href="https://apps.apple.com/sk/app/id6779166726?l=sk">Otvoriť v App Store</a></article></div><p class="gallery-data-notice">Obrázky aplikácií obsahujú ukážkové údaje.</p></section>
 
-      <div class="app-grid">
-        <article class="app-card">
-          <div class="app-title-row">
-            <img class="app-icon" src="assets/strazca-terminov.webp" alt="" width="82" height="82">
-            <div class="app-heading-copy">
-              <p class="app-status">Dostupné v App Store</p>
-              <h3>Strážca Termínov</h3>
-              <span class="app-pill">Administratíva</span>
-            </div>
-          </div>
-          <p class="app-lead">Termíny, vozidlá a dokumenty prehľadne. Upozornenia v správny čas.</p>
-          <div class="app-actions">
-            <a class="button primary app-button"
-               href="https://apps.apple.com/sk/app/str%C3%A1%C5%BEca-term%C3%ADnov/id6779741336"
-               target="_blank" rel="noopener noreferrer">Otvoriť v App Store</a>
-          </div>
-          <div class="app-gallery" data-gallery="strazca-terminov" aria-label="Ukážky aplikácie Strážca Termínov" hidden></div>
-
-        </article>
-
-        <article class="app-card">
-          <div class="app-title-row">
-            <img class="app-icon" src="assets/lexdrive.webp" alt="" width="82" height="82">
-            <div class="app-heading-copy">
-              <p class="app-status">Dostupné v App Store</p>
-              <h3>Lex Drive</h3>
-              <span class="app-pill">Právo</span>
-            </div>
-          </div>
-          <p class="app-lead">Dopravné pravidlá, priestupky a sankcie zrozumiteľne.</p>
-          <p class="app-note">Informačná aplikácia. Nenahrádza právne poradenstvo.</p>
-          <div class="app-actions">
-            <a class="button primary app-button"
-               href="https://apps.apple.com/sk/app/lexdrive/id6794546464?l=sk"
-               target="_blank" rel="noopener noreferrer">Otvoriť v App Store</a>
-          </div>
-          <div class="app-gallery" data-gallery="lexdrive" aria-label="Ukážky aplikácie Lex Drive" hidden></div>
-
-        </article>
-
-        <article class="app-card">
-          <div class="app-title-row">
-            <img class="app-icon" src="assets/kalkulacka-2v1.webp" alt="" width="82" height="82">
-            <div class="app-heading-copy">
-              <p class="app-status">Dostupné v App Store</p>
-              <h3>Kalkulačka 2v1</h3>
-              <span class="app-pill">Výpočty</span>
-            </div>
-          </div>
-          <p class="app-lead">Kalkulačka, percentá a história výpočtov poruke.</p>
-          <div class="app-actions">
-            <a class="button primary app-button"
-               href="https://apps.apple.com/sk/app/kalkula%C4%8Dka-2v1/id6777232702"
-               target="_blank" rel="noopener noreferrer">Otvoriť v App Store</a>
-          </div>
-          <div class="app-gallery" data-gallery="jurajcalc" aria-label="Ukážky aplikácie Kalkulačka 2v1" hidden></div>
-
-        </article>
-
-        <article class="app-card">
-          <div class="app-title-row">
-            <img class="app-icon" src="assets/penazenka-kariet.webp" alt="" width="82" height="82">
-            <div class="app-heading-copy">
-              <p class="app-status">Dostupné v App Store</p>
-              <h3>Peňaženka Kariet</h3>
-              <span class="app-pill">Vernostné karty</span>
-            </div>
-          </div>
-          <p class="app-lead">Vernostné karty, QR kódy a zdieľanie v jednom.</p>
-          <div class="app-actions">
-            <a class="button primary app-button"
-               href="https://apps.apple.com/sk/app/pe%C5%88a%C5%BEenka-kariet/id6779166726?l=sk"
-               target="_blank" rel="noopener noreferrer">Otvoriť v App Store</a>
-          </div>
-          <div class="app-gallery" data-gallery="penazenka-kariet" aria-label="Ukážky aplikácie Peňaženka Kariet" hidden></div>
-
-        </article>
-      </div>
-      <p class="gallery-data-notice">Obrázky aplikácií obsahujú ukážkové údaje.</p>
-    </section>
-
-    <section class="section news-section" id="novinky" aria-labelledby="news-title">
-      <div><p class="eyebrow">Novinky</p><h2 id="news-title">Čo je nové?</h2><p>Aktualizácie našich aplikácií na Telegrame.</p></div>
-      <a class="button secondary" href="https://t.me/IbaJurajAppsNovinky" target="_blank" rel="noopener noreferrer">Sledovať novinky ↗</a>
-    </section>
+    <section class="section portal-news" id="novinky" aria-labelledby="news-title"><p class="eyebrow">Novinky</p><h2 id="news-title">Najnovšie aktualizácie</h2><div data-news="3" class="news-list"></div><p data-news-empty>Informácie o vydaniach nájdete v App Store.</p><a class="text-link" href="/news.html">Všetky aktualizácie →</a> · <a class="text-link" href="https://t.me/IbaJurajAppsNovinky" rel="noopener noreferrer">Sledovať novinky ↗</a></section>
 
     <section class="section privacy-section" aria-label="Ochrana súkromia">
       <article class="privacy-card">
@@ -214,7 +132,7 @@
       <details><summary>Fungujú aplikácie aj bez iCloudu?</summary><p>Základné funkcie závisia od aplikácie. Synchronizácia a zdieľanie cez iCloud vyžadujú príslušné nastavenie.</p></details>
     </section>
 
-    <section class="section support-section" id="support" aria-labelledby="support-title">
+    <section class="section portal-support" id="support"><h2>Kontakt a podpora</h2><p>Napíšte nám cez formulár alebo Telegram. Neposielajte citlivé údaje.</p><a class="button secondary" href="/support.html">Kontaktovať podporu</a><details id="legacy-support-form"><summary>Kontaktný formulár</summary><section class="section support-section" id="support-form-section" aria-labelledby="support-title">
       <div class="support-heading">
         <p class="eyebrow">Kontakt a podpora</p>
         <h2 id="support-title">Ako vám pomôžeme?</h2>
@@ -287,7 +205,7 @@
           </div>
         </aside>
       </div>
-    </section>
+    </section></details></section>
 
     <section class="section developer-standard-section" id="standard" aria-labelledby="standard-title">
       <article class="standard-card">
@@ -314,17 +232,17 @@
 
   <footer class="footer">
     <div class="footer-brand">
-      <img src="assets/ibajuraj-logo.svg" alt="" width="36" height="36">
+      <img src="/assets/ibajuraj-logo.svg" alt="" width="36" height="36">
       <div><strong>IbaJuraj Apps</strong><p>Vytvorené na Slovensku 🇸🇰</p></div>
     </div>
     <div class="footer-meta">
       <p>© <span id="current-year">2026</span> IbaJuraj Apps</p>
     </div>
     <div class="footer-links">
-      <a href="#apps">Aplikácie</a>
-      <a href="#novinky">Novinky</a>
-      <a href="#support">Podpora</a>
-      <a href="privacy.html">Ochrana súkromia</a>
+      <a href="/#apps">Aplikácie</a>
+      <a href="/news.html">Novinky</a>
+      <a href="/support.html">Podpora</a>
+      <a href="/privacy.html">Ochrana súkromia</a>
       <a href="https://github.com/IbaJuraj/ibajuraj-application-standard" target="_blank" rel="noopener noreferrer">Štandard aplikácií</a>
       <a href="https://github.com/IbaJuraj" target="_blank" rel="noopener noreferrer">GitHub profil</a>
     </div>
