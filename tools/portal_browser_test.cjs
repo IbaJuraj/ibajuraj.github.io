@@ -40,7 +40,7 @@ const routes=["/","/apps/strazca-terminov/","/apps/lexdrive/","/apps/jurajcalc/"
  for(const lang of ["sk","cs","en","de","pl","hu"]){
    await page.goto(root+"/apps/lexdrive/?lang="+lang);
    await page.waitForFunction(l=>document.documentElement.lang===l,lang);
-   await page.locator("#site-language").waitFor();
+   await page.locator("#site-language").waitFor({state:"attached"});
    assert.equal(await page.locator("#site-language").inputValue(),lang);
  }
  await page.goto(root+"/index.html?app=strazca-terminov&type=technical#support");
