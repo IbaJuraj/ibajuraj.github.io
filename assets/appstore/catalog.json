@@ -1,1 +1,209 @@
-{"schemaVersion":1,"apps":{}}
+{
+  "apps": {
+    "jurajcalc": {
+      "id": 6777232702,
+      "locales": {
+        "cs": {
+          "date": "2026-09-05T01:33:49Z",
+          "description": "Calculator 2-in-1 combines a classic calculator with practical percentage calculations in one simple app.\nWhether you need to solve a quick calculation, work out a percentage, calculate a discount, or compare values, everything is available in one place.\nClassic Calculator\n• basic arithmetic operations\n• percentage calculations\n• clear display of expressions and results\n• calculation history\n• easy-to-read formatting for large numbers\nPercentages\n• quickly calculate a percentage of any value\n• instantly see the final value and the difference\n• create your own quick percentage presets\n• useful for discounts, prices, and everyday calculations\nPersonalization\n• multiple color themes, including dark options\n• customizable button colors\n• alternative app icons\n• Light, Dark, or Automatic appearance\n• restore the default appearance at any time\nCalculator 2-in-1 is designed to be fast, clear, and comfortable to use every day.",
+          "history": [
+            {
+              "date": "2026-09-05T01:33:49Z",
+              "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+              "version": "1.14.0"
+            }
+          ],
+          "images": [],
+          "minOS": "17.0",
+          "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+          "version": "1.14.0"
+        },
+        "de": {
+          "date": "2026-09-05T01:33:49Z",
+          "description": "Kalkulačka 2v1 vereint einen klassischen Taschenrechner mit praktischen Prozentberechnungen in einer einfachen App.\nEgal, ob Sie schnell eine alltägliche Rechnung durchführen, Prozente berechnen, einen Rabatt ermitteln oder einen Preisunterschied feststellen möchten – alles finden Sie an einem Ort.\nKlassischer Taschenrechner\n• grundlegende Rechenoperationen\n• Prozentberechnungen\n• übersichtliche Darstellung von Rechenweg und Ergebnis\n• Berechnungsverlauf\n• gut lesbare Formatierung großer Zahlen\nProzentberechnungen\n• schnelle Berechnung von Prozenten aus einem Preis oder Wert\n• sofortige Anzeige des Endwerts und der Differenz\n• eigene Schnellprozentwerte\n• praktisch für Rabatte, Preise und alltägliche Berechnungen\nAnpassung des Erscheinungsbilds\n• mehrere Farbthemen einschließlich dunkler Varianten\n• eigene Tastenfarbe\n• alternative App-Symbole\n• heller, dunkler oder automatischer Darstellungsmodus\n• Möglichkeit, das Standarddesign wiederherzustellen\nKalkulačka 2v1 wurde so entwickelt, dass sie schnell, übersichtlich und bequem im Alltag zu verwenden ist.",
+          "history": [
+            {
+              "date": "2026-09-05T01:33:49Z",
+              "notes": "Neu in Version 1.14.0\n• Verständlichere Erklärungen bei Prozentrechnungen und kombinierten Rechenoperationen.\n• Der ursprünglich eingegebene Ausdruck bleibt auch bei Verwendung von Prozenten sichtbar.\n• Verbesserte Darstellung von Klammern und der Reihenfolge der Rechenoperationen.\n• Einheitlichere Formatierung großer Zahlen und Dezimalzahlen.\n• Verbesserter Berechnungsverlauf.\n• Das Design „Standard“ wurde in „Eisblau“ umbenannt.\n• Weitere kleinere Verbesserungen an Benutzeroberfläche und Stabilität.",
+              "version": "1.14.0"
+            }
+          ],
+          "images": [],
+          "minOS": "17.0",
+          "notes": "Neu in Version 1.14.0\n• Verständlichere Erklärungen bei Prozentrechnungen und kombinierten Rechenoperationen.\n• Der ursprünglich eingegebene Ausdruck bleibt auch bei Verwendung von Prozenten sichtbar.\n• Verbesserte Darstellung von Klammern und der Reihenfolge der Rechenoperationen.\n• Einheitlichere Formatierung großer Zahlen und Dezimalzahlen.\n• Verbesserter Berechnungsverlauf.\n• Das Design „Standard“ wurde in „Eisblau“ umbenannt.\n• Weitere kleinere Verbesserungen an Benutzeroberfläche und Stabilität.",
+          "version": "1.14.0"
+        },
+        "en": {
+          "date": "2026-09-05T01:33:49Z",
+          "description": "Calculator 2-in-1 combines a classic calculator with practical percentage calculations in one simple app.\nWhether you need to solve a quick calculation, work out a percentage, calculate a discount, or compare values, everything is available in one place.\nClassic Calculator\n• basic arithmetic operations\n• percentage calculations\n• clear display of expressions and results\n• calculation history\n• easy-to-read formatting for large numbers\nPercentages\n• quickly calculate a percentage of any value\n• instantly see the final value and the difference\n• create your own quick percentage presets\n• useful for discounts, prices, and everyday calculations\nPersonalization\n• multiple color themes, including dark options\n• customizable button colors\n• alternative app icons\n• Light, Dark, or Automatic appearance\n• restore the default appearance at any time\nCalculator 2-in-1 is designed to be fast, clear, and comfortable to use every day.",
+          "history": [
+            {
+              "date": "2026-09-05T01:33:49Z",
+              "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+              "version": "1.14.0"
+            }
+          ],
+          "images": [],
+          "minOS": "17.0",
+          "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+          "version": "1.14.0"
+        },
+        "hu": {
+          "date": "2026-09-05T01:33:49Z",
+          "description": "Calculator 2-in-1 combines a classic calculator with practical percentage calculations in one simple app.\nWhether you need to solve a quick calculation, work out a percentage, calculate a discount, or compare values, everything is available in one place.\nClassic Calculator\n• basic arithmetic operations\n• percentage calculations\n• clear display of expressions and results\n• calculation history\n• easy-to-read formatting for large numbers\nPercentages\n• quickly calculate a percentage of any value\n• instantly see the final value and the difference\n• create your own quick percentage presets\n• useful for discounts, prices, and everyday calculations\nPersonalization\n• multiple color themes, including dark options\n• customizable button colors\n• alternative app icons\n• Light, Dark, or Automatic appearance\n• restore the default appearance at any time\nCalculator 2-in-1 is designed to be fast, clear, and comfortable to use every day.",
+          "history": [
+            {
+              "date": "2026-09-05T01:33:49Z",
+              "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+              "version": "1.14.0"
+            }
+          ],
+          "images": [],
+          "minOS": "17.0",
+          "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+          "version": "1.14.0"
+        },
+        "pl": {
+          "date": "2026-09-05T01:33:49Z",
+          "description": "Calculator 2-in-1 combines a classic calculator with practical percentage calculations in one simple app.\nWhether you need to solve a quick calculation, work out a percentage, calculate a discount, or compare values, everything is available in one place.\nClassic Calculator\n• basic arithmetic operations\n• percentage calculations\n• clear display of expressions and results\n• calculation history\n• easy-to-read formatting for large numbers\nPercentages\n• quickly calculate a percentage of any value\n• instantly see the final value and the difference\n• create your own quick percentage presets\n• useful for discounts, prices, and everyday calculations\nPersonalization\n• multiple color themes, including dark options\n• customizable button colors\n• alternative app icons\n• Light, Dark, or Automatic appearance\n• restore the default appearance at any time\nCalculator 2-in-1 is designed to be fast, clear, and comfortable to use every day.",
+          "history": [
+            {
+              "date": "2026-09-05T01:33:49Z",
+              "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+              "version": "1.14.0"
+            }
+          ],
+          "images": [],
+          "minOS": "17.0",
+          "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+          "version": "1.14.0"
+        },
+        "sk": {
+          "date": "2026-09-05T01:33:49Z",
+          "description": "Calculator 2-in-1 combines a classic calculator with practical percentage calculations in one simple app.\nWhether you need to solve a quick calculation, work out a percentage, calculate a discount, or compare values, everything is available in one place.\nClassic Calculator\n• basic arithmetic operations\n• percentage calculations\n• clear display of expressions and results\n• calculation history\n• easy-to-read formatting for large numbers\nPercentages\n• quickly calculate a percentage of any value\n• instantly see the final value and the difference\n• create your own quick percentage presets\n• useful for discounts, prices, and everyday calculations\nPersonalization\n• multiple color themes, including dark options\n• customizable button colors\n• alternative app icons\n• Light, Dark, or Automatic appearance\n• restore the default appearance at any time\nCalculator 2-in-1 is designed to be fast, clear, and comfortable to use every day.",
+          "history": [
+            {
+              "date": "2026-09-05T01:33:49Z",
+              "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+              "version": "1.14.0"
+            }
+          ],
+          "images": [],
+          "minOS": "17.0",
+          "notes": "What’s New in Version 1.14.0\n• Clearer explanations for percentage calculations and mixed operations.\n• Your original expression remains visible when using percentages.\n• Improved display of parentheses and order of operations.\n• More consistent formatting of large and decimal numbers.\n• Improved calculation History.\n• The “Default” theme has been renamed to “Ice”.\n• Additional minor user interface and stability improvements.",
+          "version": "1.14.0"
+        }
+      },
+      "name": "Kalkulačka 2v1"
+    },
+    "lexdrive": {
+      "id": 6794546464,
+      "locales": {
+        "cs": {
+          "date": "2026-11-15T20:48:14Z",
+          "description": "Lex Drive – dopravné priestupky, právne predpisy a praktické situácie prehľadne na jednom mieste.\n\nPotrebujete rýchlo zistiť, aké pravidlá platia v konkrétnej dopravnej situácii, aké povinnosti má vodič alebo ktoré právne ustanovenie sa vzťahuje na daný priestupok?\n\nLex Drive vám pomôže zorientovať sa v dopravných predpisoch, vyhľadávať právne informácie a porozumieť ich praktickému významu.\n\nČO V APLIKÁCII NÁJDETE\n\n• Dopravné priestupky a správne delikty s právnou kvalifikáciou.\n• Pravidlá cestnej premávky a povinnosti vodičov.\n• Povinnosti držiteľov a prevádzkovateľov vozidiel.\n• Taxislužbu, cestnú dopravu a súvisiace predpisy.\n• Pobyt cudzincov a súvisiace priestupky.\n• Diaľničné známky, mýto, PZP a technické kontroly.\n• Právne ustanovenia, sankcie a súvisiace zákony.\n• Praktické vysvetlenia a prepojenia medzi jednotlivými právnymi informáciami.\n\nRÝCHLE VYHĽADÁVANIE\n\nVyhľadávajte podľa bežných výrazov, názvov priestupkov, konkrétnych situácií, paragrafov alebo odborných skratiek, napríklad ADR a OBU.\n\nNemusíte vždy poznať presné číslo zákona alebo ustanovenia.\n\nPREHĽADNÉ USPORIADANIE\n\nAplikácia obsahuje štyri hlavné časti:\n\n• Domov – rýchly prístup k vyhľadávaniu a najdôležitejším funkciám.\n• Situácie – praktické dopravné situácie a ich vysvetlenia.\n• Priestupky – prehľad priestupkov, právnych kvalifikácií a sankcií.\n• Knižnica – právne predpisy a súvisiace ustanovenia.\n\nHISTÓRIA A OBĽÚBENÉ\n\nČasto používané informácie si môžete uložiť medzi Obľúbené. História vám umožní vrátiť sa k predtým otvoreným výsledkom.\n\nVYBRANÉ INFORMÁCIE AJ OFFLINE\n\nČasť právneho obsahu je dostupná aj bez internetového pripojenia. Užitočné informácie tak môžete mať poruke aj v teréne.\n\nDÔLEŽITÉ UPOZORNENIE\n\nLex Drive je nezávislá informačná pomôcka. Nenahrádza oficiálne znenie právnych predpisov, právne poradenstvo ani rozhodnutie príslušného orgánu.\n\nPri posudzovaní konkrétneho prípadu je rozhodujúce znenie právnych predpisov účinné k príslušnému dátumu.",
+          "history": [
+            {
+              "date": "2026-11-15T20:48:14Z",
+              "notes": "Verzia 1.25.0 prináša prehľadnejšie používateľské prostredie a jednoduchší prístup k dopravným predpisom.\n\n**Novinky a vylepšenia:**\n- Nové rozbaľovacie karty pre PZP, technickú a emisnú kontrolu.\n- Prehľadnejšie spracovanie zadržania vodičského preukazu, osvedčenia o evidencii a tabuliek s evidenčným číslom.\n- Rýchlejšie prechody medzi súvisiacimi priestupkami a právnymi ustanoveniami.\n- Zrozumiteľnejšie rozlíšenie policajných pokút a sankcií okresného úradu.\n- Nová možnosť nahlásiť problém priamo z vybraných kariet s automatickým uvedením identifikátora karty.\n- Vylepšené vyhľadávanie, navigácia a používateľská prehľadnosť.\n- Opravy chýb a zvýšenie stability aplikácie.\n\nĎakujeme, že používate Lex Drive.",
+              "version": "1.25.0"
+            }
+          ],
+          "images": [],
+          "minOS": "16.6",
+          "notes": "Verzia 1.25.0 prináša prehľadnejšie používateľské prostredie a jednoduchší prístup k dopravným predpisom.\n\n**Novinky a vylepšenia:**\n- Nové rozbaľovacie karty pre PZP, technickú a emisnú kontrolu.\n- Prehľadnejšie spracovanie zadržania vodičského preukazu, osvedčenia o evidencii a tabuliek s evidenčným číslom.\n- Rýchlejšie prechody medzi súvisiacimi priestupkami a právnymi ustanoveniami.\n- Zrozumiteľnejšie rozlíšenie policajných pokút a sankcií okresného úradu.\n- Nová možnosť nahlásiť problém priamo z vybraných kariet s automatickým uvedením identifikátora karty.\n- Vylepšené vyhľadávanie, navigácia a používateľská prehľadnosť.\n- Opravy chýb a zvýšenie stability aplikácie.\n\nĎakujeme, že používate Lex Drive.",
+          "version": "1.25.0"
+        },
+        "sk": {
+          "date": "2026-11-15T20:48:14Z",
+          "description": "Lex Drive – dopravné priestupky, právne predpisy a praktické situácie prehľadne na jednom mieste.\n\nPotrebujete rýchlo zistiť, aké pravidlá platia v konkrétnej dopravnej situácii, aké povinnosti má vodič alebo ktoré právne ustanovenie sa vzťahuje na daný priestupok?\n\nLex Drive vám pomôže zorientovať sa v dopravných predpisoch, vyhľadávať právne informácie a porozumieť ich praktickému významu.\n\nČO V APLIKÁCII NÁJDETE\n\n• Dopravné priestupky a správne delikty s právnou kvalifikáciou.\n• Pravidlá cestnej premávky a povinnosti vodičov.\n• Povinnosti držiteľov a prevádzkovateľov vozidiel.\n• Taxislužbu, cestnú dopravu a súvisiace predpisy.\n• Pobyt cudzincov a súvisiace priestupky.\n• Diaľničné známky, mýto, PZP a technické kontroly.\n• Právne ustanovenia, sankcie a súvisiace zákony.\n• Praktické vysvetlenia a prepojenia medzi jednotlivými právnymi informáciami.\n\nRÝCHLE VYHĽADÁVANIE\n\nVyhľadávajte podľa bežných výrazov, názvov priestupkov, konkrétnych situácií, paragrafov alebo odborných skratiek, napríklad ADR a OBU.\n\nNemusíte vždy poznať presné číslo zákona alebo ustanovenia.\n\nPREHĽADNÉ USPORIADANIE\n\nAplikácia obsahuje štyri hlavné časti:\n\n• Domov – rýchly prístup k vyhľadávaniu a najdôležitejším funkciám.\n• Situácie – praktické dopravné situácie a ich vysvetlenia.\n• Priestupky – prehľad priestupkov, právnych kvalifikácií a sankcií.\n• Knižnica – právne predpisy a súvisiace ustanovenia.\n\nHISTÓRIA A OBĽÚBENÉ\n\nČasto používané informácie si môžete uložiť medzi Obľúbené. História vám umožní vrátiť sa k predtým otvoreným výsledkom.\n\nVYBRANÉ INFORMÁCIE AJ OFFLINE\n\nČasť právneho obsahu je dostupná aj bez internetového pripojenia. Užitočné informácie tak môžete mať poruke aj v teréne.\n\nDÔLEŽITÉ UPOZORNENIE\n\nLex Drive je nezávislá informačná pomôcka. Nenahrádza oficiálne znenie právnych predpisov, právne poradenstvo ani rozhodnutie príslušného orgánu.\n\nPri posudzovaní konkrétneho prípadu je rozhodujúce znenie právnych predpisov účinné k príslušnému dátumu.",
+          "history": [
+            {
+              "date": "2026-11-15T20:48:14Z",
+              "notes": "Verzia 1.25.0 prináša prehľadnejšie používateľské prostredie a jednoduchší prístup k dopravným predpisom.\n\n**Novinky a vylepšenia:**\n- Nové rozbaľovacie karty pre PZP, technickú a emisnú kontrolu.\n- Prehľadnejšie spracovanie zadržania vodičského preukazu, osvedčenia o evidencii a tabuliek s evidenčným číslom.\n- Rýchlejšie prechody medzi súvisiacimi priestupkami a právnymi ustanoveniami.\n- Zrozumiteľnejšie rozlíšenie policajných pokút a sankcií okresného úradu.\n- Nová možnosť nahlásiť problém priamo z vybraných kariet s automatickým uvedením identifikátora karty.\n- Vylepšené vyhľadávanie, navigácia a používateľská prehľadnosť.\n- Opravy chýb a zvýšenie stability aplikácie.\n\nĎakujeme, že používate Lex Drive.",
+              "version": "1.25.0"
+            }
+          ],
+          "images": [],
+          "minOS": "16.6",
+          "notes": "Verzia 1.25.0 prináša prehľadnejšie používateľské prostredie a jednoduchší prístup k dopravným predpisom.\n\n**Novinky a vylepšenia:**\n- Nové rozbaľovacie karty pre PZP, technickú a emisnú kontrolu.\n- Prehľadnejšie spracovanie zadržania vodičského preukazu, osvedčenia o evidencii a tabuliek s evidenčným číslom.\n- Rýchlejšie prechody medzi súvisiacimi priestupkami a právnymi ustanoveniami.\n- Zrozumiteľnejšie rozlíšenie policajných pokút a sankcií okresného úradu.\n- Nová možnosť nahlásiť problém priamo z vybraných kariet s automatickým uvedením identifikátora karty.\n- Vylepšené vyhľadávanie, navigácia a používateľská prehľadnosť.\n- Opravy chýb a zvýšenie stability aplikácie.\n\nĎakujeme, že používate Lex Drive.",
+          "version": "1.25.0"
+        }
+      },
+      "name": "Lex Drive"
+    },
+    "penazenka-kariet": {
+      "id": 6779166726,
+      "locales": {
+        "cs": {
+          "date": "2026-09-17T14:42:59Z",
+          "description": "Keep all your loyalty and customer cards within easy reach in one clear and convenient app.\n\nCard Wallet lets you store the cards you would normally carry in your physical wallet and keep them easily accessible on your iPhone. Organize your cards, display the required barcode or QR code, and quickly find the card you need.\n\nShare selected cards with family or friends using a link, and easily add received cards directly to your Card Wallet.\n\nWith shared wallets, you can also share selected cards on an ongoing basis. Your personal cards remain separate and under your control.\n\niCloud synchronization helps keep your data available and up to date across your devices.\n\nCard Wallet supports Slovak, Czech, English, German, Polish, and Hungarian. You can choose the language directly in the app or leave it set to automatically follow your system settings.\n\nMain features:\n• storage for loyalty and customer cards,\n• barcodes and QR codes ready to use,\n• simple card organization,\n• sharing of individual cards,\n• shared wallets,\n• iCloud synchronization,\n• support for six languages,\n• focus on privacy and ease of use.\n\nKeep your cards where you need them most – on your iPhone.",
+          "history": [
+            {
+              "date": "2026-09-17T14:42:59Z",
+              "notes": "Version 1.5.4 brings improvements to stability, sharing, and localization.\nWe improved:\ncard sharing and shared wallets,\ninvitation acceptance and invite code handling,\niCloud synchronization and related behavior,\ntranslations and text consistency across supported languages,\ncard recognition, including a fix for Terranova,\ntechnical stability and internal test coverage.\nThis version also includes several smaller user interface and navigation improvements.",
+              "version": "1.5.4"
+            }
+          ],
+          "images": [],
+          "minOS": "17.6",
+          "notes": "Version 1.5.4 brings improvements to stability, sharing, and localization.\nWe improved:\ncard sharing and shared wallets,\ninvitation acceptance and invite code handling,\niCloud synchronization and related behavior,\ntranslations and text consistency across supported languages,\ncard recognition, including a fix for Terranova,\ntechnical stability and internal test coverage.\nThis version also includes several smaller user interface and navigation improvements.",
+          "version": "1.5.4"
+        },
+        "sk": {
+          "date": "2026-09-17T14:42:59Z",
+          "description": "Keep all your loyalty and customer cards within easy reach in one clear and convenient app.\n\nCard Wallet lets you store the cards you would normally carry in your physical wallet and keep them easily accessible on your iPhone. Organize your cards, display the required barcode or QR code, and quickly find the card you need.\n\nShare selected cards with family or friends using a link, and easily add received cards directly to your Card Wallet.\n\nWith shared wallets, you can also share selected cards on an ongoing basis. Your personal cards remain separate and under your control.\n\niCloud synchronization helps keep your data available and up to date across your devices.\n\nCard Wallet supports Slovak, Czech, English, German, Polish, and Hungarian. You can choose the language directly in the app or leave it set to automatically follow your system settings.\n\nMain features:\n• storage for loyalty and customer cards,\n• barcodes and QR codes ready to use,\n• simple card organization,\n• sharing of individual cards,\n• shared wallets,\n• iCloud synchronization,\n• support for six languages,\n• focus on privacy and ease of use.\n\nKeep your cards where you need them most – on your iPhone.",
+          "history": [
+            {
+              "date": "2026-09-17T14:42:59Z",
+              "notes": "Version 1.5.4 brings improvements to stability, sharing, and localization.\nWe improved:\ncard sharing and shared wallets,\ninvitation acceptance and invite code handling,\niCloud synchronization and related behavior,\ntranslations and text consistency across supported languages,\ncard recognition, including a fix for Terranova,\ntechnical stability and internal test coverage.\nThis version also includes several smaller user interface and navigation improvements.",
+              "version": "1.5.4"
+            }
+          ],
+          "images": [],
+          "minOS": "17.6",
+          "notes": "Version 1.5.4 brings improvements to stability, sharing, and localization.\nWe improved:\ncard sharing and shared wallets,\ninvitation acceptance and invite code handling,\niCloud synchronization and related behavior,\ntranslations and text consistency across supported languages,\ncard recognition, including a fix for Terranova,\ntechnical stability and internal test coverage.\nThis version also includes several smaller user interface and navigation improvements.",
+          "version": "1.5.4"
+        }
+      },
+      "name": "Peňaženka Kariet"
+    },
+    "strazca-terminov": {
+      "id": 6779741336,
+      "locales": {
+        "cs": {
+          "date": "2026-10-08T15:10:35Z",
+          "description": "Strážca Termínov je osobný administratívny asistent, ktorý vám pomáha mať dôležité termíny, dokumenty a povinnosti na jednom mieste.\nNamiesto poznámok, kalendára a viacerých aplikácií môžete prehľadne evidovať veci, na ktoré nechcete zabudnúť.\nV Strážcovi Termínov môžete sledovať napríklad:\nvozidlá, technické a emisné kontroly či diaľničné známky,\nPZP, havarijné a ďalšie poistenia,\nosobné doklady a dokumenty,\nzáruky a doklady o kúpe,\nzmluvy, služby, predplatné a viazanosti,\npracovné povinnosti, školenia a oprávnenia,\nzdravotné termíny,\nvlastné termíny a opakované povinnosti.\nAplikácia vás upozorní na blížiace sa a zmeškané termíny a na domovskej obrazovke zvýrazní to, čomu je vhodné venovať pozornosť.\nDokumenty a záznamy môžete priraďovať osobám, vozidlám a skupinám, napríklad Osobné, Rodina alebo Firma. Vďaka tomu zostáva evidencia prehľadná aj pri väčšom množstve údajov.\nK dispozícii je tiež globálne vyhľadávanie, kategórie, widgety, zálohy a export údajov.\nSúkromie a zabezpečenie\nAplikáciu môžete chrániť pomocou Face ID alebo vlastného PIN-u aplikácie. Synchronizácia cez iCloud pomáha udržiavať údaje dostupné na vašich zariadeniach.\nStrážca Termínov je navrhnutý tak, aby vám pripomenul dôležité veci v správny čas a zároveň zostal jednoduchý na každodenné používanie.",
+          "history": [
+            {
+              "date": "2026-10-08T15:10:35Z",
+              "notes": "Nová verzia zlepšuje zdieľanie skupín a spoluprácu medzi členmi.\n\n• spoľahlivejšie vytváranie a prijímanie pozvánok\n• vylepšená synchronizácia obsahu zdieľaných skupín\n• opravy prenosu vozidiel, termínov a ďalších spoločných údajov\n• lepšie obnovenie synchronizácie pri dočasnom probléme s iCloudom\n• vylepšená stabilita a ďalšie opravy chýb",
+              "version": "1.61.0"
+            }
+          ],
+          "images": [],
+          "minOS": "17.6",
+          "notes": "Nová verzia zlepšuje zdieľanie skupín a spoluprácu medzi členmi.\n\n• spoľahlivejšie vytváranie a prijímanie pozvánok\n• vylepšená synchronizácia obsahu zdieľaných skupín\n• opravy prenosu vozidiel, termínov a ďalších spoločných údajov\n• lepšie obnovenie synchronizácie pri dočasnom probléme s iCloudom\n• vylepšená stabilita a ďalšie opravy chýb",
+          "version": "1.61.0"
+        },
+        "sk": {
+          "date": "2026-10-08T15:10:35Z",
+          "description": "Strážca Termínov je osobný administratívny asistent, ktorý vám pomáha mať dôležité termíny, dokumenty a povinnosti na jednom mieste.\nNamiesto poznámok, kalendára a viacerých aplikácií môžete prehľadne evidovať veci, na ktoré nechcete zabudnúť.\nV Strážcovi Termínov môžete sledovať napríklad:\nvozidlá, technické a emisné kontroly či diaľničné známky,\nPZP, havarijné a ďalšie poistenia,\nosobné doklady a dokumenty,\nzáruky a doklady o kúpe,\nzmluvy, služby, predplatné a viazanosti,\npracovné povinnosti, školenia a oprávnenia,\nzdravotné termíny,\nvlastné termíny a opakované povinnosti.\nAplikácia vás upozorní na blížiace sa a zmeškané termíny a na domovskej obrazovke zvýrazní to, čomu je vhodné venovať pozornosť.\nDokumenty a záznamy môžete priraďovať osobám, vozidlám a skupinám, napríklad Osobné, Rodina alebo Firma. Vďaka tomu zostáva evidencia prehľadná aj pri väčšom množstve údajov.\nK dispozícii je tiež globálne vyhľadávanie, kategórie, widgety, zálohy a export údajov.\nSúkromie a zabezpečenie\nAplikáciu môžete chrániť pomocou Face ID alebo vlastného PIN-u aplikácie. Synchronizácia cez iCloud pomáha udržiavať údaje dostupné na vašich zariadeniach.\nStrážca Termínov je navrhnutý tak, aby vám pripomenul dôležité veci v správny čas a zároveň zostal jednoduchý na každodenné používanie.",
+          "history": [
+            {
+              "date": "2026-10-08T15:10:35Z",
+              "notes": "Nová verzia zlepšuje zdieľanie skupín a spoluprácu medzi členmi.\n\n• spoľahlivejšie vytváranie a prijímanie pozvánok\n• vylepšená synchronizácia obsahu zdieľaných skupín\n• opravy prenosu vozidiel, termínov a ďalších spoločných údajov\n• lepšie obnovenie synchronizácie pri dočasnom probléme s iCloudom\n• vylepšená stabilita a ďalšie opravy chýb",
+              "version": "1.61.0"
+            }
+          ],
+          "images": [],
+          "minOS": "17.6",
+          "notes": "Nová verzia zlepšuje zdieľanie skupín a spoluprácu medzi členmi.\n\n• spoľahlivejšie vytváranie a prijímanie pozvánok\n• vylepšená synchronizácia obsahu zdieľaných skupín\n• opravy prenosu vozidiel, termínov a ďalších spoločných údajov\n• lepšie obnovenie synchronizácie pri dočasnom probléme s iCloudom\n• vylepšená stabilita a ďalšie opravy chýb",
+          "version": "1.61.0"
+        }
+      },
+      "name": "Strážca Termínov"
+    }
+  },
+  "schemaVersion": 1
+}
