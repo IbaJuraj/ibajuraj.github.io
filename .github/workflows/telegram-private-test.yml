@@ -1,0 +1,16 @@
+name: Telegram private test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  private-test:
+    if: github.ref == 'refs/heads/main' && vars.ENABLE_TELEGRAM_PRIVATE_TEST == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send marked test to private destination
+        env:
+          TELEGRAM_RELEASE_BOT_TOKEN: ${{ secrets.TELEGRAM_RELEASE_BOT_TOKEN }}
+          TELEGRAM_TEST_CHAT_ID: ${{ secrets.TELEGRAM_TEST_CHAT_ID }}
+        run: python3 tools/telegram_release.py --mode private-test

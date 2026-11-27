@@ -12,6 +12,8 @@ permissions:
   contents: read
 jobs:
   build:
+    outputs:
+      catalog_sha: ${{ steps.catalog_revision.outputs.sha }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -36,6 +38,9 @@ jobs:
             git commit -m 'Refresh published App Store metadata'
             git push origin HEAD:main
           fi
+      - name: Record catalog revision
+        id: catalog_revision
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Prepare static site
         run: |
           mkdir -p /tmp/portal-site
@@ -59,3 +64,32 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment
+  telegram:
+    needs: [build, deploy]
+    if: vars.ENABLE_PORTAL_PAGES_DEPLOY == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Verify deployed metadata and test release logic
+        env:
+          DEPLOYED_SHA: ${{ needs.build.outputs.catalog_sha }}
+        run: |
+          git diff --exit-code "$DEPLOYED_SHA" HEAD -- assets/appstore/catalog.json
+          python3 tools/test_telegram_release.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Preview only (default)
+        if: vars.ENABLE_TELEGRAM_RELEASES != 'true'
+        run: python3 tools/telegram_release.py --mode preview
+      - name: Publish new release
+        if: vars.ENABLE_TELEGRAM_RELEASES == 'true'
+        env:
+          ENABLE_TELEGRAM_RELEASES: ${{ vars.ENABLE_TELEGRAM_RELEASES }}
+          TELEGRAM_RELEASE_BOT_TOKEN: ${{ secrets.TELEGRAM_RELEASE_BOT_TOKEN }}
+          TELEGRAM_RELEASE_CHAT_ID: ${{ secrets.TELEGRAM_RELEASE_CHAT_ID }}
+        run: python3 tools/telegram_release.py --mode publish
