@@ -14,7 +14,7 @@ jobs:
       - run: python3 tools/test_portal.py
       - run: node --check portal.js && node --check i18n.js
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Install browser test dependencies
